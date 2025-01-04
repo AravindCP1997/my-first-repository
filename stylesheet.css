@@ -1,4 +1,9 @@
-body {
+*{
 font-family:Trebuchet MS, Arial, Verdana;
-color: red;
+}
+h3{
+  Color: Blue;
+}
+p{
+  Color: Black;
 }
