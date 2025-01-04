@@ -1,6 +1,10 @@
 *{
 font-family:Trebuchet MS, Arial, Verdana;
 }
+body{
+  background-image:url('ship.png');
+  background-repeat:no-repeat;
+}
 h3{
   Color: Blue;
 }
