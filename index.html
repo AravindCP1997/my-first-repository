@@ -7,8 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script>
 		function myfunction(){
-		const data={"name":"John"};
-		const option={method:"POST", body:JSON.stringify(data)};
+		const data=JSON.stringify({"name":"John"});
+		alert(data);
+		const option={method:"POST", body:data};
 		fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products",option)
 		.then(x=>alert(x));
 		}
@@ -20,7 +21,7 @@
 <form action="https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products" method="POST">
 	<input type="submit">
 </form>
-<input type="button" onclick="myfunction()" >Click</input>
+<input type="button" onclick="myfunction()" >Click2</input>
 </body>
 
 </html>
