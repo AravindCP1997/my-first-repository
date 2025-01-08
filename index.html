@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script>
 		const data={"name":"John"};
-		const option={method:"POST", body:JSON.stringify(data),headers:{"content-Type":"application/Json"}};
+		const option={method:"POST", body:JSON.stringify(data),headers:{"Content-Type":"application/json"}};
 		fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products",option)
 		.then(x=>console.log(x))
 	</script>
