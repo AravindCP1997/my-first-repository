@@ -6,10 +6,12 @@
 	<link rel="icon" type="image/x-icon" href="Ship.png">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script>
+		function myfunction(){
 		const data={"name":"John"};
 		const option={method:"POST", body:JSON.stringify(data),headers:{"Content-Type":"application/json"}};
 		fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products",option)
 		.then(x=>alert(x));
+		}
 	</script>
 
 </head>
@@ -18,6 +20,7 @@
 <form action="https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products" method="POST">
 	<input type="submit">
 </form>
+<input type="button" onclick="myfunction()">
 </body>
 
 </html>
