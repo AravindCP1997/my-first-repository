@@ -8,14 +8,14 @@
 		const jsonData = {"Key":"Value"};
 		const data = JSON.stringify(jsonData);
 		alert(data);
-		const options = {
+		const options = ;
+		fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products",{
  			method: 'POST',
 			headers: {
 			    'Content-type': 'application/json; charset=UTF-8'
 			  },
- 			/*body: data*/
-			};
-		fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products",options);
+ 			body: data
+			});
 		alert('request sent');
 	</script>
 
