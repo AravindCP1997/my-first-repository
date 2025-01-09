@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,28 +6,29 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script>
 		function myfunction(){
-		const jsonData = {"Key":Value");
-		const data = JSON.stringify(data);
+		const jsonData = {"Key":"Value"};
+		const data = JSON.stringify(jsonData);
+		alert(data);
 		const options = {
  			method: 'POST',
-  			headers: {
-    				'Content-Type': 'application/json' // Set content type to JSON
-  			},
-  			body: data} // Convert JSON data to a string and set it as the request body
-			fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products",options)
-			.then(x=>{alert(x)});
-		alert('data');
-};
+			headers: {
+			    'Content-Type': 'application/json' // Set content type to JSON
+			  },
+ 			body: data // Convert JSON data to a string and set it as the request body
+			};
+		fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products",options)
+			.then(x=>{alert(x)});		
+
 		}
 	</script>
 
 </head>
 <body>
-<h3>ACP Business Insights</h3>
+<h3></h3>
 <form action="https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products" method="POST">
 	<input type="submit">
 </form>
-<input type="button" onclick="myfunction()" >Click6</input>
+<input type="button" onclick="myfunction()" >Click7</input>
 </body>
 
 </html>
