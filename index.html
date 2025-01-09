@@ -7,16 +7,17 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script>
 		function myfunction(){
-		const jsonData = "Hi";
+		const jsonData = {"Key":Value");
+		const data = JSON.stringify(data);
 		const options = {
  			method: 'POST',
   			headers: {
     				'Content-Type': 'application/json' // Set content type to JSON
   			},
-  			body: jsonData // Convert JSON data to a string and set it as the request body
+  			body: data} // Convert JSON data to a string and set it as the request body
 			fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products",options)
 			.then(x=>{alert(x)});
-		alert('Request send');
+		alert('data');
 };
 		}
 	</script>
@@ -27,7 +28,7 @@
 <form action="https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products" method="POST">
 	<input type="submit">
 </form>
-<input type="button" onclick="myfunction()" >Click5</input>
+<input type="button" onclick="myfunction()" >Click6</input>
 </body>
 
 </html>
