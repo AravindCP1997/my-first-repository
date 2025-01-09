@@ -7,13 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script>
 		function myfunction(){
-		const jsonData = { "Name": 'Aravind', "Age": 27 };
+		const jsonData = "Hi";
 		const options = {
  			method: 'POST',
   			headers: {
     				'Content-Type': 'application/json' // Set content type to JSON
   			},
-  			body: JSON.stringify(jsonData) // Convert JSON data to a string and set it as the request body
+  			body: jsonData // Convert JSON data to a string and set it as the request body
 			fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products",options)
 			.then(x=>{alert(x)});
 };
