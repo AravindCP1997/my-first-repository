@@ -8,7 +8,7 @@
 	let jsonData = {};
 	let jsonData.name = "Aravind";
 	let data = JSON.stringify(jsonData);
-	let options = {  method: 'POST', headers: {    'Content-Type': 'application/json' },  body: jsonData}
+	let options = {  method: 'POST', headers: {    'Content-Type': 'text/plain' },  body: data}
 	fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products", options)
 		.then(x=>x.text())
 		.then(y=>alert(y))
