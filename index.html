@@ -5,8 +5,10 @@
 	<link rel="icon" type="image/x-icon" href="Ship.png">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script>
-	let jsonData = { };
-	let options = {  method: 'POST', headers: {    'Content-Type': 'text/plain' },  body: "Hello"}
+	let jsonData = {};
+	let jsonData.name = "Aravind";
+	let data = JSON.stringify(jsonData);
+	let options = {  method: 'POST', headers: {    'Content-Type': 'application/json' },  body: data}
 	fetch("https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products", options)
 		.then(x=>x.text())
 		.then(y=>alert(y))
@@ -15,7 +17,7 @@
 
 </head>
 <body>
-<h3>26</h3>
+<h3>27</h3>
 <form action="https://friendly-rotary-phone-wr597qpvp7gq3gxp6-3000.app.github.dev/products" method="POST">
 <input type="text" name="fname">
 <input type="submit" >
