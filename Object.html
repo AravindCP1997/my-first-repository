@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/png;base64,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"
+    />
+
+    <script>
+      var text = "";
+
+      if ("drive" in localStorage) {
+        drive = JSON.parse(localStorage.getItem("drive"));
+      } else {
+        var drive = {};
+      }
+
+      if ("ofilename" in localStorage) {
+        ofilename = localStorage.getItem("ofilename");
+      } else {
+        ofilename = "Untitled_Object";
+      }
+
+      document.onkeyup = function (e) {
+        e.preventDefault();
+        if (e.shiftKey && e.key == "+") {
+          addField("");
+        } else if (e.shiftKey && e.key == "*") {
+          embedObject("{}");
+        } else if (e.shiftKey && e.key == "-") {
+          clearDisplay();
+        } else if (e.shiftKey && e.key == "Backspace") {
+          back();
+        } else if (e.key == "Escape") {
+          toggleoverlay();
+        }
+      };
+
+      function changefile() {
+        ofilename = event.target.value;
+        localStorage.setItem("ofilename", ofilename);
+      }
+
+      function mymessage(text) {
+        var messagebox = document.querySelector(".messagebox");
+        messagebox.innerHTML = text;
+        togglemessagebox();
+        setTimeout(togglemessagebox, 1500);
+      }
+
+      function togglemessagebox() {
+        var messagebox = document.querySelector(".messagebox");
+        if (messagebox.style.display != "block") {
+          messagebox.style.display = "block";
+        } else {
+          messagebox.style.display = "none";
+        }
+      }
+
+      function openNav() {
+        document.querySelector(".options").style.display = "grid";
+        document.querySelector(".overlay").style.display = "block";
+      }
+
+      function closeNav() {
+        document.querySelector(".options").style.display = "none";
+      }
+
+      function fileclose() {
+        drive = JSON.parse("{}");
+        localStorage.removeItem("drive");
+        ofilename = "Untitled_Object";
+        localStorage.removeItem("ofilename");
+        explorePath("");
+        toggleoverlay();
+      }
+
+      function toggleoverlay() {
+        document.querySelector(".tools-content").style.display = "none";
+        document.querySelector(".addoptions").style.display = "none";
+        document.querySelector(".options").style.display = "none";
+        document.querySelector(".overlay").style.display = "none";
+        document.querySelector(".info").style.display = "none";
+        closeNav();
+      }
+
+      function toggleTools() {
+        if (document.querySelector(".tools-content").style.display != "grid") {
+          document.querySelector(".tools-content").style.display = "grid";
+          document.querySelector(".overlay").style.display = "block";
+        } else {
+          document.querySelector(".tools-content").style.display = "none";
+        }
+      }
+
+      function toggleadd() {
+        if (document.querySelector(".addoptions").style.display != "grid") {
+          document.querySelector(".addoptions").style.display = "grid";
+          document.querySelector(".overlay").style.display = "block";
+        } else {
+          document.querySelector(".addoptions").style.display = "none";
+        }
+      }
+
+      function dragOver(ev) {
+        ev.preventDefault();
+      }
+
+      function dropEvent(ev) {
+        ev.preventDefault();
+        var x = ev.dataTransfer.items;
+        var file = x[0].getAsFile();
+        var fileextension = file.name.split(".").pop();
+        let fr = new FileReader();
+        fr.onload = function () {
+          var text = fr.result;
+          if (fileextension == "json") {
+            displayobject(text);
+          } else if (fileextension == "csv") {
+            displayobject(readCSV(text));
+          }
+        };
+        fr.readAsText(file);
+      }
+
+      function loadToROM(text) {
+        drive = JSON.parse(text);
+        localStorage.setItem("drive", JSON.stringify(drive));
+        explorePath("");
+      }
+
+      function displayobject(text) {
+        var path = document.querySelector("#path").value;
+        var tempObj1 = JSON.parse(text);
+        var keys = Object.keys(tempObj1);
+        var display = document.querySelector("#display");
+        for (i = 0; i < keys.length; i++) {
+          var key = document.createElement("input");
+          key.setAttribute("class", "labels");
+          key.setAttribute("onchange", "keychange()");
+          key.value = keys[i];
+          if (typeof tempObj1[keys[i]] != "object") {
+            var value = document.createElement("input");
+            value.setAttribute("class", "values");
+            value.setAttribute("data-value", tempObj1[keys[i]]);
+            value.value = tempObj1[keys[i]];
+            var deletebutton = document.createElement("button");
+            deletebutton.innerText = "×";
+            deletebutton.setAttribute("onclick", "deleteitem()");
+            deletebutton.setAttribute("class", "deletebutton");
+            display.appendChild(key);
+            display.appendChild(value);
+            display.appendChild(deletebutton);
+          } else {
+            key.value = keys[i];
+            var value = document.createElement("button");
+            value.setAttribute("value", path + "/" + keys[i]);
+            value.setAttribute("class", "values");
+            value.setAttribute("data-value", JSON.stringify(tempObj1[keys[i]]));
+            value.setAttribute("onclick", "objectExplorer()");
+            value.innerHTML =
+              "Records [" + Object.keys(tempObj1[keys[i]]).length + "]";
+            var deletebutton = document.createElement("button");
+            deletebutton.innerText = "×";
+            deletebutton.setAttribute("onclick", "deleteitem()");
+            deletebutton.setAttribute("class", "deletebutton");
+            display.appendChild(key);
+            display.appendChild(value);
+            display.appendChild(deletebutton);
+          }
+        }
+      }
+
+      function explorePath(path) {
+        if (Object.keys(drive).length == 0) {
+          mymessage("Add data to explore!");
+        }
+        var pathField = document.querySelector("#path");
+        pathField.value = path;
+        document.querySelector("#filename").value = ofilename;
+        var folders = path.split("/");
+        var display = document.querySelector("#display");
+        display.innerHTML = "";
+        var tempObj = drive;
+        for (i = 0; i < folders.length; i++) {
+          if (folders[i] != "") {
+            if (!(folders[i] in tempObj)) {
+              mymessage("Path not available, Please Check!");
+            }
+            tempObj = tempObj[folders[i]];
+          }
+        }
+        var keys = Object.keys(tempObj);
+        for (i = 0; i < keys.length; i++) {
+          var key = document.createElement("input");
+          key.setAttribute("class", "labels");
+          key.setAttribute("onchange", "keychange()");
+          key.value = keys[i];
+          if (typeof tempObj[keys[i]] != "object") {
+            var value = document.createElement("input");
+            value.setAttribute("class", "values");
+            value.setAttribute("data-value", tempObj[keys[i]]);
+            value.value = tempObj[keys[i]];
+            var deletebutton = document.createElement("button");
+            deletebutton.innerText = "×";
+            deletebutton.setAttribute("onclick", "deleteitem()");
+            deletebutton.setAttribute("class", "deletebutton");
+            display.appendChild(key);
+            display.appendChild(value);
+            display.appendChild(deletebutton);
+          } else {
+            key.value = keys[i];
+            var value = document.createElement("button");
+            value.setAttribute("value", path + "/" + keys[i]);
+            value.setAttribute("class", "values");
+            value.setAttribute("data-value", JSON.stringify(tempObj[keys[i]]));
+            value.setAttribute("onclick", "objectExplorer()");
+            value.innerHTML =
+              "Records [" + Object.keys(tempObj[keys[i]]).length + "]";
+            var deletebutton = document.createElement("button");
+            deletebutton.innerText = "×";
+            deletebutton.setAttribute("onclick", "deleteitem()");
+            deletebutton.setAttribute("class", "deletebutton");
+            display.appendChild(key);
+            display.appendChild(value);
+            display.appendChild(deletebutton);
+          }
+        }
+      }
+
+      function pathExplorer() {
+        var pathText = event.target.value;
+        explorePath(pathText);
+      }
+
+      function objectExplorer() {
+        save();
+        var pathText = event.target.value;
+        explorePath(pathText);
+      }
+
+      function back() {
+        var pathField = document.querySelector("#path").value;
+        var folders = pathField.split("/");
+        folders.pop();
+        explorePath(folders.join("/"));
+      }
+
+      function deleteitem() {
+        var button = event.target;
+        var display = button.parentElement;
+        display.removeChild(button.previousElementSibling);
+        display.removeChild(button.previousElementSibling);
+        display.removeChild(button);
+      }
+
+      function clearDisplay() {
+        var display = document.querySelector("#display");
+        display.innerHTML = "";
+        toggleoverlay();
+      }
+
+      function saveAsCSV() {
+        var display = document.querySelector("#display");
+        var elements = display.children;
+        var CSVrows = [];
+        var path = document.querySelector("#path").value;
+        var filename = path.split("/").pop();
+        if (filename == "") {
+          filename = ofilename;
+        }
+        for (i = 0; i < elements.length; i++) {
+          if (elements[i].getAttribute("class") == "labels") {
+            if (elements[i + 1].tagName != "BUTTON") {
+              CSVrows.push(elements[i].value + "," + elements[i + 1].value);
+            } else {
+              CSVrows.push(elements[i].value + "," + elements[i + 1].innerHTML);
+            }
+          }
+        }
+        var CSVData = CSVrows.join("\n");
+        let anchor = document.createElement("a");
+        anchor.href = "data:text/csv;charset=utf-8," + encodeURI(CSVData);
+        anchor.target = "_blank";
+        anchor.download = filename + ".csv";
+        anchor.click();
+        toggleoverlay();
+      }
+
+      function save() {
+        var path = document.querySelector("#path").value;
+        var folders = path.split("/");
+        var newObj = {};
+        var tempObj = drive;
+        for (i = 0; i < folders.length; i++) {
+          if (folders[i] != "") {
+            tempObj = tempObj[folders[i]];
+          }
+        }
+        var tempkeys = Object.keys(tempObj);
+        for (tk = 0; tk < tempkeys.length; tk++) {
+          delete tempObj[tempkeys[tk]];
+        }
+        display = document.querySelector("#display");
+        elements = display.children;
+        for (j = 0; j < elements.length; j++) {
+          if (elements[j].getAttribute("class") == "labels") {
+            if (elements[j + 1].tagName != "BUTTON") {
+              tempObj[elements[j].value] = elements[j + 1].value;
+            } else {
+              tempObj[elements[j].value] = JSON.parse(
+                elements[j + 1].getAttribute("data-value")
+              );
+            }
+          }
+        }
+        localStorage.setItem("drive", JSON.stringify(drive));
+        explorePath(path);
+      }
+
+      function saveButton() {
+        save();
+        mymessage(ofilename + " saved in local storage!");
+      }
+
+      function saveAsJSON() {
+        var display = document.querySelector("#display");
+        var elements = display.children;
+        var dataObj = {};
+        var path = document.querySelector("#path").value;
+        var filename = path.split("/").pop();
+        if (filename == "") {
+          filename = ofilename;
+        }
+        for (i = 0; i < elements.length; i++) {
+          if (elements[i].getAttribute("class") == "labels") {
+            if (elements[i + 1].tagName != "BUTTON") {
+              dataObj[elements[i].value] = elements[i + 1].value;
+            } else {
+              dataObj[elements[i].value] = JSON.parse(
+                elements[i + 1].getAttribute("data-value")
+              );
+            }
+          }
+        }
+        downloadJSON(dataObj, filename);
+        toggleoverlay();
+      }
+
+      function downloadJSON(object, fn) {
+        data = JSON.stringify(object);
+        let anchor = document.createElement("a");
+        anchor.href = "data:text/json;charset=utf-8," + encodeURI(data);
+        anchor.target = "_blank";
+        anchor.download = fn + ".json";
+        anchor.click();
+      }
+
+      function readFile() {
+        var file = event.target.files[0];
+        ofilename = file.name.split(".")[0];
+        localStorage.setItem("ofilename", ofilename);
+        let fr = new FileReader();
+        fr.onload = function () {
+          text = fr.result;
+          loadToROM(text);
+        };
+        fr.readAsText(file);
+      }
+
+      function openJSON() {
+        var button = document.querySelector("#readFile");
+        button.click();
+        toggleoverlay();
+      }
+
+      function newJSON() {
+        drive = {};
+        ofilename = "Untitled_Object";
+        localStorage.setItem("ofilename", ofilename);
+        toggleoverlay();
+        explorePath("");
+      }
+
+      function download() {
+        save();
+        downloadJSON(drive, ofilename);
+        toggleoverlay();
+      }
+
+      function addField(text) {
+        var l = document.querySelectorAll("#display .labels").length;
+        var key = document.createElement("input");
+        key.value = l;
+        key.setAttribute("class", "labels");
+        key.setAttribute("placeholder", "enter property");
+        var value = document.createElement("input");
+        value.setAttribute("class", "values");
+        value.value = text;
+        display.appendChild(key);
+        display.appendChild(value);
+        var deletebutton = document.createElement("button");
+        deletebutton.innerText = "×";
+        deletebutton.setAttribute("onclick", "deleteitem()");
+        deletebutton.setAttribute("class", "deletebutton");
+        display.appendChild(deletebutton);
+        save();
+      }
+
+      function embedObject(text) {
+        var l = document.querySelectorAll("#display .labels").length;
+        var path = document.querySelector("#path").value;
+        var display = document.querySelector("#display");
+        var key = document.createElement("input");
+        key.setAttribute("class", "labels");
+        key.setAttribute("onchange", "keychange()");
+        key.setAttribute("placeholder", "enter property");
+        key.value = l;
+        var value = document.createElement("button");
+        value.setAttribute("value", path + "/" + key.value);
+        value.setAttribute("data-value", text);
+        value.innerHTML = "Records [0]";
+        value.setAttribute("onclick", "objectExplorer()");
+        display.appendChild(key);
+        display.appendChild(value);
+        var deletebutton = document.createElement("button");
+        deletebutton.innerText = "×";
+        deletebutton.setAttribute("onclick", "deleteitem()");
+        deletebutton.setAttribute("class", "deletebutton");
+        display.appendChild(deletebutton);
+        save();
+      }
+
+      function keychange() {
+        var key = event.target.value;
+        var newPath =
+          document.querySelector("#path").value.split("/").join("/") +
+          "/" +
+          key;
+        var button = event.target.nextElementSibling;
+        if (button.tagName == "BUTTON") {
+          button.setAttribute("value", newPath);
+        }
+      }
+
+      function clickimportJSON() {
+        var button = document.querySelector("#importJSON");
+        button.click();
+        toggleoverlay();
+      }
+
+      function importJSON() {
+        var file = event.target.files[0];
+        let fr = new FileReader();
+        fr.onload = function () {
+          text = fr.result;
+          displayobject(text);
+          mymessage("JSON Import Success!");
+        };
+        fr.readAsText(file);
+      }
+
+      function clickimportCSV() {
+        var button = document.querySelector("#importCSV");
+        button.click();
+        toggleoverlay();
+      }
+
+      function importCSV() {
+        var file = event.target.files[0];
+        let fr = new FileReader();
+        fr.onload = function () {
+          text = fr.result;
+          displayobject(readCSV(text));
+          mymessage("CSV Import Success");
+        };
+        fr.readAsText(file);
+      }
+
+      function readCSV(text) {
+        var rows = text.split("\n");
+        var columns = rows[0].split(",").length;
+        if (columns == 2) {
+          var CSVObj = {};
+          for (i = 0; i < rows.length; i++) {
+            var data = rows[i].split(",");
+            CSVObj[data[0]] = data[1];
+          }
+        } else {
+          var CSVObj = [];
+          var headers = rows[0].split(",");
+
+          for (r = 1; r < rows.length; r++) {
+            var rowObj = {};
+            var data = rows[r].split(",");
+
+            for (c = 0; c < headers.length; c++) {
+              rowObj[headers[c]] = data[c];
+            }
+            CSVObj.push(rowObj);
+          }
+        }
+        return JSON.stringify(CSVObj);
+      }
+
+      function toggleinfo() {
+        toggleoverlay();
+        document.querySelector(".info").style.display = "block";
+        document.querySelector(".overlay").style.display = "block";
+      }
+    </script>
+    <style>
+      :root {
+        --blue: rgb(85, 129, 156);
+        --deepblue: rgb(68, 84, 106);
+        --deepgrey: rgb(240, 240, 240);
+        --og: rgb(255, 192, 0);
+      }
+
+      html {
+        font-family: Helvetica;
+        background: var(--blue);
+        animation-name: background;
+        animation-duration: 6s;
+      }
+
+      @keyframes background {
+        0% {
+          background: white;
+        }
+        83% {
+          background: white;
+        }
+        90% {
+          background: var(--blue);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      *,
+      button {
+        font-family: Helvetica;
+      }
+
+      .outer {
+        border-radius: 10px;
+        position: fixed;
+        top: 100%;
+        left: 5%;
+        width: 90%;
+        height: 85%;
+        background: var(--blue);
+        animation-name: canvas;
+        animation-duration: 6s;
+        z-index: 5;
+        overflow: hidden;
+        border: 2px solid var(--blue);
+        cursor: pointer;
+      }
+
+      @keyframes canvas {
+        0% {
+          top: 32.5%;
+          height: 2%;
+          opacity: 0;
+          left: 5%;
+        }
+
+        30% {
+          top: 5%;
+          height: 85%;
+          opacity: 1;
+          left: 5%;
+          width: 90%;
+        }
+        90% {
+          top: 5%;
+          height: 85%;
+          opacity: 1;
+          left: 5%;
+          width: 90%;
+        }
+        100% {
+          top: 5%;
+          height: 85%;
+          opacity: 0;
+          left: 5%;
+          width: 90%;
+        }
+      }
+
+      .boat {
+        position: absolute;
+        bottom: 35%;
+        left: 5%;
+        width: 90%;
+        aspect-ratio: 4/2;
+      }
+      
+      .sun{
+        stroke:var(--og);
+        stroke-width:1px;
+        fill:none;
+      }
+
+      .boatlines {
+        stroke: white;
+        stroke-width: 1;
+        fill: none;
+        animation-name: boatlines;
+        animation-duration: 6s;
+      }
+
+      @keyframes boatlines {
+        0% {
+          transform: translateX(-10%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      .title {
+        width: 100%;
+        position: absolute;
+        top: 65%;
+        text-align: center;
+      }
+
+      @keyframes t1 {
+        0% {
+          opacity: 0;
+        }
+        35% {
+          opacity: 0;
+        }
+        60% {
+          opacity: 1;
+        }
+      }
+
+      .t1 {
+        opacity: 1;
+        animation-name: t1;
+        animation-duration: 6s;
+        font-weight: bold;
+        font-size: 7vw;
+        color: var(--og);
+        text-align: center;
+      }
+
+      .caption {
+        position: absolute;
+        bottom: 2%;
+        left: 20%;
+        width: 60%;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        opacity: 0;
+        animation-name: caption;
+        animation-duration: 6s;
+        animation-iteration-count: 1;
+      }
+
+      @keyframes caption {
+        0% {
+          opacity: 0;
+        }
+        60% {
+          opacity: 0;
+        }
+
+        70%,
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .display-outer {
+        overflow: hidden;
+        position: fixed;
+        left: 5%;
+        height: 85%;
+        width: 90%;
+        top: 5%;
+        resize: both;
+        border-radius: 10px;
+        background: white;
+        gap: 3px;
+        display: flex;
+        flex-direction: column;
+        animation-name: box;
+        animation-duration: 10s;
+        padding: 5px;
+      }
+
+      @keyframes box {
+        0%,
+        60% {
+          opacity: 0;
+          width: 5px;
+          left: 50%;
+          height: 32.5%;
+          top: 32.5%;
+        }
+        70% {
+          opacity: 1;
+          width: 5px;
+          left: 50%;
+          top: 5%;
+          height: 85%;
+        }
+        80% {
+          opacity: 1;
+          height: 85%;
+          width: 90%;
+          left: 5%;
+        }
+      }
+
+      .displaybox {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        left: 2%;
+        width: 96%;
+        padding: 5px;
+        column-gap: 10px;
+        row-gap: 5px;
+        overflow-y: auto;
+      }
+
+      #display {
+        background: none;
+        display: grid;
+        grid-template-columns: 42% 48% 3%;
+        padding: 5px;
+        column-gap: 10px;
+        row-gap: 5px;
+      }
+
+      .displaybox,
+      .search,
+      .bottom-tools {
+        animation-name: tools;
+        animation-duration: 10s;
+      }
+
+      @keyframes tools {
+        0%,
+        80% {
+          opacity: 0;
+        }
+      }
+
+      .labels {
+        color: var(--deepblue);
+        background: none;
+        border: 1px solid white;
+        border-bottom: 1px solid var(--blue);
+        text-align: left;
+        padding: 5px;
+      }
+
+      .values {
+        color: var(--deepblue);
+        background: none;
+        border: 1px solid white;
+        border-bottom: 1px solid var(--blue);
+        text-align: left;
+        font-weight: bold;
+        padding: 5px;
+      }
+
+      .deletebutton {
+        border: none !important;
+        text-align: center !important;
+        background: none !important;
+        color: var(--blue) !important;
+      }
+
+      #display button {
+        color: var(--blue);
+        border-radius: 10px;
+        background: white;
+        border: 2px solid var(--blue);
+        font-weight: bold;
+        text-align: center;
+        padding: 5px;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      #display button:hover {
+        background: var(--blue);
+        color: white;
+      }
+
+      .search {
+        height: 40px;
+        background: white;
+        z-index: 1;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 30% 60%;
+        justify-content: center;
+        padding: 2px;
+      }
+
+      #path,
+      #filename {
+        background: white;
+        border: 2px solid white;
+        color: var(--deepblue);
+        text-align: left;
+        border-radius: 15px;
+        position: relative;
+        height: 85%;
+      }
+
+      #filename {
+        font-weight: bold;
+        color: var(--blue);
+      }
+
+      .tools-content {
+        overflow-y: auto;
+        color: white;
+        grid-template-columns: 100%;
+        position: absolute;
+        justify-content: center;
+        gap: 0;
+        bottom: 2%;
+        max-height: 90%;
+        width: 90%;
+        max-width: 350px;
+        left: 5%;
+        background: var(--blue);
+        border-radius: 10px;
+        display: none;
+        transition: 0.5s;
+        z-index: 5;
+        box-shadow: 2px 2px 5px var(--deepblue);
+      }
+
+      .tools-content * {
+        background: var(--blue);
+        border: none;
+        border-bottom: 1px solid white;
+        text-align: left;
+        padding: 15px 15px;
+        color: white;
+        font-weight: bold;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      .tools-content button:hover {
+        background: var(--deepblue);
+      }
+
+      .addoptions {
+        overflow-y: auto;
+        color: white;
+        grid-template-columns: 100%;
+        position: absolute;
+        justify-content: center;
+        gap: 0;
+        bottom: 2%;
+        max-height: 100%;
+        width: 90%;
+        max-width: 350px;
+        left: 5%;
+        background: var(--blue);
+        box-shadow: 2px 2px 5px var(--deepblue);
+        border-radius: 10px;
+        display: none;
+        transition: 0.5s;
+        z-index: 5;
+      }
+
+      .addoptions * {
+        background: var(--blue);
+        border: none;
+        border-bottom: 1px solid white;
+        text-align: left;
+        padding: 15px 15px;
+        color: white;
+        font-weight: bold;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      .addoptions button:hover {
+        background: var(--deepblue);
+      }
+
+      .options {
+        overflow-y: auto;
+        color: white;
+        grid-template-columns: 100%;
+        position: absolute;
+        justify-content: center;
+        gap: 0;
+        bottom: 2%;
+        max-height: 90%;
+        width: 90%;
+        max-width: 350px;
+        left: 5%;
+        background: var(--blue);
+        border-radius: 10px;
+        display: none;
+        transition: 0.5s;
+        z-index: 5;
+        box-shadow: 2px 2px 5px var(--deepblue);
+      }
+
+      .options * {
+        background: var(--blue);
+        border: none;
+        border-bottom: 1px solid white;
+        text-align: left;
+        padding: 15px 15px;
+        color: white;
+        font-weight: bold;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      .options button:hover {
+        background: var(--deepblue);
+      }
+
+      .bottom-tools {
+        border-radius: 0;
+        position: fixed;
+        bottom: 10px;
+        height: 30px;
+        left: 5%;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        background: var(--blue);
+        gap: 5px;
+        z-index: 3;
+        padding: 2px;
+      }
+
+      .bottom-tools button {
+        border: none;
+        color: white;
+        background: none;
+        border-radius: 5px;
+        overflow: hidden;
+        font-weight: bold;
+        width: 15%;
+        max-width: 100px;
+        border: 2px solid white;
+        transition: 0.5s;
+        cursor: pointer;
+        padding: 2px;
+      }
+
+      .bottom-tools button:hover {
+        color: var(--blue);
+        background: white;
+      }
+
+      .messagebox {
+        display: none;
+        position: absolute;
+        right: 2%;
+        max-width: 80%;
+        bottom: 30px;
+        max-height: 80%;
+        padding: 10px;
+        background: var(--blue);
+        overflow-y: auto;
+        text-align: center;
+        color: white;
+        opacity: 1;
+        border-radius: 2px;
+        border-top-left-radius: 10px;
+      }
+
+      .message {
+        color: white;
+        text-align: center;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: none;
+        opacity: 0.8;
+        z-index: 4;
+        display: none;
+      }
+
+      .info {
+        position: fixed;
+        background: white;
+        top: 5%;
+        height: 85%;
+        left: 5%;
+        width: 90%;
+        z-index: 5;
+        display: none;
+        padding: 5px;
+        border-radius: 10px;
+        overflow-y: auto;
+      }
+
+      .infocontent * {
+        font-size: 16px;
+        color: var(--deepblue);
+        text-align: justify;
+        margin: 2px;
+      }
+
+      .infocontent h2,
+      .infocontent strong {
+        color: var(--blue);
+      }
+
+      @media (orientation: landscape) {
+        .boat {
+          position: absolute;
+          bottom: 35%;
+          left: 30%;
+          width: 40%;
+          aspect-ratio: 4/2;
+        }
+
+        .title {
+          top: 65%;
+        }
+
+        .t1 {
+          font-size: 5vw;
+        }
+      }
+
+      @media only screen and (max-height: 500px) {
+        .display-outer,
+        .info,
+        .outer {
+          height: 90%;
+        }
+
+        .bottom-tools {
+          position: relative;
+          background: none;
+          bottom: auto;
+          height: auto;
+        }
+
+        .bottom-tools button {
+          border: 2px solid var(--blue);
+          color: var(--blue);
+        }
+
+        .bottom-tools button:hover {
+          border: 2px solid var(--blue);
+          color: white;
+          background: var(--blue);
+        }
+      }
+      
+    </style>
+  </head>
+  <body onload="explorePath('')">
+    <div class="outer">
+      <svg class="boat">
+        <line x1="25%" y1="80%" x2="30%" y2="80%" class="boatlines"></line>
+        <line x1="30%" y1="80%" x2="30%" y2="65%" class="boatlines"></line>
+        <line x1="35%" y1="65%" x2="35%" y2="55%" class="boatlines"></line>
+        <line x1="32%" y1="50%" x2="38%" y2="60%" class="boatlines"></line>
+        <line x1="30%" y1="65%" x2="40%" y2="65%" class="boatlines"></line>
+        <line x1="40%" y1="80%" x2="40%" y2="65%" class="boatlines"></line>
+        <line x1="40%" y1="80%" x2="45%" y2="80%" class="boatlines"></line>
+        <line x1="58%" y1="80%" x2="58%" y2="55%" class="boatlines"></line>
+        <line x1="72%" y1="80%" x2="72%" y2="65%" class="boatlines"></line>
+        <line x1="65%" y1="55%" x2="58%" y2="55%" class="boatlines"></line>
+        <line x1="65%" x2="65%" y1="55%" y2="65%" class="boatlines"></line>
+        <line x1="65%" x2="72%" y1="65%" y2="65%" class="boatlines"></line>
+        <line x1="55%" y1="80%" x2="58%" y2="80%" class="boatlines"></line>
+        <line x1="72%" y1="80%" x2="75%" y2="80%" class="boatlines"></line>
+        <line x1="30%" y1="90%" x2="47%" y2="90%" class="boatlines"></line>
+        <line x1="53%" y1="90%" x2="70%" y2="90%" class="boatlines"></line>
+        <line x1="30%" y1="90%" x2="25%" y2="80%" class="boatlines"></line>
+        <line x1="70%" y1="90%" x2="75%" y2="80%" class="boatlines"></line>
+        <line x1="45%" y1="80%" x2="50%" y2="5%" class="boatlines"></line>
+        <line x1="55%" y1="80%" x2="50%" y2="5%" class="boatlines"></line>
+        <line x1="47%" y1="90%" x2="50%" y2="35%" class="boatlines"></line>
+        <line x1="53%" y1="90%" x2="50%" y2="35%" class="boatlines"></line>
+        <circle
+          cx="65%"
+          r="6%"
+          cy="30%"
+          class="sun"
+        >
+          <animate attributename="cx" begin="0s" dur="7s" from="65%" to="65%" />
+          <animate
+            attributename="stroke"
+            begin="0s"
+            dur="7s"
+            from="rgb(255,150,0)"
+            to="rgb(255,192,0)"
+          />
+        </circle>
+        <rect width="2%" height="10%" x="34%" y="70%" class="boatlines"></rect>
+        <rect width="2%" height="4%" x="60%" y="58%" class="boatlines"></rect>
+        <rect width="2%" height="4%" x="60%" y="67%" class="boatlines"></rect>
+        <rect width="2%" height="4%" x="66%" y="67%" class="boatlines"></rect>
+        <rect width="2%" height="4%" x="60%" y="76%" class="boatlines"></rect>
+        <rect width="2%" height="4%" x="66%" y="76%" class="boatlines"></rect>
+      </svg>
+      <div class="title">
+        <div class="t1"><p lang="ml">ഒബ്ജെക്റ്റ്.</p></div>
+      </div>
+      <div class="caption">{ Object. }</div>
+    </div>
+    <div
+      class="display-outer"
+      ondrop="dropEvent(event)"
+      ondragover="dragOver(event)"
+    >
+      <div class="search">
+        <input id="filename" onchange="changefile()" placeholder="Filename" />
+        <input
+          id="path"
+          onchange="pathExplorer()"
+          placeholder="Enter path to explore"
+        />
+      </div>
+      <div class="displaybox">
+        <div id="display"></div>
+      </div>
+      <div class="addoptions">
+        <button onclick="addField('')">Key-Value</button>
+        <button onclick="embedObject('{}')">Key-Object</button>
+      </div>
+      <div class="options">
+        <button onclick="newJSON()">New</button>
+        <button onclick="openJSON()">Open</button>
+        <button onclick="saveButton()">Save</button>
+        <button onclick="download()">Download</button>
+        <button onclick="toggleinfo()">Info</button>
+        <button onclick="fileclose()">Close</button>
+      </div>
+      <div class="tools-content">
+        <button onclick="clearDisplay()">Clear</button>
+        <button onclick="clickimportCSV()">Import CSV</button>
+        <button onclick="clickimportJSON()">Import JSON</button>
+        <button onclick="saveAsCSV()">Export CSV</button>
+        <button onclick="saveAsJSON()">Export JSON</button>
+      </div>
+      <div class="bottom-tools">
+        <button onclick="toggleadd()">+</button>
+        <button onclick="openNav()">File</button>
+        <button onclick="toggleTools()">Data</button>
+        <button onclick="saveButton()">Save</button>
+        <button onclick="back()">&larr;</button>
+      </div>
+      <div class="overlay" onclick="toggleoverlay()"></div>
+      <div class="messagebox" onclick="togglemessagebox()"></div>
+    </div>
+    <input
+      type="file"
+      id="readFile"
+      onchange="readFile()"
+      hidden
+      accept=".json"
+    />
+    <input
+      type="file"
+      id="importJSON"
+      onchange="importJSON()"
+      hidden
+      accept=".json"
+    />
+    <input
+      type="file"
+      id="importCSV"
+      onchange="importCSV()"
+      hidden
+      accept=".csv"
+    />
+    <div class="info">
+      <div class="infocontent">
+        <h2>Object</h2>
+        <p>
+          Object is an application that can create, read, update and delete
+          records in a JSON file.
+        </p>
+        <h2>How to:</h2>
+        <ol>
+          <li>
+            <details>
+              <summary>Open and Close a File</summary>
+              <p>
+                Navigate <strong>File &rarr; Open</strong>, to open files. File
+                once opened is saved in the local storage until user makes a
+                close command (<strong>File &rarr; Close</strong>).
+              </p>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Create a New File</summary>
+              <p>
+                Navigate<strong> File &rarr; New</strong>. New file will be
+                created to which data can be added.
+              </p>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Add New Record/ Object</summary>
+              <p>
+                There are two options while adding new records. Either to add
+                Key-Value pair or Key-Object pair. Key-Object pair will have a
+                blank object embedded to Key. Click '<strong>+</strong>' button
+                to add new Key-Value pair or Key-Object pair.
+              </p>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Download File</summary>
+              <p>
+                Navigate <strong>File &rarr; Download</strong> to download the
+                JSON file.
+              </p>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Import, Export or Clear Current Path</summary>
+              <p>
+                Navigate <strong>Data</strong> to Import data to or Export data
+                from or Clear data in the current path. Data can be imported/
+                exported as JSON/ CSV. User can also drag and drop CSV/ JSON
+                files to import data.
+              </p>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Delete a Record</summary>
+              <p>
+                Click <strong>&times;</strong> button adjacent to a record, to
+                delete that record.
+              </p>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>Shortcuts</summary>
+              <ol>
+                <li><strong>Shift +</strong>: Add a Key-Value pair.</li>
+                <li><strong>Shift *</strong>: Add a Key-Object pair.</li>
+                <li><strong>Shift -</strong>: Clear.</li>
+                <li><strong>Shift Backspace</strong>: Back/ Parent Object.</li>
+                <li><strong>F5</strong>: Refresh</li>
+                <li><strong>F11</strong>: Toggle Full-Screen.</li>
+              </ol>
+            </details>
+          </li>
+        </ol>
+        <details>
+          <summary><strong>App Info</strong></summary>
+          <p>
+            Version: 1.0.0 | Release: 01 May 2025 | Developed by: Aravind C
+            Pradeep
+          </p>
+        </details>
+      </div>
+    </div>
+  </body>
+</html>
