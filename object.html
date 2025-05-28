@@ -19,8 +19,8 @@
         var drive = {};
       }
 
-      if ("ofilename" in localStorage) {
-        ofilename = localStorage.getItem("ofilename");
+      if ("filename" in localStorage) {
+        ofilename = localStorage.getItem("filename");
       } else {
         ofilename = "Untitled_Object";
       }
@@ -42,7 +42,7 @@
 
       function changefile() {
         ofilename = event.target.value;
-        localStorage.setItem("ofilename", ofilename);
+        localStorage.setItem("filename", ofilename);
       }
 
       function mymessage(text) {
@@ -74,7 +74,7 @@
         drive = JSON.parse("{}");
         localStorage.removeItem("drive");
         ofilename = "Untitled_Object";
-        localStorage.removeItem("ofilename");
+        localStorage.removeItem("filename");
         explorePath("");
         toggleoverlay();
       }
@@ -363,7 +363,7 @@
       function readFile() {
         var file = event.target.files[0];
         ofilename = file.name.split(".")[0];
-        localStorage.setItem("ofilename", ofilename);
+        localStorage.setItem("filename", ofilename);
         let fr = new FileReader();
         fr.onload = function () {
           text = fr.result;
@@ -381,7 +381,7 @@
       function newJSON() {
         drive = {};
         ofilename = "Untitled_Object";
-        localStorage.setItem("ofilename", ofilename);
+        localStorage.setItem("filename", ofilename);
         toggleoverlay();
         explorePath("");
       }
