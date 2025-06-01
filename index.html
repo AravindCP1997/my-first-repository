@@ -231,16 +231,26 @@
           left: 5%;
         }
       }
+
+.containers{
+animation-name: applications;
+        animation-duration: 6s;
+display:flex;
+flex-direction:column;
+padding:5px;
+border-radius:15px;
+
+}
       
       .applications{
-        position:fixed;
+        
         display:flex;
         flex-direction:row;
         gap:5%;
-        top: 5%;
-        left: 5%;
-        width: 90%;
-height:max(200px,20%);
+        
+      
+        width: 100%;
+height:max(200px,10%);
         animation-name: applications;
         animation-duration: 6s;
         opacity:1;
@@ -283,7 +293,8 @@ height:max(200px,20%);
         position:absolute;
         bottom:3%;
         text-align:center;
-        width:100%;
+        width:60%;
+float:right;
         animation-name: applications;
         animation-duration: 6s;
         opacity:0.8;
@@ -367,6 +378,8 @@ height:max(200px,20%);
       </div>
       <div class="caption"><i>built for the world, hosted from kochi</i></div>
     </div>
+<div class="containers">
+<h2 class="container-title">Web Applications</h2>
    <div class="applications">
      <button class="appbuttons" onclick="openObject()">
        Object.
@@ -375,6 +388,7 @@ height:max(200px,20%);
        Matrix.
      </button>
     </div>
+</div>
     <p class="tag">Looking for a fresh solution? <a target="_blank" href="mailto:aravindcpradeep@outlook.com?&amp;subject=Business%20Intelligence">Collaborate with us</a></p>
   </body>
 </html>
