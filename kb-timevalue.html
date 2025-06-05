@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Knowledge Base</title>
+    <style>
+
+        :root{
+            --grey:rgb(75, 75, 75);
+            --light-grey:rgb(200, 200, 200);
+            --red:rgb(192,0,0);
+        }
+        @font-face {
+        font-family: "Helvetica";
+        src: url(Helvetica.woff) format("woff");
+        font-weight: normal;
+      }
+
+        html{
+            font-family: Helvetica;
+        }
+
+        .box1{
+            border-radius: 15px;
+            padding: 10px;
+            width:90%;
+            color:var(--grey)
+        }
+
+        
+
+        .box2{
+            border-radius: 15px;
+            padding: 10px;
+            float:right;
+            width:90%;
+            color:var(--red);
+            text-align:right;
+        }
+
+        .pvandfv{
+            background: var(--red);
+            border-radius: 15px;
+            padding: 10px;
+            color:white;
+            text-align:left;
+        }
+
+        .box3{
+            float:left;
+            border-radius: 15px;
+            padding: 10px;
+            width:90%;
+            color:var(--grey);
+        }
+
+        .formulae{
+            display: none;
+        }
+
+      
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h1>Time Value of Money</h1>
+    <div class="intro">
+    <p>Time value of money is the concept which states that a sum of money received today is worth more than an identical sum to be received on a future date. The fact that the money received today can be invested to generate some income by the future date underlies the concept.</p>
+    <p>Time value of money is the concept with which sum of money or cashflows arising, from an asset or a project, at differents points of time is evaluated. While doing so, it is important to understand Present Value and Future Value.</p>
+    </div>
+    </div>
+    
+    <div class="box2">
+    <h2>Present Value and Future Value</h2>
+    <div class="pvandfv">
+    <h3>Present Value</h3>
+    <p>Present value is the present worth of a sum of money or cashflow arising on a future date. Present value is calculated by discounting the sum of money or cash flow using the expected rate of return. Present value is also the sum of money to be invested today to generate the required cash flow on a future date.</p>
+    <h3>Future Value</h3>
+    <p>Future value is the worth of a sum of money on a future date, if invested on a specified rate of return. Present value is calculated by compounding the sum of money or cash flow using the expected rate of return.</p>
+    </div>
+    </div>
+    <div class="box3">
+    <h2>Annuity and Perpetuity</h2>
+    <h3>Annuity</h3>
+    <p>An annuity is a series of equal payments made at regular intervals over a specified period of time. Annuities can be classified as ordinary annuities (payments made at the end of each period) or annuities due (payments made at the beginning of each period).</p>
+    <h3>Perpetuity</h3>
+    <p>A perpetuity is a type of annuity that continues indefinitely, with no end date. It provides a constant stream of cash flows for an infinite period of time. The present value of a perpetuity can be calculated using the formula: PV = C / r, where C is the cash flow per period and r is the discount rate.</p>
+    </div>
+    <div class="formulae">
+
+        <h2>Key Formulas</h2>
+    <ul>
+        <li>Present Value (PV) = FV / (1 + r)^n</li>
+        <li>Future Value (FV) = PV * (1 + r)^n</li>
+        <li>Present Value of Annuity = Pmt * [(1 - (1 + r)^-n) / r]</li>
+        <li>Future Value of Annuity = Pmt * [((1 + r)^n - 1) / r]</li>
+        <li>Present Value of Perpetuity = C / r</li>
+        <li>Future Value of Perpetuity = C / r (assuming constant cash flow)</li>
+    </ul>
+
+        
+    </div>
+   
+</body>
+</html>
