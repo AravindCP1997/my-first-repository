@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Knowledge Base</title>
     <style>
 
@@ -26,62 +27,55 @@
         }
 
         .box1{
-            border-radius: 15px;
-            padding: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
             width:100%;
             color:var(--grey);
-            border:1px solid var(--red);
         }
 
         .head1{
             color:var(--red);  
-            width:100%;
-            text-align: center;
+            width:70%;
+            text-align: left;
+            border-bottom:1px solid var(--red);
+            padding: 10px;
         }
 
         .intro{
             width:100%;
             color:var(--grey);
             text-align: justify;
+            padding-left:10px;
+            padding-right:10px;
         }
 
         .content{
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: row;
             justify-content: space-between;
             width:100%;
         }
 
-        .box2{
+        .box3, .box2{
             border-radius: 15px;
-            padding: 10px;
-            width:45%;
+            padding-left: 10px;
+            padding-right: 10px;
             color:var(--grey);
         }
 
-        .head2{
+        .head2, .head3{
             color:var(--red);
             padding: 10px;
-            width:min(100%,400px);
+            width:70%;
             text-align: left;
             border-bottom:1px solid var(--red);
+            margin:0; 
         }
 
-        .head3{
-            color:var(--red);
+        .pvandfv, .annuityandperpetuity{
             padding: 10px;
-            width:min(100%,400px);
-            text-align: left;
-            border-bottom:1px solid var(--red); 
-        }
-
-
-        .box3{
-            float:right;
-            border-radius: 15px;
-            padding: 10px;
-            width:45%;
-            color:var(--grey);
+            width:100%;
+            text-align: justify;
         }
 
         .formulae{
@@ -90,6 +84,11 @@
 
         math *{
             font-family: Helvetica;
+        }
+
+        p{
+            font-size:16px;
+            line-height: 1.35;
         }
 
       
@@ -105,7 +104,7 @@
     </div>
     <div class="content">
     <div class="box2">
-    <h2 class="head2">Present Value and Future Value</h2>
+    <h2 class="head2">Present and Future Value</h2>
     <div class="pvandfv">
     <h3>Present Value</h3>
     <p>Present value is the present worth of a sum of money or cashflow arising on a future date. Present value is calculated by discounting the sum of money or cash flow using the expected rate of return. Present value is also the sum of money to be invested today to generate the required cash flow on a future date.</p>
@@ -174,6 +173,7 @@
     </div>
     <div class="box3">
     <h2 class="head3">Annuity and Perpetuity</h2>
+    <div class="annuityandperpetuity">
     <h3>Annuity</h3>
     <p>An annuity is a series of equal payments made at regular intervals over a specified period of time. Annuities can be classified as ordinary annuities (payments made at the end of each period) or annuities due (payments made at the beginning of each period).</p>
     <math>
