@@ -17,59 +17,70 @@
         font-weight: normal;
       }
 
+      * {
+        box-sizing: border-box;
+      }
+
         html{
             font-family: Helvetica;
         }
 
         .box1{
             border-radius: 15px;
-            padding: 10px;
-            width:90%;
-            color:var(--grey)
+            padding: 20px;
+            width:100%;
+            color:var(--grey);
+            border:1px solid var(--red);
         }
 
         .head1{
-            color:var(--red);
-            padding: 10px;
-            width:min(100%,800px);
-            text-align: left;
-            border-bottom:1px solid var(--red);
+            color:var(--red);  
+            width:100%;
+            text-align: center;
+        }
+
+        .intro{
+            width:100%;
+            color:var(--grey);
+            text-align: justify;
+        }
+
+        .content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width:100%;
         }
 
         .box2{
             border-radius: 15px;
             padding: 10px;
-            width:90%;
+            width:45%;
             color:var(--grey);
         }
 
         .head2{
             color:var(--red);
             padding: 10px;
-            width:400px;
+            width:min(100%,400px);
             text-align: left;
-            border-bottom:1px solid var(--red); 
+            border-bottom:1px solid var(--red);
         }
 
         .head3{
             color:var(--red);
             padding: 10px;
-            width:400px;
+            width:min(100%,400px);
             text-align: left;
             border-bottom:1px solid var(--red); 
         }
 
-        .pvandfv{
-            padding: 10px;
-            width:90%;
-            color:var(--grey);
-        }
 
         .box3{
-            float:left;
+            float:right;
             border-radius: 15px;
             padding: 10px;
-            width:90%;
+            width:45%;
             color:var(--grey);
         }
 
@@ -88,11 +99,11 @@
     <div class="box1">
         <h1 class="head1">Time Value of Money</h1>
     <div class="intro">
-    <p>Time value of money is the concept which states that a sum of money received today is worth more than an identical sum to be received on a future date. The fact that the money received today can be invested to generate some income by the future date underlies the concept.</p>
-    <p>Time value of money is the concept with which sum of money or cashflows arising, from an asset or a project, at differents points of time is evaluated. While doing so, it is important to understand Present Value and Future Value.</p>
+    <p>Time value of money is the concept that a sum of money received today is worth more than an identical sum to be received on a future date. The fact that the money received today can be invested to generate some income by the future date substantiates the concept.</p>
+    <p>Time value of money is the concept with which sum of money or cashflows arising, from an asset or a project, at differents points of time, is evaluated. Present Value (PV) and Future Value (FV) are the measures used to evaluate or compare cash flow arising at different points of time.</p>
     </div>
     </div>
-    
+    <div class="content">
     <div class="box2">
     <h2 class="head2">Present Value and Future Value</h2>
     <div class="pvandfv">
@@ -167,6 +178,55 @@
     <p>An annuity is a series of equal payments made at regular intervals over a specified period of time. Annuities can be classified as ordinary annuities (payments made at the end of each period) or annuities due (payments made at the beginning of each period).</p>
     <math>
         <mrow>
+            <mi>PV of Annuity</mi>
+            <mo>=</mo>
+            <mi>P</mi>
+            <mo>&times;</mo>
+            <mfrac>
+                <mrow>
+                    <mfenced open="(" close=")">
+                            <msup>
+                            <mfenced open="(" close=")">
+                            <mo>(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mi>r</mi>
+                            <mo>)</mo>
+                    </mfenced>
+                        <mn>n</mn>
+                        </msup>
+                        <mo>-</mo>
+                    <mn>1</mn>
+                        </mfenced>
+                </mrow>
+                <mrow>
+                    <mi>r</mi>
+                    <mo>&times;</mo>
+                    <mfenced open="(" close=")">
+                       <msup>
+                            <mfenced open="(" close=")">
+                            <mo>(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mi>r</mi>
+                            <mo>)</mo>
+                    </mfenced>
+                        <mn>n</mn>
+                        </msup> 
+                    </mfenced>
+                        
+            </mfrac>
+        </mrow>
+    </math>
+    <p>Where:</p>
+    <ul>
+        <li>PV = Present Value</li>
+        <li>P = Payment</li>
+        <li>r = Rate of return</li>
+        <li>n = Number of periods or payments</li>
+    </ul>
+    <math>
+        <mrow>
             <mi>FV of Annuity</mi>
             <mo>=</mo>
             <mi>P</mi>
@@ -205,22 +265,26 @@
         <li>n = Number of periods or payments</li>
     </ul>
     <h3>Perpetuity</h3>
-    <p>A perpetuity is a type of annuity that continues indefinitely, with no end date. It provides a constant stream of cash flows for an infinite period of time. The present value of a perpetuity can be calculated using the formula: PV = C / r, where C is the cash flow per period and r is the discount rate.</p>
-    </div>
-    <div class="formulae">
-
-        <h2>Key Formulas</h2>
+    <p>A perpetuity is a type of annuity that continues indefinitely, with no end date. It provides a constant stream of cash flows for an infinite period of time.</p>
+    <math>
+        <mrow>
+            <mi>PV of Perpetuity</mi>
+            <mo>=</mo>
+            <mfrac>
+                <mrow>
+                    <mi>P</mi>
+                </mrow>
+                <mrow>
+                    <mi>r</mi>
+            </mfrac></mrow>
+    </math>
+    <p>Where:</p>
     <ul>
-        <li>Present Value (PV) = FV / (1 + r)^n</li>
-        <li>Future Value (FV) = PV * (1 + r)^n</li>
-        <li>Present Value of Annuity = Pmt * [(1 - (1 + r)^-n) / r]</li>
-        <li>Future Value of Annuity = Pmt * [((1 + r)^n - 1) / r]</li>
-        <li>Present Value of Perpetuity = C / r</li>
-        <li>Future Value of Perpetuity = C / r (assuming constant cash flow)</li>
+        <li>PV = Present Value</li>
+        <li>P = Payment</li>
+        <li>r = Rate of return</li>
     </ul>
-
-        
     </div>
-   
+   </div>
 </body>
 </html>
