@@ -9,6 +9,7 @@
             --grey:rgb(75, 75, 75);
             --light-grey:rgb(200, 200, 200);
             --red:rgb(192,0,0);
+            --red-grey:rgb(192, 0, 0, 0.5);
         }
         @font-face {
         font-family: "Helvetica";
@@ -27,23 +28,41 @@
             color:var(--grey)
         }
 
-        
+        .head1{
+            color:var(--red);
+            padding: 10px;
+            width:min(100%,800px);
+            text-align: left;
+            border-bottom:1px solid var(--red);
+        }
 
         .box2{
             border-radius: 15px;
             padding: 10px;
-            float:right;
             width:90%;
+            color:var(--grey);
+        }
+
+        .head2{
             color:var(--red);
-            text-align:right;
+            padding: 10px;
+            width:400px;
+            text-align: left;
+            border-bottom:1px solid var(--red); 
+        }
+
+        .head3{
+            color:var(--red);
+            padding: 10px;
+            width:400px;
+            text-align: left;
+            border-bottom:1px solid var(--red); 
         }
 
         .pvandfv{
-            background: var(--red);
-            border-radius: 15px;
             padding: 10px;
-            color:white;
-            text-align:left;
+            width:90%;
+            color:var(--grey);
         }
 
         .box3{
@@ -58,12 +77,16 @@
             display: none;
         }
 
+        math *{
+            font-family: Helvetica;
+        }
+
       
     </style>
 </head>
 <body>
     <div class="box1">
-        <h1>Time Value of Money</h1>
+        <h1 class="head1">Time Value of Money</h1>
     <div class="intro">
     <p>Time value of money is the concept which states that a sum of money received today is worth more than an identical sum to be received on a future date. The fact that the money received today can be invested to generate some income by the future date underlies the concept.</p>
     <p>Time value of money is the concept with which sum of money or cashflows arising, from an asset or a project, at differents points of time is evaluated. While doing so, it is important to understand Present Value and Future Value.</p>
@@ -71,18 +94,116 @@
     </div>
     
     <div class="box2">
-    <h2>Present Value and Future Value</h2>
+    <h2 class="head2">Present Value and Future Value</h2>
     <div class="pvandfv">
     <h3>Present Value</h3>
     <p>Present value is the present worth of a sum of money or cashflow arising on a future date. Present value is calculated by discounting the sum of money or cash flow using the expected rate of return. Present value is also the sum of money to be invested today to generate the required cash flow on a future date.</p>
+    <math>
+        <mrow>
+            <mi>PV</mi>
+            <mo>=</mo>
+            <mfrac>
+                <mrow>
+                    <mi>FV</mi>
+                </mrow>
+                <mrow>
+                    <msup>
+                        <mfenced open="(" close=")">
+                            <mo>(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mi>r</mi>
+                            <mo>)</mo>
+                    </mfenced>
+                        <mn>n</mn>
+                        </msup>
+                    
+                    
+                </mrow>
+            </mfrac>
+        </mrow>
+    </math>
+    <p>Where:</p>
+    <ul>
+        <li>PV = Present Value</li>
+        <li>FV = Future Value</li>
+        <li>r = Rate of return</li>
+        <li>n = Number of periods</li>
+    </ul>
     <h3>Future Value</h3>
     <p>Future value is the worth of a sum of money on a future date, if invested on a specified rate of return. Present value is calculated by compounding the sum of money or cash flow using the expected rate of return.</p>
+    <math>
+        <mrow>
+            <mi>FV</mi>
+            <mo>=</mo>
+            <mi>PV</mi>
+            <mo>&times;</mo>
+                    <msup>
+                        <mfenced open="(" close=")">
+                            <mo>(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mi>r</mi>
+                            <mo>)</mo>
+                    </mfenced>
+                        <mn>n</mn>
+                        </msup>
+                    
+                    
+                </mrow>
+    </math>
+    <p>Where:</p>
+    <ul>
+        <li>FV = Future Value</li>
+        <li>PV = Present Value</li>
+        <li>r = Rate of return</li>
+        <li>n = Number of periods</li>
+    </ul>
     </div>
     </div>
     <div class="box3">
-    <h2>Annuity and Perpetuity</h2>
+    <h2 class="head3">Annuity and Perpetuity</h2>
     <h3>Annuity</h3>
     <p>An annuity is a series of equal payments made at regular intervals over a specified period of time. Annuities can be classified as ordinary annuities (payments made at the end of each period) or annuities due (payments made at the beginning of each period).</p>
+    <math>
+        <mrow>
+            <mi>FV of Annuity</mi>
+            <mo>=</mo>
+            <mi>P</mi>
+            <mo>&times;</mo>
+            <mfrac>
+                <mrow>
+                    <mfenced open="(" close=")">
+                            <msup>
+                            <mfenced open="(" close=")">
+                            <mo>(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mi>r</mi>
+                            <mo>)</mo>
+                    </mfenced>
+                        <mn>n</mn>
+                        </msup>
+                        <mo>-</mo>
+                    <mn>1</mn>
+                        </mfenced>
+                </mrow>
+                <mrow>
+                    <mi>r</mi>
+            </mfrac>
+            
+                        
+                    
+                    
+                </mrow>
+    </math>
+    <p>Where:</p>
+    <ul>
+        <li>FV = Future Value</li>
+        <li>P = Payment</li>
+        <li>r = Rate of return</li>
+        <li>n = Number of periods or payments</li>
+    </ul>
     <h3>Perpetuity</h3>
     <p>A perpetuity is a type of annuity that continues indefinitely, with no end date. It provides a constant stream of cash flows for an infinite period of time. The present value of a perpetuity can be calculated using the formula: PV = C / r, where C is the cash flow per period and r is the discount rate.</p>
     </div>
