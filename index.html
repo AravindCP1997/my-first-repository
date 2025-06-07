@@ -24,14 +24,23 @@
         anchor.href = "object.html";
         anchor.click();
       }
+
+      function openEpisode(){
+        var episode = event.target.getAttribute("data-episode");
+        let anchor = document.createElement("a");
+        anchor.target = "_blank";
+        anchor.href = episode;
+        anchor.click();
+      }
     </script>
     <style>
       :root {
         --blue: rgb(95,158,160);
         --deepblue: rgb(85,129,156);
-        --deepgrey: rgb(240, 240, 240);
+        --deepgrey: rgb(240, 240, 240, 0.8);
         --og: rgb(255, 192, 0);
-        --black:rgb(15,15,15);
+        --black:rgb(75,75,75);
+        --red:rgb(192,0,0);
       }
 
       @font-face {
@@ -244,51 +253,55 @@ z-index:2;
 flex-direction:column;
 padding:15px;
 gap:15px;
+animation-name: applications;
+animation-duration: 6s;
 }
 
-.web-apps, .about{
-animation-name: applications;
-        animation-duration: 6s;
+.duo{
+  display: grid;
+  grid-template-columns: 48% 48%;
+  gap: 4%;
+  width: 100%;
+}
+
+.web-apps, .about, .knowledge-base{
 display:flex;
 flex-direction:column;
 padding:15px;
 border-radius:15px;
 gap:15px;
+overflow-y: auto;
 }
 
-.web-apps{
-background:var(--deepgrey);
-  width:min(100%,450px);
+.web-apps,.knowledge-base{
+  min-height:275px;
 }
 
 .about p{
 color:var(--black);
+font-weight: bold;
 }
 
-.web-apps h2{
-color:var(--deepblue);
-font-size:20px;
-}
+.container-title{
+        font-weight: bold;
+        font-size: 1.5em;
+        color: var(--deepblue);
+        text-align: justify;
+      }
 
-.about h2{
-font-size:20px;
-color:var(--deepblue);
-}
+      .web-apps {
+        background: var(--deepgrey);;
+        border-radius:15px;
+      }
       
-      .applications{
-        
+      .applications, .episodes{
         display:flex;
-        flex-direction:row;
+        flex-direction:column;
         gap:15px;
-        
-      
-        width: 100%;
-height:max(200px,10%);
-        animation-name: applications;
-        animation-duration: 6s;
         opacity:1;
         justify-content:left;
-       
+        padding:10px;
+        overflow-y: auto;
       }
       
       @keyframes applications{
@@ -300,6 +313,11 @@ height:max(200px,10%);
           opacity:1;
         }
       }
+
+      .application{
+        border-bottom:2px solid white
+      }
+
       
       .appbuttons{
         border-radius:15px;
@@ -320,19 +338,71 @@ z-index:3;
       .appbuttons:hover{
         transform:scale(1.05)
       }
+
+      .app-description {
+        font-size: 0.9em;
+        color: var(--black);
+        font-weight:bold;
+        text-align: justify;
+        padding:10px;
+        padding-left: 0px;
+      }
+
+      .knowledge-base {
+        background: var(--deepblue);
+        border-radius:15px;
+        opacity:0.2;
+      }
+
+      .knowledge-base h2 {
+        color: var(--deepgrey);
+        font-weight: bold;
+      }
+
+      .episode{
+        border-bottom:1px solid var(--deepgrey);
+        padding:5px;
+        transition:0.5s;
+      }
+
+      .episode:hover{
+        transform: scale(1.02);
+        cursor: pointer;
+      }
+
+      .episode-title {
+        font-weight: bold;
+        color: white;
+        text-align: justify;
+      }
+
+      .genre{
+        font-size: 0.9em;
+        color: var(--deepgrey);
+        text-align: justify;
+        padding-top:5px;
+      }
+
+      .episode-description {
+        font-size: 0.9em;
+        color: var(--deepgrey);
+        text-align: justify;
+        padding:10px;
+        padding-left: 0px;
+        font-weight:bold;
+      }
       
       .tag{
         color:var(--blue);
         font-weight:bold;
-        position:absolute;
-        bottom:3%;
-right:15px;
+        right:15px;
         text-align:right;
-        width:60%;
-
+        width:100%;
         animation-name: applications;
         animation-duration: 6s;
         opacity:0.8;
+        padding-top:50px;
+        padding-right: 10px;
       }
 
       @media (orientation: landscape) {
@@ -358,6 +428,13 @@ right:15px;
           height: 90%;
         }
       }
+
+      @media only screen and (max-width: 500px) {
+            .duo{
+                grid-template-columns: 96%;
+            }
+
+        }
       
     </style>
   </head>
@@ -418,16 +495,34 @@ right:15px;
 <h2 class="container-title">ACP-BI</h2>
 <p>Space to develop and deploy business tech.</p>
 </div>
+<div class="duo">
 <div class="web-apps">
 <h2 class="container-title">Web Apps</h2>
    <div class="applications">
+    <div class="application">
      <button class="appbuttons" onclick="openObject()">
        Object.
      </button>
+     <p class="app-description">Read and write JSON.</p>
+     </div>
+     <div class="application">
      <button class="appbuttons" onclick="openMatrix()">
        Matrix.
      </button>
+     <p class="app-description">Create <i>excelable</i> files (CSV) from JSON.</p>
+     </div>
     </div>
+</div>
+<div class="knowledge-base">
+  <h2 class="container-title"></h2>
+  <div class="episodes">
+    <div class="episode" data-link="kb-timevalue.html">
+      <h3 class="episode-title">Coming Up</h3>
+      <p class="genre"></p>
+      <p class="episode-description">Before 15 June 2025.</p>
+    </div>
+  </div>
+</div>
 </div>
 </div>
     <p class="tag">Can't find what you are looking for? <a target="_blank" href="mailto:aravindcpradeep@outlook.com?&amp;subject=Business%20Intelligence">Write to us!</a></p>
