@@ -12,17 +12,22 @@
             });
             event.target.style.backgroundColor = 'var(--blue)';
             event.target.style.color = 'white';
+            document.querySelectorAll('.calculator input').forEach(input => {
+                input.style["font-weight"] = 'normal';
+            });
         }
 
         function switchToPV(){
             switchHeader();
             document.getElementsByClassName('calculator')[0].setAttribute('onchange','calculatePresentValue()');
+            document.getElementById('present-value').style["font-weight"] = 'bold';
 
         }
 
         function switchToFV(){
             switchHeader();
             document.getElementsByClassName('calculator')[0].setAttribute('onchange','calculateFutureValue()');
+            document.getElementById('future-value').style["font-weight"] = 'bold';
         }
 
         function calculateFutureValue() {
@@ -144,6 +149,9 @@
             display:grid;
             grid-template-columns: 1fr 1fr;
             gap:10px;
+            border:1px solid var(--light-grey);
+            border-radius: 15px;
+            padding: 10px;
         }
 
         .headers{
