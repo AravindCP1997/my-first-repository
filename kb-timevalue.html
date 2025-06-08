@@ -4,11 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Knowledge Base</title>
+    <script>
+        function switchHeader() {
+            document.querySelectorAll('.headers button').forEach(button => {
+                button.style.backgroundColor = 'var(--light-grey)';
+                button.style.color = 'black';
+            });
+            event.target.style.backgroundColor = 'var(--blue)';
+            event.target.style.color = 'white';
+        }
+
+        function switchToPV(){
+            switchHeader();
+            document.getElementsByClassName('calculator')[0].setAttribute('onchange','calculatePresentValue()');
+
+        }
+
+        function switchToFV(){
+            switchHeader();
+            document.getElementsByClassName('calculator')[0].setAttribute('onchange','calculateFutureValue()');
+        }
+
+        function calculateFutureValue() {
+            const pv = parseFloat(document.getElementById('present-value').value);
+            const r = parseFloat(document.getElementById('rate-of-return').value) / 100;
+            const n = parseInt(document.getElementById('number-of-periods').value);
+            const fv = pv * Math.pow((1 + r), n);
+            document.getElementById('future-value').value = fv.toFixed(2);
+        }
+
+        function calculatePresentValue() {
+            const fv = parseFloat(document.getElementById('future-value').value);
+            const r = parseFloat(document.getElementById('rate-of-return').value) / 100;
+            const n = parseInt(document.getElementById('number-of-periods').value);
+            const pv = fv / Math.pow((1 + r), n);
+            document.getElementById('present-value').value = pv.toFixed(2);
+        }
+
+    
+    </script>
     <style>
 
         :root{
             --grey:rgb(75, 75, 75);
-            --light-grey:rgb(200, 200, 200);
+            --light-grey:rgb(240, 240, 240);
             --red:rgb(192,0,0);
             --red-grey:rgb(192, 0, 0, 0.5);
             --blue:rgb(85,129,156);
@@ -97,6 +136,41 @@
             line-height: 1.35;
         }
 
+        .calc{
+            padding: 10px;
+        }
+
+        .calculator{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap:10px;
+        }
+
+        .headers{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding-bottom: 10px;
+        }
+
+        .headers * {
+            width:min(100px,20%);
+            border:none;
+            border-radius: 15px;
+            padding:5px;
+            font-size:16px;
+            background: var(--light-grey);
+            transition:1s;
+            cursor: pointer;
+        }
+
+        .calculator input, .calculator label{
+            padding: 5px;
+            border:none;
+            border-bottom: 1px solid var(--light-grey);
+            font-size: 16px;
+        }
+
         @media only screen and (max-width: 500px) {
             .content{
                 flex-direction: column;
@@ -180,6 +254,7 @@
         <li>r = Rate of return</li>
         <li>n = Number of periods</li>
     </ul>
+    
     </div>
     </div>
     <div class="box3">
@@ -294,5 +369,26 @@
     </ul>
     </div>
    </div>
+    </div>
+    <div class="calc">
+        <h3>Calculator</h3>
+        <div class="headers">
+            <button onclick="switchToPV()">Present Value</button>
+            <button onclick="switchToFV()">Future Value</button>
+            <button>Annuity</button>
+            <button>Perpetuity</button>
+        </div>
+        <div class="calculator" onchange="calculateFutureValue()">
+            <label for="present-value" >Present Value</label>
+            <input type="number" id="present-value" placeholder="Enter Present Value" value="100000"/>
+            <label for="rate-of-return">Rate of Return (%)</label>
+            <input type="number" id="rate-of-return" placeholder="Enter Rate of Return" value="7.5"/>
+            <label for="number-of-periods">Number of Periods</label>
+            <input type="number" id="number-of-periods" placeholder="Enter Number of Periods" value="1"/>
+            <label for="future-value">Future Value</label>
+            <input type="number" id="future-value" placeholder="Enter Future Value" value="107500"/>
+            <p></p>
+        </div>
+    </div>
 </body>
 </html>
