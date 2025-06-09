@@ -36,6 +36,8 @@
             const n = parseInt(document.getElementById('number-of-periods').value);
             const fv = pv * Math.pow((1 + r), n);
             document.getElementById('future-value').value = fv.toFixed(2);
+            document.querySelector('#pvfvcalculator .result').innerText = `Rupees ${pv.toFixed(2)} invested today, will be worth ${fv.toFixed(2)}, after ${n} year(s) at ${(r*100).toFixed(2)}% p.a expected rate of return.`;
+            document.querySelector('#pvfvcalculator .result').style.display = 'block';
         }
 
         function calculatePresentValue() {
@@ -44,6 +46,8 @@
             const n = parseInt(document.getElementById('number-of-periods').value);
             const pv = fv / Math.pow((1 + r), n);
             document.getElementById('present-value').value = pv.toFixed(2);
+            document.querySelector('#pvfvcalculator .result').innerText = `Rupees ${fv.toFixed(2)} to be received after ${n} year(s) is worth Rupees ${pv.toFixed(2)} received today at ${(r*100).toFixed(2)}% p.a expected rate of return.`;
+            document.querySelector('#pvfvcalculator .result').style.display = 'block';
         }
 
     
@@ -162,13 +166,13 @@
         }
 
         .headers * {
-            width:min(100px,20%);
+            width:min(250px,40%);
             border:none;
             border-radius: 15px;
             padding:5px;
             font-size:16px;
             background: var(--light-grey);
-            transition:1s;
+            transition:0.5s;
             cursor: pointer;
         }
 
@@ -177,6 +181,11 @@
             border:none;
             border-bottom: 1px solid var(--light-grey);
             font-size: 16px;
+            transition: 0.5s;
+        }
+
+        .result{
+            grid-column:1/ span 2;
         }
 
         @media only screen and (max-width: 500px) {
@@ -262,7 +271,24 @@
         <li>r = Rate of return</li>
         <li>n = Number of periods</li>
     </ul>
-    
+    <div class="calc">
+        <h3>Calculator</h3>
+        <div class="headers">
+            <button onclick="switchToPV()">Present Value</button>
+            <button onclick="switchToFV()">Future Value</button>
+        </div>
+        <div id="pvfvcalculator" class="calculator" onchange="calculateFutureValue()">
+            <label for="present-value" >Present Value</label>
+            <input type="number" id="present-value" placeholder="Enter Present Value" value="100000"/>
+            <label for="rate-of-return">Rate of Return (%)</label>
+            <input type="number" id="rate-of-return" placeholder="Enter Rate of Return" value="7.5" min="0"/>
+            <label for="number-of-periods">Number of Periods</label>
+            <input type="number" id="number-of-periods" placeholder="Enter Number of Periods" value="1" min="0"/>
+            <label for="future-value">Future Value</label>
+            <input type="number" id="future-value" placeholder="Enter Future Value" value="107500"/>
+            <p class="result">Rupees 107500 to be received after 1 year is worth Rupees 100000 received today at 7.5% p.a expected rate of return.</p>
+        </div>
+    </div>
     </div>
     </div>
     <div class="box3">
@@ -378,25 +404,6 @@
     </div>
    </div>
     </div>
-    <div class="calc">
-        <h3>Calculator</h3>
-        <div class="headers">
-            <button onclick="switchToPV()">Present Value</button>
-            <button onclick="switchToFV()">Future Value</button>
-            <button>Annuity</button>
-            <button>Perpetuity</button>
-        </div>
-        <div class="calculator" onchange="calculateFutureValue()">
-            <label for="present-value" >Present Value</label>
-            <input type="number" id="present-value" placeholder="Enter Present Value" value="100000"/>
-            <label for="rate-of-return">Rate of Return (%)</label>
-            <input type="number" id="rate-of-return" placeholder="Enter Rate of Return" value="7.5"/>
-            <label for="number-of-periods">Number of Periods</label>
-            <input type="number" id="number-of-periods" placeholder="Enter Number of Periods" value="1"/>
-            <label for="future-value">Future Value</label>
-            <input type="number" id="future-value" placeholder="Enter Future Value" value="107500"/>
-            <p></p>
-        </div>
-    </div>
+    
 </body>
 </html>
