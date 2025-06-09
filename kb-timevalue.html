@@ -50,6 +50,37 @@
             document.querySelector('#pvfvcalculator .result').style.display = 'block';
         }
 
+        function calculateAnnuity() {
+            const payment = parseFloat(document.getElementById('payment').value);
+            const r = parseFloat(document.getElementById('a-rate-of-return').value) / 100;
+            const n = parseInt(document.getElementById('a-number-of-periods').value);
+            const pv = payment * ((Math.pow((1 + r), n) - 1) / (r * Math.pow((1 + r), n)));
+            const fv = payment * ((Math.pow((1 + r), n) - 1) / r);
+            document.getElementById('a-present-value').value = pv.toFixed(2);
+            document.getElementById('a-future-value').value = fv.toFixed(2);
+            document.querySelector('#annuitycalculator .result').innerText = `Rupees ${payment.toFixed(2)} annuity for ${n} year(s) at ${(r*100).toFixed(2)}% p.a expected rate of return, has a present value of Rupees ${pv.toFixed(2)} and future value of Rupees ${fv.toFixed(2)}.`;
+            document.querySelector('#annuitycalculator .result').style.display = 'block';
+        }
+
+        function calculatePerpetuity() {
+            const payment = parseFloat(document.getElementById('payment').value);
+            const r = parseFloat(document.getElementById('a-rate-of-return').value) / 100;
+            const pv = payment / r;
+            document.getElementById('a-present-value').value = pv.toFixed(2);
+            document.querySelector('#annuitycalculator .result').innerText = `Rupees ${payment.toFixed(2)} perpetuity at ${(r*100).toFixed(2)}% p.a expected rate of return, has a present value of Rupees ${pv.toFixed(2)}.`;
+            document.querySelector('#annuitycalculator .result').style.display = 'block';
+        }
+
+        function switchToAnnuity() {
+            switchHeader();
+            document.querySelector('#annuitycalculator').setAttribute('onchange','calculateAnnuity()');
+        }
+
+        function switchToPerpetuity() {
+            switchHeader();
+            document.querySelector('#annuitycalculator').setAttribute('onchange','calculatePerpetuity()');
+        }
+
     
     </script>
     <style>
@@ -401,6 +432,26 @@
         <li>P = Payment</li>
         <li>r = Rate of return</li>
     </ul>
+    <div class="calc">
+        <h3>Calculator</h3>
+        <div class="headers">
+            <button onclick="switchToAnnuity()">Annuity</button>
+            <button onclick="switchToPerpetuity()">Perpetuity</button>
+        </div>
+        <div id="annuitycalculator" class="calculator" onchange="calculateAnnuity()">
+            <label for="payment" >Payment</label>
+            <input type="number" id="payment" placeholder="Enter Payment" value="100000"/>
+            <label for="a-rate-of-return">Rate of Return (%)</label>
+            <input type="number" id="a-rate-of-return" placeholder="Enter Rate of Return" value="7.5" min="0"/>
+            <label for="a-number-of-periods">Number of Periods</label>
+            <input type="number" id="a-number-of-periods" placeholder="Enter Number of Periods" value="1" min="0"/>
+            <label for="a-future-value">Future Value</label>
+            <input type="number" id="a-future-value" placeholder="Enter Future Value" value="107500"/>
+            <label for="a-present-value">Present Value</label>
+            <input type="number" id="a-present-value" placeholder="Enter Future Value" value="107500"/>
+            <p class="result">Rupees 107500 to be received after 1 year is worth Rupees 100000 received today at 7.5% p.a expected rate of return.</p>
+        </div>
+    </div>
     </div>
    </div>
     </div>
