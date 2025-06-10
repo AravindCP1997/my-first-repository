@@ -19,6 +19,7 @@
 
         function switchToPV(){
             switchHeader();
+            calculatePresentValue();
             document.getElementsByClassName('calculator')[0].setAttribute('onchange','calculatePresentValue()');
             document.getElementById('present-value').style["font-weight"] = 'bold';
 
@@ -26,6 +27,7 @@
 
         function switchToFV(){
             switchHeader();
+            calculateFutureValue();
             document.getElementsByClassName('calculator')[0].setAttribute('onchange','calculateFutureValue()');
             document.getElementById('future-value').style["font-weight"] = 'bold';
         }
@@ -73,12 +75,22 @@
 
         function switchToAnnuity() {
             switchHeader();
+            calculateAnnuity();
             document.querySelector('#annuitycalculator').setAttribute('onchange','calculateAnnuity()');
+            document.getElementById('a-future-value').style.display = 'block';
+            document.getElementById('a-future-value').previousElementSibling.style.display = 'block';
+            document.getElementById('a-number-of-periods').style.display = 'block';
+            document.getElementById('a-number-of-periods').previousElementSibling.style.display = 'block';
         }
 
         function switchToPerpetuity() {
             switchHeader();
+            calculatePerpetuity();
             document.querySelector('#annuitycalculator').setAttribute('onchange','calculatePerpetuity()');
+            document.getElementById('a-future-value').style.display = 'none';
+            document.getElementById('a-future-value').previousElementSibling.style.display = 'none';
+            document.getElementById('a-number-of-periods').style.display = 'none';
+            document.getElementById('a-number-of-periods').previousElementSibling.style.display = 'none';
         }
 
     
@@ -131,16 +143,15 @@
         }
 
         .content{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 47% 47%;
+            gap: 6%;
             width:100%;
+            padding:10px
         }
 
         .box3, .box2{
             border-radius: 15px;
-            padding-left: 10px;
-            padding-right: 10px;
             color:var(--grey);
         }
 
@@ -150,7 +161,7 @@
             width:70%;
             text-align: left;
             border-bottom:1px solid var(--blue);
-            margin:0; 
+            margin:0;
         }
 
         h3{
@@ -169,6 +180,7 @@
 
         math *{
             font-family: Helvetica;
+            text-wrap: break-word;
         }
 
         p{
@@ -176,15 +188,11 @@
             line-height: 1.35;
         }
 
-        .calc{
-            padding: 10px;
-        }
-
+        
         .calculator{
             display:grid;
-            grid-template-columns: 1fr 1fr;
-            gap:10px;
-            border:1px solid var(--light-grey);
+            grid-template-columns: 47% 47%;
+            gap:6%;
             border-radius: 15px;
             padding: 10px;
         }
@@ -217,6 +225,7 @@
 
         .result{
             grid-column:1/ span 2;
+            text-wrap: break-word;
         }
 
         @media only screen and (max-width: 500px) {
@@ -233,8 +242,8 @@
     <div class="box1">
         <h1 class="head1">Time Value of Money</h1>
     <div class="intro">
-    <p>Time value of money is the concept that a sum of money received today is worth more than an identical sum to be received on a future date. The fact that the money received today can be invested to generate some income by the future date substantiates the concept.</p>
-    <p>Time value of money is the concept with which sum of money or cashflows arising, from an asset or a project, at differents points of time, is evaluated. Present Value (PV) and Future Value (FV) are the measures for time valuation of money.</p>
+    <p>Time value of money is the concept that a sum of money received today is worth more than an identical sum to be received on a future date. The fact that the money received today can be invested to generate some income by the future date is the substance of the concept.</p>
+    <p>Time value of money is the concept with which sum of money or cashflows arising, from an asset or a project, at differents points of time, is evaluated. Present Value (PV) and Future Value (FV) are the measures used for time valuation of money.</p>
     </div>
     </div>
     <div class="content">
@@ -317,7 +326,7 @@
             <input type="number" id="number-of-periods" placeholder="Enter Number of Periods" value="1" min="0"/>
             <label for="future-value">Future Value</label>
             <input type="number" id="future-value" placeholder="Enter Future Value" value="107500"/>
-            <p class="result">Rupees 107500 to be received after 1 year is worth Rupees 100000 received today at 7.5% p.a expected rate of return.</p>
+            <label class="result">Rupees 107500 to be received after 1 year is worth Rupees 100000 received today at 7.5% p.a expected rate of return.</label>
         </div>
     </div>
     </div>
@@ -449,7 +458,7 @@
             <input type="number" id="a-future-value" placeholder="Enter Future Value" value="107500"/>
             <label for="a-present-value">Present Value</label>
             <input type="number" id="a-present-value" placeholder="Enter Future Value" value="107500"/>
-            <p class="result">Rupees 107500 to be received after 1 year is worth Rupees 100000 received today at 7.5% p.a expected rate of return.</p>
+            <label class="result">Rupees 107500 to be received after 1 year is worth Rupees 100000 received today at 7.5% p.a expected rate of return.</label>
         </div>
     </div>
     </div>
