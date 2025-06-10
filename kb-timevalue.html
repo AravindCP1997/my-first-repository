@@ -34,7 +34,7 @@
             const n = parseInt(document.getElementById('number-of-periods').value);
             const fv = pv * Math.pow((1 + r), n);
             document.getElementById('future-value').value = fv.toFixed(2);
-            document.querySelector('#pvfvcalculator .result').innerText = `Rupees ${pv.toFixed(2)} invested today, will be worth ${fv.toFixed(2)}, after ${n} year(s) at ${(r*100).toFixed(2)}% p.a expected rate of return.`;
+            document.querySelector('#pvfvcalculator .result').innerText = `Rupees ${pv.toFixed(2)} invested today, will be worth Rupees ${fv.toFixed(2)}, after ${n} year(s) at ${(r*100).toFixed(2)}% p.a expected rate of return.`;
             document.querySelector('#pvfvcalculator .result').style.display = 'block';
         }
 
@@ -120,19 +120,22 @@
             padding-right: 10px;
             width:100%;
             color:var(--grey);
+            background: var(--blue);
+            border-radius: 15px;
+            padding:10px;
         }
 
         .head1{
-            color:var(--blue);  
+            color:white;  
             width:70%;
             text-align: left;
-            border-bottom:1px solid var(--blue);
+            border-bottom:1px solid white;
             padding: 10px;
         }
 
         .intro{
             width:100%;
-            color:var(--grey);
+            color:white;
             text-align: justify;
             padding-left:10px;
             padding-right:10px;
@@ -140,15 +143,18 @@
 
         .content{
             display: grid;
-            grid-template-columns: 47% 47%;
-            gap: 6%;
+            grid-template-columns: 49% 49%;
+            gap: 2%;
             width:100%;
-            padding:10px
+            padding-top:10px;
         }
 
         .box3, .box2{
             border-radius: 15px;
-            color:var(--grey);
+            padding:10px;
+            border:1px solid var(--blue);
+            overflow-y:auto;
+            max-height:500px;
         }
 
         .head2, .head3{
@@ -240,7 +246,7 @@
         <h1 class="head1">Time Value of Money</h1>
     <div class="intro">
     <p>Time value of money is the concept that a sum of money received today is worth more than an identical sum to be received on a future date. The fact that the money received today can be invested to generate some income by the future date is the substance of the concept.</p>
-    <p>Time value of money is the concept with which sum of money or cashflows arising, from an asset or a project, at differents points of time, is evaluated. Present Value (PV) and Future Value (FV) are the measures used for time valuation of money.</p>
+    <p>Time value of money is the concept with which sum of money or cashflows arising, from an asset or a project, at different points of time, is evaluated. Present Value (PV) and Future Value (FV) are the measures used in time valuation of money.</p>
     </div>
     </div>
     <div class="content">
@@ -276,12 +282,12 @@
     </math>
     <p>Where:</p>
     <ul>
-        <li>FV = Future Value</li>
+        <li>FV = Future value</li>
         <li>r = Rate of return</li>
         <li>n = Number of periods</li>
     </ul>
     <h3>Future Value</h3>
-    <p>Future value is the expected worth of a sum of money on a future date, if invested at a specified rate of return. Future value is calculated by compounding the sum of money or cash flow using the expected rate of return.</p>
+    <p>Future value is the expected worth of a sum of money on a future date, if invested today at a specified rate of return. Future value is calculated by compounding the sum of money or cash flow using the expected rate of return.</p>
     <math>
         <mrow>
             <mi>Future Value (FV)</mi>
@@ -304,7 +310,7 @@
     </math>
     <p>Where:</p>
     <ul>
-        <li>PV = Present Value</li>
+        <li>PV = Present value</li>
         <li>r = Rate of return</li>
         <li>n = Number of periods</li>
     </ul>
@@ -325,6 +331,7 @@
             <input type="number" id="future-value" placeholder="Enter Future Value" value="107500"/>
             <label class="result">Rupees 107500 to be received after 1 year is worth Rupees 100000 received today at 7.5% p.a expected rate of return.</label>
         </div>
+        
     </div>
     </div>
     </div>
@@ -332,7 +339,7 @@
     <h2 class="head3">Annuity and Perpetuity</h2>
     <div class="annuityandperpetuity">
     <h3>Annuity</h3>
-    <p>An annuity is a series of equal payments made at regular intervals over a specified period of time.  Present and future value of an annuity is the sum total of present and future value, respectively, of all payments under the annuity.</p>
+    <p>An annuity is a series of equal payments made at regular intervals over a specified period of time. The present value of an annuity is the sum of present value of all payments under the annuity and the future value of an annuity is the sum of future value of all payments under the annuity.</p>
     <math>
         <mrow>
             <mi>Present Value (PV) of Annuity</mi>
@@ -457,8 +464,11 @@
             <input type="number" id="a-present-value" placeholder="Enter Present Value" value="93023.26" min="0"/>
             <label class="result">Rupees 100000.00 annuity for 1 year(s) at 7.50% p.a expected rate of return, has a present value of Rupees 93023.26 and future value of Rupees 100000.00.</label>
         </div>
+        
     </div>
+    
     </div>
+    
    </div>
     </div>
     
