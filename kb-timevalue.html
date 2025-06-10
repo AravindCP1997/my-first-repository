@@ -56,7 +56,7 @@
             const fv = payment * ((Math.pow((1 + r), n) - 1) / r);
             document.getElementById('a-present-value').value = pv.toFixed(2);
             document.getElementById('a-future-value').value = fv.toFixed(2);
-            document.querySelector('#annuitycalculator .result').innerText = `Rupees ${payment.toFixed(2)} annuity for ${n} year(s) at ${(r*100).toFixed(2)}% p.a expected rate of return, has a present value of Rupees ${pv.toFixed(2)} and future value of Rupees ${fv.toFixed(2)}.`;
+            document.querySelector('#annuitycalculator .result').innerText = `Rupees ${payment.toFixed(2)} annuity for ${n} year(s) at ${(r*100).toFixed(2)}% p.a expected rate of return, is worth Rupees ${pv.toFixed(2)} received today and Rupees ${fv.toFixed(2)} to be received after ${n} year(s).`;
             document.querySelector('#annuitycalculator .result').style.display = 'block';
         }
 
@@ -65,7 +65,7 @@
             const r = parseFloat(document.getElementById('a-rate-of-return').value) / 100;
             const pv = payment / r;
             document.getElementById('a-present-value').value = pv.toFixed(2);
-            document.querySelector('#annuitycalculator .result').innerText = `Rupees ${payment.toFixed(2)} perpetuity at ${(r*100).toFixed(2)}% p.a expected rate of return, has a present value of Rupees ${pv.toFixed(2)}.`;
+            document.querySelector('#annuitycalculator .result').innerText = `Rupees ${payment.toFixed(2)} perpetuity at ${(r*100).toFixed(2)}% p.a expected rate of return, is worth Rupees ${pv.toFixed(2)} received today.`;
             document.querySelector('#annuitycalculator .result').style.display = 'block';
         }
 
@@ -113,6 +113,7 @@
 
         html{
             font-family: Helvetica;
+            padding:10px;
         }
 
         .box1{
@@ -459,7 +460,7 @@
             <input type="number" id="a-future-value" placeholder="Enter Future Value" value="100000" min="0"/>
             <label for="a-present-value">Present Value</label>
             <input type="number" id="a-present-value" placeholder="Enter Present Value" value="93023.26" min="0"/>
-            <label class="result">Rupees 100000.00 annuity for 1 year(s) at 7.50% p.a expected rate of return, has a present value of Rupees 93023.26 and future value of Rupees 100000.00.</label>
+            <label class="result">Rupees 100000.00 annuity for 1 year(s) at 7.50% p.a expected rate of return, is worth Rupees 93023.26 received today and Rupees 100000.00 to be received after 1 year(s).</label>
         </div>
         
     </div>
