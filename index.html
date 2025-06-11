@@ -37,7 +37,9 @@
       :root {
         --blue: rgb(95,158,160);
         --deepblue: rgb(85,129,156);
-        --deepgrey: rgb(240, 240, 240, 0.8);
+        --deepbluebackground: rgb(85,129,156, 0.6);
+        --deepgrey: rgb(240, 240, 240);
+        --deepgreybackground: rgb(240, 240, 240, 0.6);
         --og: rgb(255, 192, 0);
         --black:rgb(75,75,75);
         --red:rgb(192,0,0);
@@ -257,6 +259,11 @@ animation-name: applications;
 animation-duration: 6s;
 }
 
+.about p{
+color:var(--black);
+font-weight: bold;
+}
+
 .duo{
   display: grid;
   grid-template-columns: 48% 48%;
@@ -273,14 +280,12 @@ gap:15px;
 overflow-y: auto;
 }
 
+
 .web-apps,.knowledge-base{
   min-height:275px;
 }
 
-.about p{
-color:var(--black);
-font-weight: bold;
-}
+
 
 .container-title{
         font-weight: bold;
@@ -290,7 +295,7 @@ font-weight: bold;
       }
 
       .web-apps {
-        background: var(--deepgrey);;
+        background: var(--deepgreybackground);;
         border-radius:15px;
       }
       
@@ -349,13 +354,12 @@ z-index:3;
       }
 
       .knowledge-base {
-        background: var(--deepblue);
+        background: var(--deepbluebackground);
         border-radius:15px;
-        opacity:0.2;
       }
 
       .knowledge-base h2 {
-        color: var(--deepgrey);
+        color: white;
         font-weight: bold;
       }
 
@@ -389,20 +393,20 @@ z-index:3;
         text-align: justify;
         padding:10px;
         padding-left: 0px;
-        font-weight:bold;
       }
       
       .tag{
         color:var(--blue);
         font-weight:bold;
         right:15px;
-        text-align:right;
+        text-align:center;
         width:100%;
         animation-name: applications;
         animation-duration: 6s;
         opacity:0.8;
-        padding-top:50px;
+        padding-top:20px;
         padding-right: 10px;
+        padding-bottom: 20px;
       }
 
       @media (orientation: landscape) {
@@ -493,7 +497,9 @@ z-index:3;
 <div class="containers">
 <div class="about">
 <h2 class="container-title">ACP-BI</h2>
+<div>
 <p>Space to develop and deploy business tech.</p>
+</div>
 </div>
 <div class="duo">
 <div class="web-apps">
@@ -514,12 +520,12 @@ z-index:3;
     </div>
 </div>
 <div class="knowledge-base">
-  <h2 class="container-title"></h2>
+  <h2 class="container-title">Knowledge Base</h2>
   <div class="episodes">
-    <div class="episode" data-link="kb-timevalue.html">
-      <h3 class="episode-title">Coming Up</h3>
-      <p class="genre"></p>
-      <p class="episode-description">15 June 2025.</p>
+    <div class="episode" onclick="openEpisode()" data-link="kb-timevalue.html">
+      <h3 class="episode-title">Time Value of Money</h3>
+      <p class="genre">Genre: Fundamentals</p>
+      <p class="episode-description">Read why cash flows arising at different points of time have different worth!</p>
     </div>
   </div>
 </div>
