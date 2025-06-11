@@ -117,8 +117,6 @@
         }
 
         .box1{
-            padding-left: 10px;
-            padding-right: 10px;
             width:100%;
             color:var(--grey);
             background: var(--blue);
@@ -148,6 +146,7 @@
             gap: 2%;
             width:100%;
             padding-top:10px;
+            padding-bottom: 10px;
         }
 
         .box3, .box2{
@@ -174,10 +173,6 @@
             text-align: justify;
         }
 
-        .formulae{
-            display: none;
-        }
-
         math *{
             font-family: Helvetica;
             text-wrap: break-word;
@@ -194,7 +189,6 @@
             grid-template-columns: 47% 47%;
             gap:6%;
             border-radius: 15px;
-            padding: 10px;
         }
 
         .headers{
@@ -236,6 +230,28 @@
 
         }
 
+        @media print {
+            .content{
+                grid-template-columns: 100%;
+                gap:2%;
+            }
+
+            * {
+                color: black !important;
+                background: white !important;
+            }
+
+            .head1, .head2, .head3 {
+                color: black !important;
+                border-bottom: 1px solid black !important;
+            }
+
+            .calc {
+                display: none !important;
+            }
+
+        }
+
       
     </style>
 </head>
@@ -244,7 +260,7 @@
         <h1 class="head1">Time Value of Money</h1>
     <div class="intro">
     <p>Time value of money is the concept that a sum of money received today is worth more than an identical sum to be received on a future date. The fact that the money received today can be invested to generate some income by the future date is the substance of the concept.</p>
-    <p>Time value of money is the concept with which sum of money or cashflows arising, from an asset or a project, at different points of time, is evaluated. Present Value (PV) and Future Value (FV) are the measures used in time valuation of money.</p>
+    <p>Time value of money is the concept with which sum of money or cash flows arising, from an asset or a project, at different points of time, is evaluated. Present Value (PV) and Future Value (FV) are the measures used in time valuation of money.</p>
     </div>
     </div>
     <div class="content">
@@ -252,7 +268,7 @@
     <h2 class="head2">Present and Future Value</h2>
     <div class="pvandfv">
     <h3>Present Value</h3>
-    <p>Present value is the present worth of a sum of money or cashflow arising on a future date. Present value is calculated by discounting the sum of money or cash flow using the expected rate of return.</p><p> Present value is also the sum of money to be invested today to generate a specified cash flow on a future date, at a specified rate of return.</p>
+    <p>Present value is the present worth of a sum of money or cash flow arising on a future date. Present value is calculated by discounting the sum of money or cash flow using the expected rate of return.</p><p> Present value is also the sum of money to be invested today to generate a specified cash flow on a future date, at a specified rate of return.</p>
     <math>
         <mrow>
             <mi>Present Value (PV)</mi>
@@ -319,14 +335,14 @@
             <button onclick="switchToFV()">Future Value</button>
         </div>
         <div id="pvfvcalculator" class="calculator" onchange="calculatePresentValue()">
-            <label for="present-value" >Present Value</label>
-            <input type="number" id="present-value" placeholder="Enter Present Value" value="100000"/>
+            <label for="future-value">Future Value</label>
+            <input type="number" id="future-value" placeholder="Enter Future Value" value="107500"/>
             <label for="rate-of-return">Rate of Return (%)</label>
             <input type="number" id="rate-of-return" placeholder="Enter Rate of Return" value="7.5" min="0"/>
             <label for="number-of-periods">Number of Periods</label>
             <input type="number" id="number-of-periods" placeholder="Enter Number of Periods" value="1" min="0"/>
-            <label for="future-value">Future Value</label>
-            <input type="number" id="future-value" placeholder="Enter Future Value" value="107500"/>
+            <label for="present-value" >Present Value</label>
+            <input type="number" id="present-value" placeholder="Enter Present Value" value="100000"/>
             <label class="result">Rupees 107500.00 to be received after 1 year(s) is worth Rupees 100000.00 received today at 7.50% p.a expected rate of return.</label>
         </div>
         
@@ -337,7 +353,7 @@
     <h2 class="head3">Annuity and Perpetuity</h2>
     <div class="annuityandperpetuity">
     <h3>Annuity</h3>
-    <p>An annuity is a series of equal payments made at regular intervals over a specified period of time. The present value of an annuity is the sum of present value of all payments under the annuity and the future value of an annuity is the sum of future value of all payments under the annuity.</p>
+    <p>An annuity consists of equal payments made regularly over a set period. The present value of an annuity is the sum of present value of all payments under the annuity and the future value of an annuity is the sum of future value of all payments under the annuity.</p>
     <math>
         <mrow>
             <mi>Present Value (PV) of Annuity</mi>
@@ -469,6 +485,5 @@
     
    </div>
     </div>
-    
 </body>
 </html>
