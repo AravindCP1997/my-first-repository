@@ -25,8 +25,7 @@
         anchor.click();
       }
 
-      function openEpisode(){
-        var episode = event.target.getAttribute("data-episode");
+      function openEpisode(episode){
         let anchor = document.createElement("a");
         anchor.target = "_blank";
         anchor.href = episode;
@@ -522,7 +521,7 @@ z-index:3;
 <div class="knowledge-base">
   <h2 class="container-title">Knowledge Base</h2>
   <div class="episodes">
-    <div class="episode" onclick="openEpisode()" data-link="kb-timevalue.html">
+    <div class="episode" onclick="openEpisode('kb-timevalue.html')">
       <h3 class="episode-title">Time Value of Money</h3>
       <p class="genre">Genre: Fundamentals</p>
       <p class="episode-description">Read why cash flows arising at different points of time have different worth!</p>
