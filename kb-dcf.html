@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base - DCF</title>
+<style>
+
+    @font-face {
+        font-family: "Helvetica";
+        src: url(Helvetica.woff) format("woff");
+        font-weight: normal;
+      }
+
+      :root{
+        --blue:rgb(64,82,106);
+        --gold:rgb(255,192,0);
+      }
+
+    html {
+        font-family: "Helvetica", sans-serif;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .slides {
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+    }
+
+    .slide{
+        position:relative;
+        border-radius: 15px;
+        color:var(--blue);
+        background: var(--blue);
+        color:white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        min-height: 400px;
+        padding: 15px;
+    }
+
+    #title-slide {
+        background: var(--gold);
+        color:white;
+    }
+
+    #title-slide h1 {
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+</style>
+    </head>
+    <body>
+        <div class="slides" >
+            <div class="slide" id="title-slide">
+                <h1>Discounted Cash Flow (DCF) Techniques</h1>
+                <h3>Knowledge Base from ACP-BI</h3>
+            </div>
+            <div class="slide">
+                <h2>What is DCF?</h2>
+                <p>DCF stands for Discounted Cash Flow, a financial valuation method used to estimate the value of an investment or project based on its expected future cash flows.</p>
+                <p>Financial worth of the investment or project is determined by discounting cash flows arising from it.</p>
+            </div>
+
+            <div class="slide">
+                <h2>Key Components of DCF</h2>
+                <ul>
+                    <li>Future Cash Flows</li>
+                    <li>Discount Rate</li>
+                    <li>Present Value Calculation</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Steps in DCF Analysis</h2>
+                <ol>
+                    <li>Forecast future cash flows</li>
+                    <li>Select an appropriate discount rate</li>
+                    <li>Calculate the present value of future cash flows</li>
+                    <li>Sum the present values to get the total value</li>
+                </ol>
+            </div>
+
+            <div class="slide">
+                <h2>Applications of DCF</h2>
+                <p>DCF is widely used in finance for valuing companies, projects, and investments, helping investors make informed decisions.</p>
+            </div>
+        </div>
+    </body>
+    </html>
