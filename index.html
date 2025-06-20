@@ -42,6 +42,7 @@
         --og: rgb(255, 192, 0);
         --black:rgb(75,75,75);
         --red:rgb(192,0,0);
+        --ogblue:rgb(64,82,106);
       }
 
       @font-face {
@@ -251,6 +252,7 @@
 
 .containers{
 z-index:2;
+display:flex;
 flex-direction:column;
 padding:15px;
 gap:15px;
@@ -258,9 +260,20 @@ animation-name: applications;
 animation-duration: 6s;
 }
 
+.about{
+  background: var(--ogblue);
+  border-radius:15px;
+  padding:10px;
+  width:100%;
+}
+
 .about p{
-color:var(--black);
+color:white;
 font-weight: bold;
+}
+
+.about h2{
+color: var(--og);
 }
 
 .duo{
@@ -275,7 +288,7 @@ display:flex;
 flex-direction:column;
 padding:15px;
 border-radius:15px;
-gap:15px;
+gap:10px;
 overflow-y: auto;
 }
 
@@ -395,7 +408,7 @@ z-index:3;
       }
       
       .tag{
-        color:var(--blue);
+        color:var(--deepblue);
         font-weight:bold;
         right:15px;
         text-align:center;
@@ -406,6 +419,8 @@ z-index:3;
         padding-top:20px;
         padding-right: 10px;
         padding-bottom: 20px;
+        background: var(--deepgreybackground);
+        border-radius:15px;
       }
 
       @media (orientation: landscape) {
@@ -435,6 +450,10 @@ z-index:3;
       @media only screen and (max-width: 500px) {
             .duo{
                 grid-template-columns: 96%;
+            }
+
+            .about, .tag{
+              width:96%;
             }
 
         }
@@ -497,7 +516,7 @@ z-index:3;
 <div class="about">
 <h2 class="container-title">ACP-BI</h2>
 <div>
-<p>Space to develop and deploy business tech.</p>
+<p>Space to develop and deploy business tech-knowledge.</p>
 </div>
 </div>
 <div class="duo">
@@ -526,10 +545,16 @@ z-index:3;
       <p class="genre">Genre: Fundamentals</p>
       <p class="episode-description">Read why cash flows arising at different points of time have different worth!</p>
     </div>
+    <div class="episode">
+      <h3 class="episode-title">Project D</h3>
+      <p class="genre">Work-in-Progress</p>
+      <p class="episode-description">Coming up before July 15 2025</p>
+    </div>
   </div>
 </div>
 </div>
+<p class="tag">Can't find what you are looking for? <a target="_blank" href="mailto:aravindcpradeep@outlook.com?&amp;subject=Business%20Intelligence">Write to us!</a></p>
 </div>
-    <p class="tag">Can't find what you are looking for? <a target="_blank" href="mailto:aravindcpradeep@outlook.com?&amp;subject=Business%20Intelligence">Write to us!</a></p>
+    
   </body>
 </html>
