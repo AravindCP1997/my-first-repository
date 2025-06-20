@@ -37,15 +37,26 @@
         color:white;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        text-align: center;
+        justify-content: top;
+        text-align: justify;
         min-height: 400px;
-        padding: 15px;
+        padding: 25px;
+    }
+
+    .slide p{
+        margin:5px;
+    }
+
+    .slide h2 {
+        margin-top:60px;
+        color:var(--gold)
     }
 
     #title-slide {
         background: var(--gold);
         color:white;
+        justify-content: center;
+        text-align: center;
     }
 
     #title-slide h1 {
@@ -53,18 +64,47 @@
         margin: 0;
     }
 
+    .DCF-techniques {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        width:100%;
+        height:100px;
+        margin-top:20px;
+    }
+
+    .DCF-techniques button {
+        border:1px solid var(--gold);
+        color: var(--gold);
+        background: transparent;
+        font-weight: bold;
+        font-family: 'Helvetica', sans-serif;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        width:300px;
+    }
+
 </style>
     </head>
     <body>
         <div class="slides" >
             <div class="slide" id="title-slide">
-                <h1>Discounted Cash Flow (DCF) Techniques</h1>
+                <h1>Discounted Cash Flow Techniques</h1>
                 <h3>Knowledge Base from ACP-BI</h3>
             </div>
-            <div class="slide">
-                <h2>What is DCF?</h2>
-                <p>DCF stands for Discounted Cash Flow, a financial valuation method used to estimate the value of an investment or project based on its expected future cash flows.</p>
+            <div class="slide" id="slide-1">
+                <h2>Discounted Cash Flow (DCF)</h2>
+                <p>Discounted cash flow is the financial valuation method used to estimate the value of an investment or project based on its expected future cash flows.</p>
                 <p>Financial worth of the investment or project is determined by discounting cash flows arising from it.</p>
+                <p>DCF techniques commonly used include:</p>
+                <div class="DCF-techniques">
+                    <button>Net Present Value</button>
+                    <button>Internal Rate of Return</button>
+                    <button>Profitability Index</button>
+            </div>
             </div>
 
             <div class="slide">
