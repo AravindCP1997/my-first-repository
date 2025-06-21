@@ -40,7 +40,7 @@
         justify-content: top;
         text-align: justify;
         min-height: 400px;
-        padding: 25px;
+        padding: 60px;
     }
 
     .slide p{
@@ -48,11 +48,11 @@
     }
 
     .slide h2 {
-        margin-top:60px;
-        color:var(--gold)
-    }
+        color:var(--gold);
+        text-align: left;;
+    } 
 
-    #title-slide {
+    #title-slide, #end-slide {
         background: var(--gold);
         color:white;
         justify-content: center;
@@ -87,48 +87,51 @@
         width:300px;
     }
 
+    .DCF-techniques button:hover {
+        background: var(--gold);
+        color: white;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
 </style>
     </head>
     <body>
         <div class="slides" >
             <div class="slide" id="title-slide">
-                <h1>Discounted Cash Flow Techniques</h1>
+                <h1>Discounted Cash Flow Methods</h1>
                 <h3>Knowledge Base from ACP-BI</h3>
             </div>
             <div class="slide" id="slide-1">
-                <h2>Discounted Cash Flow (DCF)</h2>
-                <p>Discounted cash flow is the financial valuation method used to estimate the value of an investment or project based on its expected future cash flows.</p>
-                <p>Financial worth of the investment or project is determined by discounting cash flows arising from it.</p>
-                <p>DCF techniques commonly used include:</p>
+                <h2>Discounted Cash Flow Methods</h2>
+                <p>Discounted cash flow (DCF) methods are the financial valuation methods used to estimate the value of a project or an asset based on its expected future cash flows.</p>
+                <p>Financial worth of the project or the asset is determined by discounting cash flows arising from the project or the asset.</p>
+                <p>Commonly used DCF methods include:</p>
                 <div class="DCF-techniques">
-                    <button>Net Present Value</button>
-                    <button>Internal Rate of Return</button>
-                    <button>Profitability Index</button>
+                    <button onclick="document.location='#slide-3'">Net Present Value</button>
+                    <button onclick="document.location='#slide-4'">Profitability Index</button>
+                    <button onclick="document.location='#slide-5'">Internal Rate of Return</button>
+                    
             </div>
             </div>
 
-            <div class="slide">
-                <h2>Key Components of DCF</h2>
-                <ul>
-                    <li>Future Cash Flows</li>
-                    <li>Discount Rate</li>
-                    <li>Present Value Calculation</li>
-                </ul>
+            <div class="slide" id="slide-3">
+                <h2>Net Present Value</h2>
+                <p>Net Present Value (NPV) of a project or an asset is the <strong>difference</strong> between present value of cash inflows and present value of cash outflows arising from the project or the asset.</p><p> NPV is positive when present value of cash inflows exceeds the present value of cash out flows and is negative when present value of cash outflows exceeds present value of cash inflows.</p>
+                <p>A project or an asset is financially viable when it's NPV is greater than or equal to zero.</p>
             </div>
 
-            <div class="slide">
-                <h2>Steps in DCF Analysis</h2>
-                <ol>
-                    <li>Forecast future cash flows</li>
-                    <li>Select an appropriate discount rate</li>
-                    <li>Calculate the present value of future cash flows</li>
-                    <li>Sum the present values to get the total value</li>
-                </ol>
+            <div class="slide" id="slide-4">
+                <h2>Profitability Index</h2>
+                <p>Profitability Index (PI) of a project or an asset is the <strong>ratio</strong> between present value of cash inflows and present value of cash outflows arising from the project or the asset.</p><p> PI is greater than one, when present value of cash inflows exceeds the present value of cash out flows and is less than one when present value of cash outflows exceeds present value of cash inflows.</p>
+                <p>A project or an asset is financially viable when it's PI is greater than or equal to one.</p>
             </div>
-
-            <div class="slide">
-                <h2>Applications of DCF</h2>
-                <p>DCF is widely used in finance for valuing companies, projects, and investments, helping investors make informed decisions.</p>
+            <div class="slide" id="slide-5">
+                <h2>Internal Rate of Return</h2>
+                <p>Internal Rate of Return (IRR) of a project or an asset is the rate of return at which the present value of cash inflows arising from the project or the asset equals present value of cash outflows from the project or the asset.</p>
+                <p>At IRR, NPV of the project or the asset is zero and PI is one.</p>
+            </div>
+            <div class="slide" id="end-slide">
+                <h1>The End</h1>
             </div>
         </div>
     </body>
