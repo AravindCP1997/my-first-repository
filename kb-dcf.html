@@ -43,6 +43,7 @@
       :root{
         --blue:rgb(64,82,106);
         --gold:rgb(255,192,0);
+        --green:rgb(65,129,156);
       }
 
     html {
@@ -67,8 +68,8 @@
         flex-direction: column;
         justify-content: top;
         text-align: justify;
-        min-height: 400px;
         padding: min(5%,60px);
+        min-height: 400px;
     }
 
     .slide p{
@@ -76,9 +77,16 @@
         line-height: 1.5;
     }
 
+    ul {
+        line-height: 1.5;
+    }
+
     .slide h2 {
         color:var(--gold);
-        text-align: left;;
+        text-align: left;
+        width:60%;
+        border-bottom:1px solid var(--gold);
+        padding:10px;
     } 
 
     #title-slide, #end-slide {
@@ -91,12 +99,6 @@
     #title-slide h1 {
         font-size: 2.5em;
         margin: 0;
-    }
-
-    #slide-0{
-        background:white;
-        color:var(--blue);
-        border:1px solid var(--blue);
     }
 
     .DCF-techniques {
@@ -128,34 +130,76 @@
         transition: background 0.3s ease, color 0.3s ease;
     }
 
-    #CoC{
-        background:white;
-        color:var(--blue);
-        border:1px solid var(--blue);
-    }
-
-    #end-slide{
+    #end-slide {
         min-height: unset;
     }
+
+    #related-contents{
+        min-height: unset;
+        padding:10px;
+        background: none;
+        
+        
+    }
+
+    .related-contents{
+        display: flex;
+        flex-direction: row;
+        height:100px;
+        padding:10px;
+    }
+
+    .related-contents button{
+        background:var(--blue);
+        border:none;
+        color:white;
+        font-weight:bold;
+        border-radius: 15px;
+        font-family: Helvetica;
+        cursor: pointer;
+        font-size:16px;
+        padding:10px;
+        aspect-ratio: 1/1;
+    }
+
+    #related-contents h2{
+        color:var(--blue);
+        border-bottom:1px solid var(--blue);
+        width:80%; 
+    }
+
 
 </style>
     </head>
     <body>
         <div class="slides" >
             <div class="slide" id="title-slide">
+                <h3>Knowledge Base</h3>
                 <h1>Discounted Cash Flow Methods</h1>
-                <h3>Knowledge Base from ACP-BI</h3>
             </div>
+            
             <div class="slide" id="slide-0">
-                <h2>Financial Valuation</h2>
-                <p>Financial valuation of a project or an asset is required when there is an initial or multi stage investment of funds into the project or the asset which is expected to generate some cash flow in return. </p><p>The financial valuation fundamentally evaluates whether the cash flow or returns generated from the project or the asset is sufficient to pay back the funds invested plus the cost of capital.</p>
-                <p>Therefore, the factors that affect financial viability of a project or an asset are the cash flow expected from the project or the asset and the Cost of Capital <a href="#CoC">(Read more)</a>.</p>
+                <h2>Financial Viability</h2>
+                <p>While undertaking a project or investing in an asset, investors might want to know the financial viability of the project or asset.</p><p>The financial viabiity fundamentally means the project or the asset generates cash flow sufficient to pay back the funds invested plus the cost of capital.</p>
+                <p>The factors that affect financial viability of a project or an asset are, therefore: </p>
+                <ul>
+                    <li>Initial Investment: Funds invested in the project or the asset.</li>
+                    <li>Cash Flow: The expected cash inflows and outflows from the project or the asset.</li>
+                    <li>Cost of Capital: The return expected by the providers of funds.</li>
+                </ul>
+                
+            </div>
+            <div class="slide" id="CoC">
+                <h2>Cost of Capital</h2>
+                <p>Cost of capital is the return expected by the providers of funds.</p><p>Sources of funds can be debt, equity or retained earnings, each having its own cost. Debt bears interest, while providers of equity capital expects dividend.</p>
+                <p>Cost of Capital is the weighted average cost of all sources of funds used to finance the project or the asset.</p>
+                <p>Cost of capital is used as the discount rate in discounted cash flow methods to determine present value of future cash flows.</p>
                 
             </div>
             <div class="slide" id="slide-1">
                 <h2>Discounted Cash Flow Methods</h2>
-                <p>Discounted cash flow (DCF) methods are the financial valuation methods used to estimate the value of a project or an asset from its expected future cash flows.</p>
-                <p>Financial worth of the project or the asset is determined by discounting cash flows arising from the project or the asset.</p>
+                <p>Discounted cash flow (DCF) methods are the financial valuation methods used to evaluate the financial viability of a project or an asset.</p>
+                <p>Financial worth of the project or the asset is determined by discounting cash flows arising from it at the firms cost of capital.</p>
                 <p>Commonly used DCF methods include:</p>
                 <div class="DCF-techniques">
                     <button onclick="document.location='#slide-3'">Net Present Value</button>
@@ -183,7 +227,7 @@
                 <p>A project or an asset is financially viable when the IRR of the project or the asset exceeds the firm's Cost of Capital. </p>
             </div>
             <div class="slide" id="slide-6" onchange="NPV()">
-                <h2>Calculator</h2>
+                <h2>Evaluate</h2>
                 <input type="number" id="discount-rate" placeholder="Discount Rate (%)" step="0.01" value="10">
                 <div class="cashflows">
                     <div class="cashflow">
@@ -198,15 +242,14 @@
                 </div>
                 <p>Internal Rate of Return: <span id="irr-result">0</span></p>
             </div>
-            <div class="slide" id="CoC">
-                <h2>Cost of Capital</h2>
-                <p>Cost of capital is the minimum return expected by the providers of funds to a project or an asset. Cost of Capital is the weighted average cost of all sources of funds used to finance the project or the asset.</p>
-                <p>Sources of funds can be debt, equity or retained earnings. Debt bears interest while providers of equity capital expects even higher return in the nature of dividend.</p>
-                <p>Cost of capital is used as the discount rate in discounted cash flow methods to determine present value of future cash flows.</p>
-                
-            </div>
             <div class="slide" id="end-slide">
                 <h1>The End</h1>
+            </div>
+            <div class="slide" id="related-contents">
+                <h2>Related Contents</h2>
+                <div class="related-contents">
+                    <button onclick="document.location='kb-timevalue.html'">Time Value of Money</button>
+                </div>
             </div>
         </div>
     </body>
