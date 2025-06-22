@@ -15,8 +15,8 @@
 
         }
 
-        function NPV(){
-            var discountRate = parseFloat(document.getElementById('discount-rate').value) / 100;
+        function NPV(disc){
+            var discountRate = disc / 100;
             var cashflows = document.querySelectorAll('.cashflow');
             var npv = 0;
 
@@ -28,8 +28,52 @@
                 }
             });
 
-            document.getElementById('npv-result').innerText = npv.toFixed(2);
-            document.getElementById('pi-result').innerText = (npv / Math.abs(cashflows[0].querySelector('.cashflow-input').value)).toFixed(2);
+            return npv;
+        }
+
+        function PI(disc){
+            var discountRate = disc/100;
+            var cashflows = document.querySelectorAll('.cashflow');
+            var cpv = 0;
+            var inv = 0;
+            cashflows.forEach(function(cf) {
+                var year = parseFloat(cf.querySelector('.year-input').value);
+                var cashFlow = parseFloat(cf.querySelector('.cashflow-input').value);
+                if (!isNaN(year) && !isNaN(cashFlow) && !(year==0)) {
+                    cpv += cashFlow / Math.pow(1 + discountRate, year);
+                } else if(!isNaN(year) && !isNaN(cashFlow) && (year==0)){
+                    inv += cashFlow;
+                }
+            });
+
+            if (!(inv==0)){
+                var pi = cpv/-inv;
+            } else {
+                var pi = 'Initial Investment is Zero; Cannot calculate PI!';
+            }
+            return pi;
+        }
+
+        function IRR(){
+            var d = 0;
+            do {
+                var l = Math.abs(NPV(d));
+                d = d + 0.001;
+            }
+            while(l>10);
+        
+
+            return d;
+        }
+
+        function printResult(){
+            var discountRateForCalc = parseFloat(document.getElementById("discount-rate").value);
+            document.querySelector("#npv-result").innerHTML = NPV(discountRateForCalc).toFixed(0);
+            document.querySelector("#pi-result").innerHTML = PI(discountRateForCalc).toFixed(2);
+        }
+
+        function printIRR(){
+            document.querySelector("#irr-result").innerHTML = IRR().toFixed(2);
         }
     </script>
 <style>
@@ -130,6 +174,39 @@
         transition: background 0.3s ease, color 0.3s ease;
     }
 
+    .disc-rate{
+        display: flex;
+        flex-direction: row;
+        gap:10px;
+        padding:10px;
+    }
+
+    .cashflows{
+        display:flex;
+        flex-direction: column;
+        gap:5px;
+        padding:10px;
+        border-radius: 15px;
+        border:1px solid var(--gold);
+        margin:10px;
+    }
+
+    .cashflow{
+        display:grid;
+        grid-template-columns: auto auto;
+        gap:4%;
+    }
+
+    .result{
+        display:grid;
+        grid-template-columns: auto auto;
+    }
+
+    .irrresult{
+        display:grid;
+        grid-template-columns: auto auto auto;
+    }
+
     #end-slide {
         min-height: unset;
     }
@@ -226,21 +303,32 @@
                 <p>At IRR, NPV of the project or the asset is zero and PI is one.</p>
                 <p>A project or an asset is financially viable when the IRR of the project or the asset exceeds the firm's Cost of Capital. </p>
             </div>
-            <div class="slide" id="slide-6" onchange="NPV()">
+            <div class="slide" id="slide-6" onchange="printResult()">
                 <h2>Evaluate</h2>
-                <input type="number" id="discount-rate" placeholder="Discount Rate (%)" step="0.01" value="10">
+                <div class="disc-rate">
+                <label for="discount-rate">Cost of Capital</label><input type="number" id="discount-rate" placeholder="Discount Rate (%)" step="0.01" value="10">
+                </div>
                 <div class="cashflows">
+                    <p>Cash flows</p>
+                    <button onclick="addCashflow()">Add Cash Flow</button>
                     <div class="cashflow">
-                    <input type="number" placeholder="Year" class="year-input">
-                    <input type="number" placeholder="Cash Flow" class="cashflow-input">
+                    <input type="number" placeholder="Year" class="year-input" value="0">
+                    <input type="number" placeholder="Cash Inflow or (-) Cash Outflow" class="cashflow-input" value="-100000">
                     </div>
+                    <div class="cashflow">
+                        <input type="number" placeholder="Year" class="year-input" value="1">
+                    <input type="number" placeholder="Cash Inflow or (-) Cash Outflow" class="cashflow-input" value="110000">
+                    </div>
+                
                 </div>
-                <button onclick="addCashflow()">Add Cash Flow</button>
+                
                 <div class="result">
-                    <p>Net Present Value: <span id="npv-result">0</span></p>
-                    <p>Profitability Index: <span id="pi-result">0</span></p>
+                    <label>Net Present Value</label><label id="npv-result">0</label>
+                    <label>Profitability Index</label><label id="pi-result">1</label>
                 </div>
-                <p>Internal Rate of Return: <span id="irr-result">0</span></p>
+                <div class="irrresult">
+                    <label>Internal Rate of Return</label><label id="irr-result">10</label><button onclick="printIRR()">Calculate IRR</button>
+                </div>
             </div>
             <div class="slide" id="end-slide">
                 <h1>The End</h1>
