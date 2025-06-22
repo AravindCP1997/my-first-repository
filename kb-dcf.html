@@ -189,12 +189,16 @@
         border-radius: 15px;
         border:1px solid var(--gold);
         margin:10px;
+        max-height:300px;
+        overflow-y: auto;
+        
     }
 
-    .cashflow{
+    .cashflow, .cashflows-head{
         display:grid;
-        grid-template-columns: 49% 49%;
+        grid-template-columns: 30% 68%;
         gap:2%;
+        text-align: center;
     }
 
     .result{
@@ -215,9 +219,7 @@
         min-height: unset;
         padding:10px;
         background: none;
-        border:1px solid var(--blue);
-        
-        
+        border:1px solid var(--blue); 
     }
 
     .related-contents{
@@ -225,6 +227,7 @@
         flex-direction: row;
         height:100px;
         padding:10px;
+        gap:10px;
     }
 
     .related-contents button{
@@ -240,10 +243,8 @@
         aspect-ratio: 1/1;
     }
 
-    #related-contents h2{
-        color:var(--blue);
-        border-bottom:1px solid var(--blue);
-        width:80%; 
+    .related-contents button:hover{
+        background: var(--green);
     }
 
     input, label, button{
@@ -337,13 +338,17 @@
                 <div class="cashflows">
                     <p>Cash flows</p>
                     <button onclick="addCashflow()">Add Cash Flow</button>
-                    <div class="cashflow">
-                    <input type="number" placeholder="Year" class="year-input" value="0">
-                    <input type="number" placeholder="Inflow or (-) Outflow" class="cashflow-input" value="-100000">
+                    <div class="cashflows-head">
+                        <label>Year</label>
+                        <label>Infow or (-) Outflow</label>
                     </div>
                     <div class="cashflow">
-                        <input type="number" placeholder="Year" class="year-input" value="1">
-                    <input type="number" placeholder="Inflow or (-) Outflow" class="cashflow-input" value="110000">
+                    <input type="number" placeholder="Enter Year" class="year-input" value="0">
+                    <input type="number" placeholder="Enter cash flow" class="cashflow-input" value="-100000">
+                    </div>
+                    <div class="cashflow">
+                        <input type="number" placeholder="Enter Year" class="year-input" value="1">
+                    <input type="number" placeholder="Enter cash flow" class="cashflow-input" value="110000">
                     </div>
                 
                 </div>
@@ -359,13 +364,12 @@
             <div class="slide" id="end-slide">
                 <h1>The End</h1>
                 <p>Found something wrong with our content? <a href="mailto:aravindcpradeep@outlook.com">Inform us!</a></p>
-            </div>
-            <div class="slide" id="related-contents">
-                <h2>Related Contents</h2>
                 <div class="related-contents">
+                    <button style="background:none; color:white;">Read More &rarr;</button>
                     <button onclick="document.location='kb-timevalue.html'">Time Value of Money</button>
                 </div>
             </div>
+            
         </div>
     </body>
     </html>
