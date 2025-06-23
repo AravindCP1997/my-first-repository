@@ -228,7 +228,6 @@
     #related-contents{
         min-height: unset;
         padding:10px;
-        background: none;
         border:1px solid var(--blue); 
     }
 
@@ -238,6 +237,8 @@
         height:100px;
         padding:10px;
         gap:10px;
+        border:1px solid var(--gold);
+        border-radius: 15px;
     }
 
     .related-contents button{
@@ -251,10 +252,11 @@
         font-size:16px;
         padding:10px;
         aspect-ratio: 1/1;
+        transition: 0.2s ease-in-out;
     }
 
     .related-contents button:hover{
-        background: var(--green);
+        background: var(--gold);
     }
 
     input, label, button{
@@ -376,14 +378,17 @@
                     <label>Internal Rate of Return</label><label id="irr-result">10</label><button onclick="printIRR()">Refresh IRR</button>
                 </div>
             </div>
-            <div class="slide" id="end-slide">
-                <h1>The End</h1>
+            <div class="slide" id="related-contents">
                 <div class="related-contents">
                     <button style="background:none; color:white;">Read More &rarr;</button>
                     <button onclick="document.location='kb-timevalue.html'">Time Value of Money</button>
                 </div>
+            </div>
+            <div class="slide" id="end-slide">
+                <h1>The End</h1>
                 <p>Found something wrong with our content? <a href="mailto:aravindcpradeep@outlook.com">Inform us!</a></p>
             </div>
+            
             
         </div>
     </body>
