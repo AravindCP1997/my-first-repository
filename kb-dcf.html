@@ -8,26 +8,45 @@
         function addCashflow(){
             var cashflows = document.querySelector('.cashflows');
             var cashflow = document.querySelector('.cashflow');
+            var lastrow = document.querySelector('.cashflows-total');
             var newCashflow = cashflow.cloneNode(true);
             newCashflow.querySelector('.year-input').value = '';
             newCashflow.querySelector('.cashflow-input').value = '';
-            newCashflow.querySelector('.pv').innerHTML = '';
-            cashflows.appendChild(newCashflow);
+            newCashflow.querySelector('.pv').innerHTML = 0;
+            cashflows.insertBefore(newCashflow,lastrow);
 
         }
 
         function deleteCashflow(){
             var cf = event.target.parentElement;
             var cfs = cf.parentElement;
-            if (cfs.children.length>4){
+            if (cfs.children.length>5){
             cfs.removeChild(cf);
             }
+        }
+
+        function cfTotal(){
+            var discountRate = parseFloat(document.getElementById("discount-rate").value)/100;
+            var sumcf = 0;
+            var sumpv = 0;
+            var cashflows = document.querySelectorAll('.cashflow');
+            cashflows.forEach(function(cf) {
+                var year = parseFloat(cf.querySelector('.year-input').value);
+                var cashFlow = parseFloat(cf.querySelector('.cashflow-input').value);
+                if (!isNaN(year) && !isNaN(cashFlow)) {
+                    sumcf += cashFlow;
+                    sumpv += cashFlow / Math.pow(1 + discountRate, year)
+                }
+            });
+            document.querySelector("#total-cf").innerHTML = sumcf;
+            document.querySelector("#total-pv").innerHTML = sumpv.toFixed(0);
         }
 
         function NPV(disc){
             var discountRate = disc / 100;
             var cashflows = document.querySelectorAll('.cashflow');
             var npv = 0;
+            var II = parseFloat(document.querySelector("#initial-invest").value);
 
             cashflows.forEach(function(cf) {
                 var year = parseFloat(cf.querySelector('.year-input').value);
@@ -38,6 +57,8 @@
                 }
             });
 
+            npv -= II;
+
             return npv;
         }
 
@@ -45,41 +66,44 @@
             var discountRate = disc/100;
             var cashflows = document.querySelectorAll('.cashflow');
             var cpv = 0;
-            var inv = 0;
+            var II = parseFloat(document.querySelector("#initial-invest").value);
             cashflows.forEach(function(cf) {
                 var year = parseFloat(cf.querySelector('.year-input').value);
                 var cashFlow = parseFloat(cf.querySelector('.cashflow-input').value);
                 if (!isNaN(year) && !isNaN(cashFlow) && !(year==0)) {
                     cpv += cashFlow / Math.pow(1 + discountRate, year);
                 } else if(!isNaN(year) && !isNaN(cashFlow) && (year==0)){
-                    inv += cashFlow;
+                    II -= cashFlow;
                 }
             });
 
-            if (!(inv==0)){
-                var pi = cpv/-inv;
+            if (!(II==0)){
+                var pi = cpv/II;
+                pi=pi.toFixed(3);
             } else {
-                var pi = 'Initial Investment is Zero; Cannot calculate PI!';
+                var pi = Infinity;
             }
             return pi;
         }
 
         function IRR(){
             var d = 0;
-            do {
+            cfTotal();
+            if ((parseFloat(document.querySelector("#total-cf").innerHTML)>=parseFloat(document.querySelector("#initial-invest").value))){
+                do {
                 var l = Math.abs(NPV(d));
                 d = d + 0.001;
             }
-            while(l>10);
-        
-
+                while(l>10);
+            }
             return d;
         }
 
         function printResult(){
+            cfTotal();
             var discountRateForCalc = parseFloat(document.getElementById("discount-rate").value);
             document.querySelector("#npv-result").innerHTML = NPV(discountRateForCalc).toFixed(0);
-            document.querySelector("#pi-result").innerHTML = PI(discountRateForCalc).toFixed(2);
+            document.querySelector("#pi-result").innerHTML = PI(discountRateForCalc);
         }
 
         function printIRR(){
@@ -185,9 +209,9 @@
     }
 
     .disc-rate{
-        display: flex;
-        flex-direction: row;
-        gap:10px;
+        display: grid;
+        grid-template-columns: 48% 48%;
+        gap:4%;
         padding:10px;
     }
 
@@ -204,7 +228,7 @@
         
     }
 
-    .cashflow, .cashflows-head{
+    .cashflow, .cashflows-head, .cashflows-total{
         display:grid;
         grid-template-columns: 25% 30% 30% 6%;
         gap:2%;
@@ -293,7 +317,6 @@
                 <h3>Knowledge Base</h3>
                 <h1>Discounted Cash Flow Methods</h1>
             </div>
-            
             <div class="slide" id="slide-0">
                 <h2>Financial Viability</h2>
                 <p>While undertaking a project or investing in an asset, investors might want to know the financial viability of the project or asset.</p><p>The financial viabiity fundamentally means the project or the asset generates cash flow sufficient to pay back the funds invested plus the cost of capital.</p>
@@ -346,6 +369,7 @@
                 <h2>Evaluate</h2>
                 <div class="disc-rate">
                 <label for="discount-rate">Cost of Capital</label><input type="number" id="discount-rate" placeholder="Discount Rate (%)" step="0.01" value="10">
+                <label for="initial-invest">Initial Investment</label><input type="number" id="initial-invest" placeholder="Initial Investment" value="100000">
                 </div>
                 <div class="cashflows">
                     <p>Cash flows</p>
@@ -356,16 +380,15 @@
                         <label>Present Value</label>
                     </div>
                     <div class="cashflow">
-                    <input type="number" placeholder="Enter Year" class="year-input" value="0">
-                    <input type="number" placeholder="Enter cash flow" class="cashflow-input" value="-100000">
-                    <label class="pv">-100000</label>
-                    <button class="close-button" onclick="deleteCashflow()">&times;</button>
-                    </div>
-                    <div class="cashflow">
-                    <input type="number" placeholder="Enter Year" class="year-input" value="1">
+                    <input type="number" placeholder="Enter Year" class="year-input" value="1" min="1">
                     <input type="number" placeholder="Enter cash flow" class="cashflow-input" value="110000">
                     <label class="pv">100000</label>
                     <button class="close-button" onclick="deleteCashflow()">&times;</button>
+                    </div>
+                    <div class="cashflows-total">
+                        <label>Total</label>
+                        <label id="total-cf">110000</label>
+                        <label id="total-pv">100000</label>
                     </div>
                 
                 </div>
@@ -386,7 +409,7 @@
             </div>
             <div class="slide" id="end-slide">
                 <h1>The End</h1>
-                <p>Found something wrong with our content? <a href="mailto:aravindcpradeep@outlook.com">Inform us!</a></p>
+                <p>Found something wrong with our content? <a href="mailto:aravindcpradeep@outlook.com?&amp;subject=Discounted%20Cash%20Flow%20Methods">Inform us!</a></p>
             </div>
             
             
