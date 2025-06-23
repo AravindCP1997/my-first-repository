@@ -11,8 +11,17 @@
             var newCashflow = cashflow.cloneNode(true);
             newCashflow.querySelector('.year-input').value = '';
             newCashflow.querySelector('.cashflow-input').value = '';
+            newCashflow.querySelector('.pv').innerHTML = '';
             cashflows.appendChild(newCashflow);
 
+        }
+
+        function deleteCashflow(){
+            var cf = event.target.parentElement;
+            var cfs = cf.parentElement;
+            if (cfs.children.length>4){
+            cfs.removeChild(cf);
+            }
         }
 
         function NPV(disc){
@@ -25,6 +34,7 @@
                 var cashFlow = parseFloat(cf.querySelector('.cashflow-input').value);
                 if (!isNaN(year) && !isNaN(cashFlow)) {
                     npv += cashFlow / Math.pow(1 + discountRate, year);
+                    cf.querySelector(".pv").innerHTML = (cashFlow / Math.pow(1 + discountRate, year)).toFixed(0);
                 }
             });
 
@@ -196,7 +206,7 @@
 
     .cashflow, .cashflows-head{
         display:grid;
-        grid-template-columns: 30% 68%;
+        grid-template-columns: 25% 30% 30% 6%;
         gap:2%;
         text-align: center;
     }
@@ -341,14 +351,19 @@
                     <div class="cashflows-head">
                         <label>Year</label>
                         <label>Infow or (-) Outflow</label>
+                        <label>Present Value</label>
                     </div>
                     <div class="cashflow">
                     <input type="number" placeholder="Enter Year" class="year-input" value="0">
                     <input type="number" placeholder="Enter cash flow" class="cashflow-input" value="-100000">
+                    <label class="pv">-100000</label>
+                    <button class="close-button" onclick="deleteCashflow()">&times;</button>
                     </div>
                     <div class="cashflow">
-                        <input type="number" placeholder="Enter Year" class="year-input" value="1">
+                    <input type="number" placeholder="Enter Year" class="year-input" value="1">
                     <input type="number" placeholder="Enter cash flow" class="cashflow-input" value="110000">
+                    <label class="pv">100000</label>
+                    <button class="close-button" onclick="deleteCashflow()">&times;</button>
                     </div>
                 
                 </div>
@@ -363,11 +378,11 @@
             </div>
             <div class="slide" id="end-slide">
                 <h1>The End</h1>
-                <p>Found something wrong with our content? <a href="mailto:aravindcpradeep@outlook.com">Inform us!</a></p>
                 <div class="related-contents">
                     <button style="background:none; color:white;">Read More &rarr;</button>
                     <button onclick="document.location='kb-timevalue.html'">Time Value of Money</button>
                 </div>
+                <p>Found something wrong with our content? <a href="mailto:aravindcpradeep@outlook.com">Inform us!</a></p>
             </div>
             
         </div>
