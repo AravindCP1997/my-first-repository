@@ -212,6 +212,7 @@
         display: grid;
         grid-template-columns: 48% 48%;
         gap:4%;
+        row-gap: 10px;
         padding:10px;
     }
 
@@ -233,6 +234,11 @@
         grid-template-columns: 25% 30% 30% 6%;
         gap:2%;
         text-align: center;
+    }
+
+    .cashflows-total, .cashflows-head{
+        font-weight:bold;
+        color:var(--gold)
     }
 
     .result{
@@ -279,9 +285,6 @@
         transition: 0.2s ease-in-out;
     }
 
-    .related-contents button:hover{
-        background: var(--gold);
-    }
 
     input, label, button{
         border-radius:15px;
@@ -300,12 +303,15 @@
         background:none;
         border:1px solid var(--gold);
         cursor: pointer;
+        transition: 0.2s ease-in-out;;
     }
 
     button:hover{
         background:var(--gold);
         color:var(--white);
         transition:0.2s ease-in-out;
+        border:none;
+        box-shadow:1px 0.5px 5px rgb(40,60,85);
     }
 
 
@@ -404,12 +410,12 @@
             <div class="slide" id="related-contents">
                 <div class="related-contents">
                     <button style="background:none; color:white;">Read More &rarr;</button>
-                    <button onclick="document.location='kb-timevalue.html'">Time Value of Money</button>
+                    <button id="timevalue" onclick="document.location='kb-timevalue.html'">Time Value of Money</button>
                 </div>
             </div>
             <div class="slide" id="end-slide">
                 <h1>The End</h1>
-                <p>Found something wrong with our content? <a href="mailto:aravindcpradeep@outlook.com?&amp;subject=Discounted%20Cash%20Flow%20Methods">Inform us!</a></p>
+                <p>Found something wrong with the content? <a href="mailto:aravindcpradeep@outlook.com?&amp;subject=Discounted%20Cash%20Flow%20Methods">Inform us!</a></p>
             </div>
             
             
