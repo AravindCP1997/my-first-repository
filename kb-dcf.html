@@ -134,7 +134,7 @@
     .slides {
         display: flex;
         flex-direction: column;
-        gap:20px;
+        gap:1 0px;
     }
 
     .slide{
@@ -160,7 +160,7 @@
         text-align: left;
         width:60%;
         border-bottom:1px solid var(--green);
-        padding:10px;
+        padding-bottom:10px;
     } 
 
     #title-slide {
@@ -251,12 +251,17 @@
     input, label{
         padding:5px;
         border:none;
-        border-bottom:1px solid var(--light-grey);
         font-size:16px;
     }
 
     input{
         text-align: center;
+        cursor: pointer;
+        border-bottom:1px solid var(--light-grey);
+    }
+
+    .cashflow label, .cashflows-head label, .cashflows-total label {
+        border-bottom:1px solid var(--light-grey);
     }
 
     button{
@@ -273,6 +278,11 @@
     button:hover{
         transition:0.5s ease-in-out;
         box-shadow:1px 0.5px 5px rgb(40,60,85);
+    }
+
+    #end-slide{
+        border-top:1px solid var(--green);
+        margin-top:15px;
     }
 
 
@@ -368,10 +378,6 @@
                 <div class="irrresult">
                     <label>Internal Rate of Return</label><label id="irr-result">10</label><button onclick="printIRR()">Refresh IRR</button>
                 </div>
-            </div>
-            <div class="slide" id="end-slide">
-                <h2>The End</h2>
-                <p>Found something wrong with the content? <a href="mailto:aravindcpradeep@outlook.com?&amp;subject=Discounted%20Cash%20Flow%20Methods">Inform us!</a></p>
             </div>
             
             
