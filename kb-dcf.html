@@ -121,7 +121,7 @@
       :root{
         --blue:rgb(64,82,106);
         --gold:rgb(255,192,0);
-        --green:rgb(65,129,156);
+        --green:rgb(85,129,156);
         --light-grey:rgb(220,220,220);
       }
 
@@ -145,9 +145,10 @@
         text-align: justify;
         padding:min(5%,60px);
         border-radius:20px;
-        background:var(--green);
+        background:var(--blue);
         color:white;
         min-height: 400px;
+        padding-bottom: 40px;
     }
 
     .slide p{
@@ -165,6 +166,7 @@
         width:60%;
         border-bottom:1px solid var(--gold);
         padding:10px;
+        line-height: 1.5;
     } 
 
     #title-slide {
@@ -172,13 +174,12 @@
         color:white;
         justify-content: center;
         text-align: center;
-        min-height:unset;
-        height:300px;
     }
 
     #title-slide h1 {
         font-size: 2.5em;
         margin: 0;
+        line-height:1.2;
     }
 
     .DCF-techniques {
@@ -192,9 +193,9 @@
     }
 
     .DCF-techniques button {
-        border:1px solid var(--green);
+        border:1px solid var(--blue);
         background: white;
-        color:var(--green);
+        color:var(--blue);
         font-weight: bold;
         font-family: 'Helvetica', sans-serif;
         padding: 10px 20px;
@@ -270,7 +271,7 @@
         cursor: pointer;
         border-bottom:1px solid var(--light-grey);
         border-radius:15px;
-        color:var(--green);
+        color:var(--blue);
     }
 
     .cashflow label, .cashflows-head label, .cashflows-total label {
@@ -281,10 +282,10 @@
         border-radius: 15px;
         font-family:Helvetica;
         background:white;
-        border:1px solid var(--green);
+        border:1px solid var(--blue);
         cursor: pointer;
         transition: 0.2s ease-in-out;
-        color:var(--green);
+        color:var(--blue);
         font-weight:bold;
     }
 
@@ -293,12 +294,6 @@
         background:none;
         color:var(--gold);
     }
-
-    #end-slide{
-        border-top:1px solid var(--green);
-        margin-top:15px;
-    }
-
 
 </style>
     </head>
