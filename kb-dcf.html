@@ -207,6 +207,14 @@
         transition: background 0.5s ease, color 0.3s ease;
     }
 
+    math{
+        padding-top:10px;
+    }
+
+    math *{
+        font-family:Helvetica;
+    }
+
     .disc-rate{
         display: grid;
         grid-template-columns: 48% 48%;
@@ -296,7 +304,7 @@
             </div>
             <div class="slide" id="slide-0">
                 <h2>Financial Viability</h2>
-                <p>While undertaking a project or investing in an asset, investors might want to know the financial viability of the project or asset.</p><p>The financial viabiity fundamentally means the project or the asset generates cash flow sufficient to pay back the funds invested plus the cost of capital.</p>
+                <p>While undertaking a project or investing in an asset, firms may want to know the financial viability of the project or the asset.</p><p>The financial viabiity fundamentally means the project or the asset generates cash flow sufficient to pay back the funds invested in it plus the cost of capital.</p>
                 <p>The factors that affect financial viability of a project or an asset are, therefore: </p>
                 <ul>
                     <li>Initial Investment: Funds invested in the project or the asset.</li>
@@ -329,12 +337,37 @@
                 <h2>Net Present Value</h2>
                 <p>Net Present Value (NPV) of a project or an asset is the difference between present value of cash inflows and present value of cash outflows arising from the project or the asset.</p><p> NPV is positive when present value of cash inflows exceeds the present value of cash outflows and is negative when present value of cash outflows exceeds present value of cash inflows.</p>
                 <p>A project or an asset is financially viable when it's NPV is greater than or equal to zero.</p>
+                <p>Conceptual formula of Net Present Value:</p>
+                <math>
+                    <mrow>
+                        <mi>NPV</mi>
+                        <mo>=</mo>
+                        <mi>Present Value of Cashflows</mi>
+                        <mo>-</mo>
+                        <mi>Initial Investment</mi>
+                    </mrow>
+                </math>
             </div>
 
             <div class="slide" id="slide-4">
                 <h2>Profitability Index</h2>
                 <p>Profitability Index (PI) of a project or an asset is the ratio between present value of cash inflows and present value of cash outflows arising from the project or the asset.</p><p> PI is greater than one, when present value of cash inflows exceeds the present value of cash out flows and is less than one when present value of cash outflows exceeds present value of cash inflows.</p>
                 <p>A project or an asset is financially viable when it's PI is greater than or equal to one.</p>
+                <p>Conceptual formula of Profitability Index:</p>
+                <math>
+                    <mrow>
+                        <mi>PI</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mi>Present Value of Cashflows</mi>
+                            </mrow>
+                            <mrow>
+                                <mi>Initial Investment</mi>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
             </div>
             <div class="slide" id="slide-5">
                 <h2>Internal Rate of Return</h2>
@@ -379,6 +412,7 @@
                     <label>Internal Rate of Return</label><label id="irr-result">10</label><button onclick="printIRR()">Refresh IRR</button>
                 </div>
             </div>
+        
             
             
         </div>
