@@ -89,12 +89,14 @@
         function IRR(){
             var d = 0;
             cfTotal();
-            if ((parseFloat(document.querySelector("#total-cf").innerHTML)>=parseFloat(document.querySelector("#initial-invest").value))){
+            if ((parseFloat(document.querySelector("#total-cf").innerHTML)>=parseFloat(document.querySelector("#initial-invest").value))&&(parseFloat(document.querySelector("#initial-invest").value)>0)){
                 do {
                 var l = Math.abs(NPV(d));
                 d = d + 0.001;
             }
                 while(l>10);
+            } else if (parseFloat(document.querySelector("#initial-invest").value)==0){
+                d = Infinity;
             }
             return d;
         }
@@ -245,6 +247,10 @@
         text-align: center;
     }
 
+    .cashflows-head{
+        padding-bottom:10px;
+    }
+
 
     .result{
         padding-top:20px;
@@ -305,7 +311,8 @@
             </div>
             <div class="slide" id="slide-0">
                 <h2>Financial Viability</h2>
-                <p>While undertaking a project or investing in an asset, firms may want to know the financial viability of it.</p><p>The financial viabiity fundamentally means the project or the asset generates cash flow sufficient to pay back the funds invested in it plus the cost of capital.</p>
+                <p>While undertaking a project or investing in an asset, firms may want to know the financial viability of it.</p>
+                <p>The financial viabiity fundamentally means the project or the asset generates cash flows sufficient to repay the capital employed in it along with the cost of capital.</p>
                 <p>The factors that affect financial viability of a project or an asset are, therefore: </p>
                 <ul>
                     <li>Initial Investment: Funds invested in the project or the asset.</li>
@@ -316,14 +323,16 @@
             </div>
             <div class="slide" id="CoC">
                 <h2>Cost of Capital</h2>
-                <p>Cost of capital is the return expected by the providers of funds.</p><p>Sources of funds can be debt, equity or retained earnings, each having its own cost. Debt bears interest, while providers of equity capital expects dividend.</p>
-                <p>Cost of Capital is the weighted average cost of all sources of funds used to finance the project or the asset.</p>
+                <p>Cost of capital is the return expected by the providers of funds.</p>
+                <p>Sources of funds can be debt, equity or retained earnings, each having its own cost. Debt bears interest, while providers of equity capital expect dividend.</p>
+                <p>Cost of capital is the weighted average cost of all sources of funds used to finance the project or the asset.</p>
                 <p>Cost of capital is used as the discount rate in discounted cash flow methods to determine present value of future cash flows.</p>
                 
             </div>
             <div class="slide" id="slide-1">
                 <h2>Discounted Cash Flow Methods</h2>
-                <p>Discounted cash flow (DCF) methods are the financial valuation methods used to evaluate the financial viability of a project or an asset in which financial worth of the project or the asset is determined by discounting cash flows arising from it, at the firms cost of capital.</p>
+                <p>Discounted cash flow (DCF) methods are financial valuation methods used to evaluate the financial viability of a project or an asset.</p>
+                <p>In DCF methods, financial worth of the project or the asset is determined by discounting cash flows arising from it, at the firms cost of capital.</p>
                 <p>Commonly used DCF methods include:</p>
                 <div class="DCF-techniques">
                     <button onclick="document.location='#slide-3'">Net Present Value</button>
@@ -336,15 +345,15 @@
             <div class="slide" id="slide-3">
                 <h2>Net Present Value</h2>
                 <p>Net Present Value (NPV) of a project or an asset is the difference between present value of cash inflows and present value of cash outflows arising from the project or the asset.</p><p> NPV is positive when present value of cash inflows exceeds the present value of cash outflows and is negative when present value of cash outflows exceeds present value of cash inflows.</p>
-                <p>A project or an asset is financially viable when it's NPV is greater than or equal to zero.</p>
                 <p>Conceptual formula of Net Present Value:</p>
                 <p style="text-align: center;">NPV = Present Value of Cashflows - Initial Investment</p>
+                <p class="indicator">A project or an asset is financially viable when it's NPV is greater than or equal to zero.</p>
             </div>
 
             <div class="slide" id="slide-4">
                 <h2>Profitability Index</h2>
-                <p>Profitability Index (PI) of a project or an asset is the ratio between present value of cash inflows and present value of cash outflows arising from the project or the asset.</p><p> PI is greater than one, when present value of cash inflows exceeds the present value of cash out flows and is less than one when present value of cash outflows exceeds present value of cash inflows.</p>
-                <p>A project or an asset is financially viable when it's PI is greater than or equal to one.</p>
+                <p>Profitability Index (PI) of a project or an asset is the ratio between present value of cash inflows and present value of cash outflows arising from the project or the asset.</p>
+                <p> PI is greater than one, when present value of cash inflows exceeds the present value of cash outflows and is less than one when present value of cash outflows exceeds present value of cash inflows.</p>
                 <p>Conceptual formula of Profitability Index:</p>
                 <math>
                     <mrow>
@@ -360,12 +369,13 @@
                         </mfrac>
                     </mrow>
                 </math>
+                <p class="indicator">A project or an asset is financially viable when it's PI is greater than or equal to one.</p>
             </div>
             <div class="slide" id="slide-5">
                 <h2>Internal Rate of Return</h2>
-                <p>Internal Rate of Return (IRR) of a project or an asset is the rate of return at which the present value of cash inflows arising from the project or the asset equals present value of cash outflows from the project or the asset.</p>
+                <p>Internal Rate of Return (IRR) of a project or an asset is the rate of return at which the present value of cash inflows arising from it equals present value of cash outflows arising from it.</p>
                 <p>At IRR, NPV of the project or the asset is zero and PI is one.</p>
-                <p>A project or an asset is financially viable when the IRR of the project or the asset exceeds the firm's Cost of Capital. </p>
+                <p class="indicator">A project or an asset is financially viable when the IRR of the project or the asset exceeds the firm's Cost of Capital. </p>
             </div>
             <div class="slide" id="slide-6" onchange="printResult()">
                 <h2>Evaluate</h2>
