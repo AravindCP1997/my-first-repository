@@ -301,6 +301,14 @@
         color:var(--gold);
     }
 
+    #last-slide{
+        min-height: unset;
+        background:none;
+        color:var(--blue);
+        padding:10px;
+        text-align:center;
+    }
+
 </style>
     </head>
     <body>
@@ -380,7 +388,7 @@
             <div class="slide" id="slide-6" onchange="printResult()">
                 <h2>Evaluate</h2>
                 <div class="disc-rate">
-                <label for="discount-rate">Cost of Capital</label><input type="number" id="discount-rate" placeholder="Discount Rate (%)" step="0.01" value="10">
+                <label for="discount-rate">Cost of Capital</label><input type="number" id="discount-rate" placeholder="Discount Rate (%)" step="0.001" value="10">
                 <label for="initial-invest">Initial Investment</label><input type="number" id="initial-invest" placeholder="Initial Investment" value="100000">
                 </div>
                 <div class="cashflows">
@@ -413,6 +421,9 @@
                 <div class="irrresult">
                     <label>Internal Rate of Return</label><label id="irr-result">10</label><button onclick="printIRR()">Refresh IRR</button>
                 </div>
+            </div>
+            <div class="slide" id="last-slide">
+                <p>Have a feedback? <a href="mailto:aravindcpradeep@outlook.com?&amp;subject=DCF%20Methods">Write to us!</a></p>
             </div>
         
             
