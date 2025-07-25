@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Business Combination</title>
+        <style>
+
+        @font-face {
+        font-family: "Helvetica";
+        src: url(Helvetica.woff) format("woff");
+        font-weight: normal;
+      }
+
+      :root{
+        --blue:rgb(64,82,106);
+        --gold:rgb(255,192,0);
+        --green:rgb(85,129,156);
+        --grey:rgb(70,68,85);
+        --light-grey:rgb(245,245,247);
+      }
+
+    html {
+        font-family: "Helvetica", sans-serif;
+        padding: 10%;
+        padding-top:min(10%,40px);
+        box-sizing: border-box;
+        background:var(--light-grey);
+    }
+
+    .slides {
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+    }
+
+    .slide{
+        position:relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        text-align: justify;
+        padding:min(5%,60px);
+        border-radius:20px;
+        background:white;
+        color:var(--grey);
+        min-height: 400px;
+        padding-bottom: 40px;
+    }
+
+    .slide h2{
+        border-bottom:1px solid var(--grey);
+        padding-bottom:10px;
+        width:min(100%,450px);
+    }
+
+    #slide-0{
+        justify-content: center;
+        text-align:center;
+    }
+
+    .elements{
+        display:flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap:20px;
+        padding:15px;
+    }
+
+    .element{
+        padding:10px;
+        border-radius:20px;
+        background: var(--grey);
+        color:white;
+        width:150px;
+    }
+
+    .element h3{
+        width:150px;
+        text-align:center;
+    }
+        </style>
+
+    </head>
+    <body>
+        <div class="slides">
+            <div class="slide" id="slide-0">
+                <h1>Business Combination</h1>
+            </div>
+            <div class="slide" id="slide-2">
+                <h2>Elements</h2>
+                <div class="elements">
+                    <div class="element">
+                        <h3>Transaction</h3>
+                        <p>Business combination is a transaction in which an entity obtains control of a business.</p>
+                    </div>
+                    <div class="element">
+                        <h3>Acquirer</h3>
+                        <p>The entity which obtains control of the business acquired is the Acquirer.</p>
+                    </div>
+                    <div class="element">
+                        <h3>Acquiree</h3>
+                        <p>The business which is acquired is the acquiree.</p>
+                    </div>
+                    <div class="element">
+                        <h3>Acquisition Date</h3>
+                        <p>Date on which the acquirer obtains control of the business</p>
+                    </div>
+                    <div class="element">
+                        <h3>Consideration</h3>
+                        <p>Consideratio is the aggregate of assets transferred and liabilities incurred by the acquirer to obtain the control of the business.</p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+    </body>
+</html>
