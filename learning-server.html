@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <img src="" id="image">
+        <script>
+            fetch('Kb.png')
+            .then(response =>{
+                return response.blob();
+            })
+            .then(blob=>{
+                document.getElementById('image').src = URL.createObjectURL(blob);
+            })
+            .catch(error=>{
+                console.error(error);
+            })
+        </script>
+    </body>
+</html>
