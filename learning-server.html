@@ -2,17 +2,18 @@
 <html>
     <body>
         <img src="" id="image">
+        <h1>Version 2.0</h1>
         <script>
-            fetch('Kb.png')
-            .then(response =>{
-                return response.blob();
-            })
-            .then(blob=>{
+            async function catchImage(){
+                const response = await fetch('Kb.png');
+                const blob = await response.blob();
                 document.getElementById('image').src = URL.createObjectURL(blob);
-            })
+            }
+
+            catchImage()
             .catch(error=>{
                 console.error(error);
-            })
+            });
         </script>
     </body>
 </html>
