@@ -30,6 +30,23 @@
     gap:0;
 }
 
+#exchange-rates{
+    position:sticky;
+    top:-100px;
+    min-height: unset;
+}
+
+.exchange-rates{
+    display:grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.exchange-rates p{
+    margin:0;
+    border:1px solid white;
+    text-align: center;
+}
+
 .right-box{
     font-weight: bold;
     color:var(--blue);
