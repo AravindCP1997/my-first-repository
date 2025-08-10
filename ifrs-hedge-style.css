@@ -7,6 +7,7 @@
 #slide-0 h1, #slide-0 h2{
     margin:0;
     width:100%;
+    color:var(--blue);
 }
 
 .column-texts{
@@ -14,4 +15,50 @@
     flex-direction: grid;
     grid-template-columns: 48% 48%;
     gap:4%;
+}
+
+#slide-6{
+    justify-content: center;
+}
+
+#slide-6 .column-texts{
+    grid-template-columns: 50% 50%;
+    gap:0;
+}
+
+.right-box{
+    font-weight: bold;
+    color:var(--blue);
+    border-left:1px solid var(--blue);
+    border-top:1px solid var(--blue);
+    padding:5%;
+}
+
+.left-box{
+    border-bottom:1px solid var(--blue);
+    padding:5%;
+}
+
+#slide-7{
+    text-align:center;
+    justify-content: center;
+    gap:0;
+    background: var(--blue);
+}
+
+#slide-7 h2, #slide-7 h1{
+    width:100%;
+    margin:0;
+    color:var(--gold);
+}
+
+.dark-slide h3{
+    color:var(--gold);
+    width:100%;
+    text-align: center;
+}
+
+#slide-8{
+    justify-content: center;
+    gap:0;
 }
