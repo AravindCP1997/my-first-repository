@@ -17,6 +17,10 @@
     gap:4%;
 }
 
+.column-texts div{
+    width:50%;
+}
+
 #slide-6{
     justify-content: center;
 }
@@ -90,6 +94,10 @@
 @media only screen and (max-width:500px){
     .column-texts{
         display:block;
+    }
+
+    .column-texts div{
+        width:100%;
     }
 
     .slide h2, .dark-slide h2{
