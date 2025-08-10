@@ -60,17 +60,6 @@
       html {
         font-family: Helvetica;
         background: white;
-        animation-name: background;
-        animation-duration: 6s;
-      }
-
-      @keyframes background {
-        0% {
-          background: var(--blue);
-        }
-        83% {
-          background: var(--blue);
-        }
       }
 
       * {
@@ -84,7 +73,7 @@
       }
 
       .outer {
-        border-radius: 10px;
+        border-radius: 25px;
         position: fixed;
         top: 100%;
         left: 5%;
@@ -93,8 +82,8 @@
         animation-name: canvas;
         animation-duration: 6s;
         overflow: hidden;
-        border: 2px solid white;
         opacity:0;
+        background: var(--blue);
       }
 
       @keyframes canvas {
@@ -149,7 +138,6 @@
       }
       
       .sun{
-        stroke-width:1px;
         fill:var(--og);
       }
 
@@ -495,13 +483,6 @@ overflow-y: auto;
           class="sun"
         >
           <animate attributename="cx" begin="0s" dur="5s" from="85%" to="65%" />
-          <animate
-            attributename="stroke"
-            begin="0s"
-            dur="7s"
-            from="rgb(255,150,0)"
-            to="rgb(255,192,0)"
-          />
         </circle>
         <rect width="2%" height="10%" x="34%" y="70%" class="boatlines"></rect>
         <rect width="2%" height="4%" x="60%" y="58%" class="boatlines"></rect>
