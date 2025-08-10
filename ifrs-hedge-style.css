@@ -44,12 +44,37 @@
     justify-content: center;
     gap:0;
     background: var(--blue);
+    position:relative;
 }
 
 #slide-7 h2, #slide-7 h1{
     width:100%;
     margin:0;
     color:var(--gold);
+}
+
+.title-card{
+    position:absolute;
+    background:var(--gold);
+    width:50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    bottom:10%;
+    left:calc(50% - 25px);
+    cursor: pointer;
+    text-align: center;
+    color:var(--blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+}
+
+.title-card:hover{
+    background: var(--blue);
+    color:var(--gold);
+    box-shadow: 2px 2px 5px black;
+    transform: scale(1.2);
 }
 
 #slide-8 h4{
