@@ -1,0 +1,17 @@
+#slide-0{
+    text-align:center;
+    justify-content: center;
+    gap:0;
+}
+
+#slide-0 h1, #slide-0 h2{
+    margin:0;
+    width:100%;
+}
+
+.column-texts{
+    display: flex;
+    flex-direction: grid;
+    grid-template-columns: 48% 48%;
+    gap:4%;
+}
