@@ -83,7 +83,7 @@
         animation-duration: 6s;
         overflow: hidden;
         opacity:0;
-        background: var(--blue);
+        background: var(--deepblue);
         aspect-ratio: unset;
       }
 
@@ -257,10 +257,11 @@ width:min(100%,750px)
 }
 
 .about{
-  background: var(--ogblue);
+  background: var(--deepblue);
   border-radius:15px;
   padding:10px;
   width:100%;
+  color:white;
 }
 
 .about p{
@@ -268,9 +269,6 @@ color:white;
 font-weight: bold;
 }
 
-.about h2{
-color: var(--og);
-}
 
 .duo{
   display: grid;
@@ -291,6 +289,7 @@ overflow-y: auto;
 
 .web-apps,.knowledge-base{
   min-height:275px;
+  background: white;
 }
 
 
@@ -298,13 +297,12 @@ overflow-y: auto;
 .container-title{
         font-weight: bold;
         font-size: 1.5em;
-        color: var(--deepblue);
         text-align: justify;
       }
 
       .web-apps {
-        background: var(--deepgreybackground);;
         border-radius:15px;
+        color:var(--ogblue);
       }
       
       .applications, .episodes{
@@ -353,7 +351,7 @@ overflow-y: auto;
 
       .app-description {
         font-size: 0.9em;
-        color: var(--black);
+        color: var(--ogblue);
         font-weight:bold;
         text-align: justify;
         padding:10px;
