@@ -37,7 +37,7 @@
         --blue: rgb(95,158,160);
         --deepblue: rgb(85,129,156);
         --deepbluebackground: rgb(85,129,156);
-        --deepgrey: rgb(240, 240, 240);
+        --deepgrey: rgb(242,242,245);
         --deepgreybackground: rgb(240, 240, 240);
         --og: rgb(255, 192, 0);
         --black:rgb(75,75,75);
@@ -59,7 +59,7 @@
 
       html {
         font-family: Helvetica;
-        background: white;
+        background: var(--deepgrey);
       }
 
       * {
@@ -84,6 +84,7 @@
         overflow: hidden;
         opacity:0;
         background: var(--blue);
+        aspect-ratio: unset;
       }
 
       @keyframes canvas {
@@ -238,6 +239,12 @@
         }
       }
 
+      .main-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
 .containers{
 display:flex;
 flex-direction:column;
@@ -245,6 +252,7 @@ padding:15px;
 gap:15px;
 animation-name: applications;
 animation-duration: 6s;
+width:min(100%,750px)
 
 }
 
@@ -496,6 +504,7 @@ overflow-y: auto;
       </div>
       <div class="caption"><strong>Business Intelligence</strong></div>
     </div>
+    <div class="main-container">
 <div class="containers">
 <div class="about">
 <h2 class="container-title">ACP-BI</h2>
@@ -539,6 +548,6 @@ overflow-y: auto;
 </div>
 <p class="tag">Can't find what you are looking for? <a target="_blank" href="mailto:aravindcpradeep@outlook.com?&amp;subject=Business%20Intelligence">Write to us!</a></p>
 </div>
-    
+</div>
   </body>
 </html>
