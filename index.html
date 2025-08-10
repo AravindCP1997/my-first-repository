@@ -64,7 +64,7 @@
 
       * {
         box-sizing: border-box;
-        margin: 0;
+        margin:0;
       }
 
       *,
@@ -252,62 +252,55 @@ padding:15px;
 gap:15px;
 animation-name: applications;
 animation-duration: 6s;
-width:min(100%,750px)
+width:min(100%,850px)
 
+}
+
+.web-apps, .knowledge-base{
+  background: white;
+  color:var(--deepblue);
+}
+
+.web-apps, .about, .knowledge-base{
+  padding:30px;
+display:flex;
+flex-direction:column;
+border-radius:25px;
+gap:10px;
+overflow-y: auto;
 }
 
 .about{
   background: var(--deepblue);
   border-radius:15px;
-  padding:10px;
   width:100%;
   color:white;
+  height:400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position:relative;
 }
 
-.about p{
-color:white;
-font-weight: bold;
+.about h5{
+position:absolute;
+bottom:10%;
+text-align: right;
+width:90%;
+opacity: 0.75;
 }
-
-
-.duo{
-  display: grid;
-  grid-template-columns: 48% 48%;
-  gap: 4%;
-  width: 100%;
-}
-
-.web-apps, .about, .knowledge-base{
-display:flex;
-flex-direction:column;
-padding:15px;
-border-radius:15px;
-gap:10px;
-overflow-y: auto;
-}
-
-
-.web-apps,.knowledge-base{
-  min-height:275px;
-  background: white;
-}
-
-
 
 .container-title{
         font-weight: bold;
         font-size: 1.5em;
         text-align: justify;
-      }
-
-      .web-apps {
-        border-radius:15px;
-        color:var(--ogblue);
+        padding-bottom:0;
       }
       
       .applications, .episodes{
         display:flex;
-        flex-direction:column;
+        flex-direction:row;
         gap:15px;
         opacity:1;
         justify-content:left;
@@ -325,17 +318,14 @@ overflow-y: auto;
         }
       }
 
-      .application{
-        border-bottom:2px solid white
-      }
-
       
       .appbuttons{
-        border-radius:15px;
+        border-radius:50%;
         border:none;
-        box-shadow:2px 2px 5px rgb(75,90,106);
-        background:var(--blue);
+        box-shadow:2px 2px 3px rgb(75,90,106);
+        background:var(--deepblue);
         aspect-ratio:1/1;
+        width:100px;
         padding:10px;
         font-weight:bold;
         color:white;
@@ -343,6 +333,10 @@ overflow-y: auto;
         font-size:16px;
         transition:0.5s;
         padding:5px;
+      }
+
+      #matrix{
+        border-radius:25px;
       }
       
       .appbuttons:hover{
@@ -352,56 +346,50 @@ overflow-y: auto;
       .app-description {
         font-size: 0.9em;
         color: var(--ogblue);
-        font-weight:bold;
         text-align: justify;
         padding:10px;
         padding-left: 0px;
-      }
-
-      .knowledge-base {
-        background: var(--deepbluebackground);
-        border-radius:15px;
-      }
-
-      .knowledge-base h2 {
-        color: white;
-        font-weight: bold;
+        width:150px;
       }
 
       .episode{
-        border-bottom:1px solid var(--deepgrey);
-        padding:5px;
+        padding:10px;
         transition:0.5s;
+        border-radius: 25px;
+      }
+
+      .episode *{
+        max-width:300px;
       }
 
       .episode:hover{
         transform: scale(1.02);
         cursor: pointer;
+        box-shadow: 1px 1px 5px 1px rgb(75,90,106);
       }
 
       .episode-title {
         font-weight: bold;
-        color: white;
         text-align: justify;
       }
 
       .genre{
         font-size: 0.9em;
-        color: var(--deepgrey);
+        color: var(--ogblue);
         text-align: justify;
         padding-top:5px;
       }
 
       .episode-description {
         font-size: 0.9em;
-        color: var(--deepgrey);
+        color: var(--ogblue);
         text-align: justify;
         padding:10px;
         padding-left: 0px;
       }
       
       .tag{
-        color:var(--deepblue);
+        color:var(--ogblue);
         font-weight:bold;
         right:15px;
         text-align:center;
@@ -412,8 +400,8 @@ overflow-y: auto;
         padding-top:20px;
         padding-right: 10px;
         padding-bottom: 20px;
-        background: var(--deepgreybackground);
-        border-radius:15px;
+        background: white;
+        border-radius:25px;
       }
 
       p{
@@ -505,12 +493,11 @@ overflow-y: auto;
     <div class="main-container">
 <div class="containers">
 <div class="about">
-<h2 class="container-title">ACP-BI</h2>
+<h1>Business Intelligence</h1>
 <div>
-<p>Space to develop and deploy business tech-knowledge.</p>
+<h5>Developed by Aravind Pradeep & Co.</h5>
 </div>
 </div>
-<div class="duo">
 <div class="web-apps">
 <h2 class="container-title">Web Apps</h2>
    <div class="applications">
@@ -521,7 +508,7 @@ overflow-y: auto;
      <p class="app-description">Read and write JSON.</p>
      </div>
      <div class="application">
-     <button class="appbuttons" onclick="openMatrix()">
+     <button class="appbuttons" onclick="openMatrix()" id="matrix">
        Matrix.
      </button>
      <p class="app-description">Create <i>excelable</i> files (CSV) from JSON.</p>
@@ -542,7 +529,6 @@ overflow-y: auto;
       <p class="episode-description">How quick to evaluate the financial feasibility of a project?</p>
     </div>
   </div>
-</div>
 </div>
 <p class="tag">Can't find what you are looking for? <a target="_blank" href="mailto:aravindcpradeep@outlook.com?&amp;subject=Business%20Intelligence">Write to us!</a></p>
 </div>
