@@ -52,8 +52,7 @@
     color:var(--gold);
 }
 
-.dark-slide h3{
-    color:var(--gold);
+#slide-8 h4{
     width:100%;
     text-align: center;
 }
@@ -61,4 +60,19 @@
 #slide-8{
     justify-content: center;
     gap:0;
+}
+
+@media only screen and (max-width:500px){
+    .column-texts{
+        display:block;
+    }
+
+    .slide h2, .dark-slide h2{
+        width:100%;
+    }
+
+    .left-box, .right-box{
+        border:none;
+        padding:2%;
+    }
 }

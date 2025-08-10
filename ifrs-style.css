@@ -55,6 +55,10 @@ html{
     color:var(--blue);
 }
 
+.slide h4{
+    color:var(--blue);
+}
+
 .author{
     position:relative;
     top:30%;
@@ -72,3 +76,8 @@ html{
     color:var(--gold);
     width:75%;
 }
+
+.dark-slide h4{
+    color:var(--gold);
+}
+
