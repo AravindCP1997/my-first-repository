@@ -272,10 +272,10 @@ overflow-y: auto;
 
 .about{
   background: var(--deepblue);
-  border-radius:15px;
+  border-radius:25px;
   width:100%;
   color:white;
-  height:400px;
+  height:250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -286,8 +286,7 @@ overflow-y: auto;
 .about h5{
 position:absolute;
 bottom:10%;
-text-align: right;
-width:90%;
+right:5%;
 opacity: 0.75;
 }
 
@@ -305,7 +304,7 @@ opacity: 0.75;
         opacity:1;
         justify-content:left;
         padding:10px;
-        overflow-y: auto;
+        overflow-x: auto;
       }
       
       @keyframes applications{
@@ -353,9 +352,7 @@ opacity: 0.75;
       }
 
       .episode{
-        padding:10px;
         transition:0.5s;
-        border-radius: 25px;
       }
 
       .episode *{
@@ -365,7 +362,6 @@ opacity: 0.75;
       .episode:hover{
         transform: scale(1.02);
         cursor: pointer;
-        box-shadow: 1px 1px 5px 1px rgb(75,90,106);
       }
 
       .episode-title {
@@ -397,11 +393,12 @@ opacity: 0.75;
         animation-name: applications;
         animation-duration: 6s;
         opacity:0.8;
-        padding-top:20px;
-        padding-right: 10px;
-        padding-bottom: 20px;
         background: white;
         border-radius:25px;
+        height:150px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
       p{
@@ -433,14 +430,6 @@ opacity: 0.75;
       }
 
       @media only screen and (max-width: 500px) {
-            .duo{
-                grid-template-columns: 96%;
-            }
-
-            .about, .tag{
-              width:96%;
-            }
-
         }
       
     </style>
