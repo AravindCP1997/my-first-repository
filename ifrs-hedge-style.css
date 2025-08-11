@@ -89,19 +89,18 @@
 #slide-7{
     justify-content: center;
     padding:max(40px,10%);
-    min-height: unset;
 }
 
 .title-card{
     background: var(--blue);
     color:var(--gold);
     text-align: center;
-    aspect-ratio: 2 / 1;
     display:flex;
     flex-direction: column;
     justify-content: center;
     padding:15px;
     cursor: pointer;
+    height:100%;
 }
 
 .lead{
