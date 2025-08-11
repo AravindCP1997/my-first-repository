@@ -49,6 +49,7 @@ html{
     padding:5%;
     text-align: justify;
     line-height: 1.5;
+    position:relative;
 }
 
 .slide h2{

@@ -29,22 +29,48 @@
     grid-template-columns: 50% 50%;
     gap:0;
 }
-
-#exchange-rates{
-    position:sticky;
-    top:-100px;
-    min-height: unset;
-}
-
 .exchange-rates{
+    position:sticky;
+    top:0px;
+    right:5px;
+    min-height: unset;
     display:grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
+    background: white;
+    font-size:80%;
+    padding:20px;
 }
 
 .exchange-rates p{
     margin:0;
-    border:1px solid white;
+    border:1px solid var(--blue);
     text-align: center;
+}
+
+.measurement-table{
+    display: grid;
+    grid-template-columns:auto auto auto auto auto auto auto auto ;
+    font-size: 80%;
+}
+
+.accounting-table{
+    display: grid;
+    grid-template-columns:auto auto auto auto auto auto auto;
+    font-size: 80%;
+}
+
+.cell{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border:1px solid var(--blue);
+    text-align: center;
+    padding:2px;
+}
+
+.cell p{
+    margin:0;
+    line-height: 1;
 }
 
 .right-box{
@@ -95,12 +121,12 @@
 
 .lead-arrow{
     animation: colorchange 1s infinite;
-    transition: 0.5s;
+    transition: 2s;
 }
 
 @keyframes colorchange{
     0% {color:var(--gold);}
-    50% {color:white}
+    50% {color:var(--blue)}
     100% {color:var(--gold);}
 }
 
