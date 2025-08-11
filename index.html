@@ -350,31 +350,28 @@ overflow-y: auto;
 
       .episode{
         transition:0.5s;
-        border:1px solid var(--deepblue);
         border-radius: 10px;
-        overflow: hidden;
-        background: var(--deepblue);
-        color:white;
-      }
-
-      .episode *{
-        max-width:250px;
+        color:var(--deepblue);
+        display: grid;
+        grid-template-columns: 150px 150px;
+        padding:10px;
+        border:1px solid var(--deepgrey);
       }
 
       .episode:hover{
         cursor: pointer;
-        background: var(--ogblue);
+        background: var(--deepgrey);
       }
       
       .episode-icon{
-        aspect-ratio: 4/1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         color:white;
-        border-bottom:2px solid white;
         text-align: center;
         padding:5px;
+        background:var(--deepblue);
+        border-radius:10px;
       }
 
       .genre{
@@ -520,15 +517,19 @@ overflow-y: auto;
       <div class="episode-icon">
       <h3 class="episode-title">Time Value of Money</h3>
       </div>
+      <div>
       <p class="genre">Genre: Fundamentals</p>
       <p class="episode-description">Why cash flows arising at different points of time have different worth?</p>
+      </div>
     </div>
     <div class="episode" onclick="openEpisode('kb-dcf.html')">
       <div class="episode-icon">
       <h3 class="episode-title">Discounted Cash Flow Methods</h3>
       </div>
+      <div>
       <p class="genre">Genre: Finance</p>
       <p class="episode-description">How quick to evaluate the financial feasibility of a project?</p>
+      </div>
     </div>
   </div>
 </div>
