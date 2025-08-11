@@ -157,4 +157,9 @@
         border:none;
         padding:2%;
     }
+
+    .accounting-table, .measurement-table{
+        font-size: 60%;
+        overflow-x: auto;
+    }
 }
