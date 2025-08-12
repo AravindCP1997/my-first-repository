@@ -69,6 +69,11 @@ html{
     opacity:0.5;
 }
 
+.dark-slide .author{
+    color:white;
+    opacity: 1;
+}
+
 .dark-slide{
     background: var(--blue);
     color:white;
