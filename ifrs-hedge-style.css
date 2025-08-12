@@ -29,10 +29,8 @@
     grid-template-columns: 50% 50%;
     gap:0;
 }
+
 .exchange-rates{
-    position:sticky;
-    top:0px;
-    right:5px;
     min-height: unset;
     display:grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
@@ -54,14 +52,15 @@
 }
 
 .accounting-table{
+    overflow: auto;
     display: grid;
-    grid-template-columns:auto auto auto auto auto auto auto;
-    font-size: 80%;
+    grid-template-columns:auto 20% auto auto auto auto auto;
+    font-size: 90%;
 }
 
 .hedge-table{
     display:grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 40% 20% 20% 20%;
     font-size:100%;
 }
 
@@ -70,8 +69,10 @@
     flex-direction: column;
     justify-content: center;
     border:1px solid var(--blue);
-    text-align: center;
+    text-align: justify;
     padding:2px;
+    padding-left: 5%;
+    word-break: break-word;
 }
 
 .dark-slide .cell{
