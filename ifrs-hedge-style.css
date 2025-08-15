@@ -36,7 +36,7 @@
     grid-template-columns: 33.33% 33.33% 33.33%;
     background: white;
     font-size:80%;
-    padding:20px;
+    width:min(100%,300px);
 }
 
 .exchange-rates p{
@@ -69,7 +69,7 @@
     flex-direction: column;
     justify-content: center;
     border:1px solid var(--blue);
-    text-align: justify;
+    text-align: left;
     padding:2px;
     padding-left: 5%;
     word-break: break-word;
