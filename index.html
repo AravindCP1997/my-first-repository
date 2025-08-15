@@ -14,6 +14,8 @@
     <script src="script.js"></script>
 
     <script>
+
+
       function openMatrix(){
         let anchor = document.createElement("a");
         anchor.target = "_blank";
@@ -38,6 +40,7 @@
     <style>
       :root {
         --blue: rgb(95,158,160);
+        --deepblue2:rgb(80,120,150);
         --deepblue: rgb(85,129,156);
         --deepbluebackground: rgb(85,129,156);
         --deepgrey: rgb(242,242,245);
@@ -119,6 +122,29 @@
           left: 5%;
           width: 90%;
         }
+      }
+
+      .background{
+        position:absolute;
+        height:100%;
+        width:100%;
+        display:grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 20% 20% 20% 20% 20%;
+        z-index: -1;
+        background: var(--deepgrey);
+        animation:back-color 2s infinite;
+      }
+
+      @keyframes back-color{
+        0% {background: none;}
+        50% {background: var(--deepgrey);}
+        100% {background: none;}
+      }
+
+      .back-cell{
+        background: var(--deepblue);
+        border-radius: 3px;
       }
 
       .boat {
@@ -446,6 +472,33 @@ overflow-y: auto;
   </head>
   <body>
     <div class="outer">
+      <div class="background">
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+        <div class="back-cell"></div>
+      </div>
       <svg class="boat">
         <line x1="25%" y1="80%" x2="30%" y2="80%" class="boatlines"></line>
         <line x1="30%" y1="80%" x2="30%" y2="65%" class="boatlines"></line>
