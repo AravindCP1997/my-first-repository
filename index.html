@@ -133,13 +133,13 @@
         grid-template-rows: 20% 20% 20% 20% 20%;
         z-index: -1;
         background: var(--deepgrey);
-        animation:back-color 2s infinite;
+        animation:back-color 1s infinite;
       }
 
       @keyframes back-color{
         0% {background: none;}
-        50% {background: var(--deepgrey);}
-        100% {background: none;}
+        30%, 90% {background: var(--deepgrey);}
+        100%{background: none;}
       }
 
       .back-cell{
