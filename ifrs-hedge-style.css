@@ -18,7 +18,7 @@
 }
 
 .column-texts div{
-    width:50%;
+    width:100%;
 }
 
 #slide-6{
@@ -39,11 +39,22 @@
     width:min(100%,300px);
 }
 
+.dark-slide .exchange-rates{
+    background: none;
+    color:white;
+}
+
+
 .exchange-rates p{
     margin:0;
     border:1px solid var(--blue);
     text-align: center;
 }
+
+.dark-slide .exchange-rates p{
+    border:1px solid white;
+}
+
 
 .measurement-table{
     display: grid;
