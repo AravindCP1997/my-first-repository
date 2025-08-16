@@ -45,13 +45,21 @@
 }
 
 
-.exchange-rates p{
+.exchange-rates div{
     margin:0;
     border:1px solid var(--blue);
     text-align: center;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p{
+        margin:0;
+    }
 }
 
-.dark-slide .exchange-rates p{
+.dark-slide .exchange-rates div{
     border:1px solid white;
 }
 
@@ -80,7 +88,7 @@
     flex-direction: column;
     justify-content: center;
     border:1px solid var(--blue);
-    text-align: left;
+    text-align: center;
     padding:2px;
     padding-left: 5%;
     word-break: break-word;
