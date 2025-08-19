@@ -179,6 +179,12 @@
     cursor:pointer;
 }
 
+#disclaimer{
+    h4 {
+        text-align:center;
+    }
+}
+
 ul{
     margin:0;
 }
