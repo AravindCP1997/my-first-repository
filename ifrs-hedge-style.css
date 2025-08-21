@@ -123,6 +123,10 @@
         text-align: center;
         width:unset;
     }
+
+    h3{
+        color:var(--blue);
+    }
 }
 
 .title-card{
@@ -178,15 +182,19 @@
     100% {color:var(--blue);}
 }
 
+
 #slide-8, #slide-15{
     justify-content: center;
     gap:0;
-    color:var(--gold);
     text-align: center;
 
     h2{
         width:unset;
         margin:0;
+    }
+
+    h1{
+        color:var(--gold);
     }
 }
 
