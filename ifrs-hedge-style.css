@@ -118,7 +118,6 @@
 #slide-7{
     justify-content: center;
     min-height: unset;
-    background: none;
     h2{
         text-align: center;
         width:unset;
@@ -156,13 +155,13 @@
     background: var(--gold);
     padding: 15px;
     max-width: 200px;
-    animation: sun 10s infinite;
+    animation: sun 2s infinite;
 }
 
 @keyframes sun {
-    0% {background: var(--gold);}
-    70% {background: rgb(255,170,0);}
-    100% {background: var(--gold);}
+    0% {opacity:1}
+    30% {opacity:0.5}
+    100% {opacity:1}
 }
 
 .lead h1, .lead h2{
