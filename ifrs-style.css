@@ -89,3 +89,25 @@ html{
     color:var(--gold);
 }
 
+.skip-forward{
+    position:absolute;
+    top:10px;
+    right:35px;
+    opacity:0.3;
+    cursor: pointer;
+    transition:1s;
+}
+
+.skip-backward{
+    position:absolute;
+    bottom:10px;
+    left:35px;
+    opacity:0.3;
+    cursor: pointer;
+    transition:1s;
+}
+
+.skip-forward:hover, .skip-backward:hover {
+    opacity:1;
+    transform: scale(1.1);
+}
