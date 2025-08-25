@@ -49,6 +49,7 @@ html{
     flex-direction: column;
     justify-content: center;
     gap:10px;
+    min-height:150px;
 
     h1, h4{
         margin:0;
@@ -81,11 +82,10 @@ html{
         display: flex;
         flex-direction: column;
         gap:5px;
-        padding:5px;
         border-radius: 10px;
 
         h4{
-            margin:5px;
+            margin:0px;
         }
 
         .accounts {
@@ -96,6 +96,17 @@ html{
 
 
 }
+
+#account-summary{
+    display: flex;
+    flex-direction: column;
+
+    .tools{
+        display:grid;
+        grid-template-columns: 49% 49%;
+        gap:2%;
+    }
+
 
 .account-balances{
     display: flex;
@@ -110,11 +121,6 @@ html{
 
     .header, .footer{
         font-weight: bold;
-
-        .cell{
-            background: var(--red);
-            color:white;
-        }
     }
 
     .cell{
@@ -145,4 +151,6 @@ html{
     .cell-r{
         text-align: right;
     }
+}
+
 }
