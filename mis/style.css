@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../Helvetica.woff');
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+:root{
+    --blue : rgb(75,75,150);
+    --red: rgb(238,0,0);
+    --gray: rgb(245,242,242);
+    --green: rgb(31, 156, 31);
+}
+
+html{
+    background: var(--gray);
+    padding:20px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box-holder{
+    width:min(850px,100%);
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.box{
+    min-height:500px;
+    border-radius: 25px;
+    padding:min(5%,20px);
+    background: white;
+    color:var(--red);
+    text-align: center;
+}
+
+#cover{
+    background: var(--red);
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+
+    h1, h4{
+        margin:0;
+    }
+}
+
+#fs{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: auto;
+    gap:20px;
+
+    .fs-section{
+        width:100%;
+        gap:5px;
+    }
+
+    .object {
+        .header {
+            display: grid;
+            grid-template-columns: 60% 30% 5%;
+
+            .hideButton{
+                cursor: pointer;
+            }
+        }
+        width:100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap:5px;
+        padding:5px;
+        border-radius: 10px;
+
+        h4{
+            margin:5px;
+        }
+
+        .accounts {
+            display: grid;
+            grid-template-columns: 60% 39%;
+        }
+    }
+
+
+}
+
+.account-balances{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+
+    .header, .data, .footer{
+        display:grid;
+        grid-template-columns: 39% 30% 30%;
+        gap:1%;
+    }
+
+    .header, .footer{
+        font-weight: bold;
+
+        .cell{
+            background: var(--red);
+            color:white;
+        }
+    }
+
+    .cell{
+        padding:10px;
+        border-radius: 10px;
+
+        p{
+            margin:0;
+        }
+
+        input{
+            margin:0;
+            border:none;
+            border-bottom: 1px solid var(--red);
+            padding:10px;
+            width:100%;
+        }
+    }
+
+    .cell-c{
+        text-align: center;
+    }
+
+    .cell-l{
+        text-align: left;
+    }
+
+    .cell-r{
+        text-align: right;
+    }
+}

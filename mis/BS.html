@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Balance Sheet | ACP-BI</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="box-holder">
+                <div class="box" id="cover">
+                    <h1>Quick FS<sup>&trade;</sup></h1>
+                    <h4>from ACP-BI</h4>
+                </div>
+                <div class="box" id="fs-box">
+                    <h2>Financial Statements</h2>
+                    <div id="fs">
+                        <div class="fs-section" id="bs">
+                            <h3>Balance Sheet</h3>
+                            <div class="fs">
+                                <div class="object">
+                                    <div class="header">
+                                    <h4>Assets</h4>
+                                    <h4>125000</h4>
+                                    <h4 class="hideButton" onclick="showOrHide()">+</h4>
+                                    </div>
+                                    <div class="object">
+                                        <h4>Non-current Assets</h4>
+                                        <div class="object">
+                                            <h4>Property Plant and Equipment</h4>
+                                            <div class="accounts">
+                                                <div class="cell cell-l"><p>Building</p></div>
+                                                <div class="cell cell-r"><p>125000</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object">
+                                    <h4>Owners Fund and Liabilities</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs" id="pl">
+                            <h3>Profit and Loss</h3>
+                            <div class="fs">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h2>Account Summary</h2>
+                    <div class="account-balances">
+                        <div class="header">
+                            <div class="cell cell-c"><p>Account</p></div>
+                            <div class="cell cell-c"><p>Debit</p></div>
+                            <div class="cell cell-c"><p>Credit</p></div>
+                        </div>
+                        <div class="data">
+                            <div class="cell cell-c"><input type="text"/></div>
+                            <div class="cell cell-r"><input type="number"/></div>
+                            <div class="cell cell-r"><input type="number"/></div>
+                        </div>
+                        <div class="footer">
+                            <div class="cell cell-c"><p>Total</p></div>
+                            <div class="cell cell-r"><p>0</p></div>
+                            <div class="cell cell-r"><p>25000</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h2>Account Presentation</h2>
+                </div>
+                <div class="box">
+                    <h2>Settings</h2>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
