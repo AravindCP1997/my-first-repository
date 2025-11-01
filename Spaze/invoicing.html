@@ -91,23 +91,21 @@
                         <table class="invoiceTable">
                             <thead>
                                 <tr>
-                                    <th class="tableCell">Sl No.</th>
                                     <th class="tableCell" style="width:15%">Description</th>
                                     <th class="tableCell">HSN/SAC</th>
                                     <th class="tableCell" style="width:10%">GST %</th>
                                     <th class="tableCell" style="width:5%">Quantity</th>
                                     <th class="tableCell">Unit Price</th>
-                                    <th class="tableCell">Taxable Value</th>
-                                    <th class="tableCell">CGST</th>
-                                    <th class="tableCell">SGST</th>
-                                    <th class="tableCell">IGST</th>
-                                    <th class="tableCell" style="width:15%">Total</th>
+                                    <th class="tableCell" style="width:10%">Taxable Value</th>
+                                    <th class="tableCell" style="width:10%">CGST</th>
+                                    <th class="tableCell" style="width:10%">SGST</th>
+                                    <th class="tableCell" style="width:10%">IGST</th>
+                                    <th class="tableCell" style="width:10%">Total</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody id="invoiceItems">
                                 <tr class="itemLine">
-                                    <td class="tableCell"><label>1</label></td>
                                     <td class="tableCell"><input type="text" placeholder="Item description"></td>
                                     <td class="tableCell"><input type="text" placeholder="HSN/SAC" value="998328"></td>
                                     <td class="tableCell"><select name="GSTRate">
@@ -118,19 +116,19 @@
                                         <option value="28">28%</option>
                                         <option value="28">40%</option>
                                     </select></td>
-                                    <td class="tableCell"><input type="number" name="Quantity" placeholder="Quantity"></td>
-                                    <td class="tableCell"><input type="number" name="UnitPrice" placeholder="Unit Price"></td>
-                                    <td class="tableCell"><input type="number" name="Taxable" placeholder="Taxable" readonly></td>
-                                    <td class="tableCell"><input type="number" name="CGST" placeholder="CGST" readonly></td>
-                                    <td class="tableCell"><input type="number" name="SGST" placeholder="SGST" readonly></td>
-                                    <td class="tableCell"><input type="number" name="IGST" placeholder="IGST" readonly></td>
-                                    <td class="tableCell"><input type="number" name="Total" placeholder="Total" readonly></td>
+                                    <td class="tableCell"><input type="text" name="Quantity" placeholder="Quantity"></td>
+                                    <td class="tableCell"><input type="text" name="UnitPrice" placeholder="Unit Price"></td>
+                                    <td class="tableCell"><input type="text" name="Taxable" placeholder="Taxable" readonly></td>
+                                    <td class="tableCell"><input type="text" name="CGST" placeholder="CGST" readonly></td>
+                                    <td class="tableCell"><input type="text" name="SGST" placeholder="SGST" readonly></td>
+                                    <td class="tableCell"><input type="text" name="IGST" placeholder="IGST" readonly></td>
+                                    <td class="tableCell"><input type="text" name="Total" placeholder="Total" readonly></td>
                                     <td><button onclick="removeItem(this.parentNode.parentNode)">-</button></td>
                                 </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td class="tableCell" colspan="6">Totals</td>
+                                    <td class="tableCell" colspan="5">Totals</td>
                                     <td class="tableCell"><input type="number" id="totalTaxable" placeholder="Total Taxable" readonly></td>
                                     <td class="tableCell"><input type="number" id="totalCGST" placeholder="Total CGST" readonly></td>
                                     <td class="tableCell"><input type="number" id="totalSGST" placeholder="Total SGST" readonly></td>
@@ -139,7 +137,7 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td class="tableCell" colspan="12">Amount in Words: <span id="amountInWords"></span></td>
+                                    <td class="tableCell" colspan="11">Amount in Words: <span id="amountInWords"></span></td>
                                 </tr>
                             </tfoot>
                         </table>

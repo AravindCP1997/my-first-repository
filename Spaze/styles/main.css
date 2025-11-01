@@ -29,6 +29,10 @@ input,select{
     border: none;
 }
 
+p,input,select,label{
+    font-size: 14px;
+}
+
 button{
     border:none;
     background: var(--darkblue);
@@ -144,8 +148,12 @@ table{
 
     td,th{
         border: 1px solid lightgray;
-        padding: 5px;
         text-align: center;
+    }
+
+    th{
+        background: var(--lightgray);
+        padding: 5px;
     }
 }
 
@@ -169,6 +177,16 @@ table{
     padding: 10px;
 }
 
+@media screen and (max-width: 768px) {
+    .slide-1, .slide-3{
+        grid-template-columns: 100%;
+    }
+
+    .customerDetails, .invoiceDetails{
+        grid-template-columns: 100%;
+    }
+}
+
 
 @media print {
     html{
@@ -184,7 +202,7 @@ table{
     }
 
     .invoiceItemsTable{
-        font-size: 70%;
+        font-size: 60%;
         width:100%;
         overflow: hidden;
     }

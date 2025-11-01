@@ -3,7 +3,6 @@ function addItem() {
     const newRow = document.createElement('tr');
     const length = tableBody.rows.length + 1;
     newRow.innerHTML = `
-        <td class="tableCell"><label></label>${length}</td>
         <td class="tableCell"><input type="text" placeholder="Item description"></td>
         <td class="tableCell"><input type="text" placeholder="HSN/SAC" value="998328"></td>
         <td class="tableCell">
@@ -17,13 +16,13 @@ function addItem() {
             </select>
         
         </td>
-        <td class="tableCell"><input type="number" name="Quantity" placeholder="Quantity"></td>
-        <td class="tableCell"><input type="number" name="UnitPrice" placeholder="Unit Price"></td>
-        <td class="tableCell"><input type="number" name="Taxable" placeholder="Taxable" readonly></td>
-        <td class="tableCell"><input type="number" name="CGST" placeholder="CGST" readonly></td>
-        <td class="tableCell"><input type="number" name="SGST" placeholder="SGST" readonly></td>
-        <td class="tableCell"><input type="number" name="IGST" placeholder="IGST" readonly></td>
-        <td class="tableCell"><input type="number" name="Total" placeholder="Total" readonly></td>
+        <td class="tableCell"><input type="text" name="Quantity" placeholder="Quantity"></td>
+        <td class="tableCell"><input type="text" name="UnitPrice" placeholder="Unit Price"></td>
+        <td class="tableCell"><input type="text" name="Taxable" placeholder="Taxable" readonly></td>
+        <td class="tableCell"><input type="text" name="CGST" placeholder="CGST" readonly></td>
+        <td class="tableCell"><input type="text" name="SGST" placeholder="SGST" readonly></td>
+        <td class="tableCell"><input type="text" name="IGST" placeholder="IGST" readonly></td>
+        <td class="tableCell"><input type="text" name="Total" placeholder="Total" readonly></td>
         <td><button onclick="removeItem(this.parentNode.parentNode)">-</button></td>
     `;
     tableBody.appendChild(newRow);
@@ -46,28 +45,28 @@ function calculateTotals() {
         const igst = GST || 0;
         const total = quantity * price;
         if (typeoFsupply === 'inter-state') {
-            row.querySelector('input[name="CGST"]').value = '0.00';
-            row.querySelector('input[name="SGST"]').value = '0.00';
-            row.querySelector('input[name="IGST"]').value = ((total * igst) / 100).toFixed(2);
+            row.querySelector('input[name="CGST"]').value = '0';
+            row.querySelector('input[name="SGST"]').value = '0';
+            row.querySelector('input[name="IGST"]').value = ((total * igst) / 100).toFixed(0);
         }
         else {
-            row.querySelector('input[name="IGST"]').value = '0.00';
-            row.querySelector('input[name="CGST"]').value = ((total * cgst) / 100).toFixed(2);
-            row.querySelector('input[name="SGST"]').value = ((total * sgst) / 100).toFixed(2);
+            row.querySelector('input[name="IGST"]').value = '0';
+            row.querySelector('input[name="CGST"]').value = ((total * cgst) / 100).toFixed(0);
+            row.querySelector('input[name="SGST"]').value = ((total * sgst) / 100).toFixed(0);
         }
-        row.querySelector('input[name="Taxable"]').value = total.toFixed(2);
-        row.querySelector('input[name="Total"]').value = (total + (total * GST) / 100).toFixed(2);
-        grandTotal += total * (1 + GST / 100).toFixed(2);
+        row.querySelector('input[name="Taxable"]').value = total.toFixed(0);
+        row.querySelector('input[name="Total"]').value = (total + (total * GST) / 100).toFixed(0);
+        grandTotal += total * (1 + GST / 100);
         totalTaxable += total;
         totalCGST += parseFloat(row.querySelector('input[name="CGST"]').value) || 0;
         totalSGST += parseFloat(row.querySelector('input[name="SGST"]').value) || 0;
         totalIGST += parseFloat(row.querySelector('input[name="IGST"]').value) || 0;
     });
-    document.getElementById('grandTotal').value = grandTotal.toFixed(2);
-    document.getElementById('totalTaxable').value = totalTaxable.toFixed(2);
-    document.getElementById('totalCGST').value = totalCGST.toFixed(2);
-    document.getElementById('totalSGST').value = totalSGST.toFixed(2);
-    document.getElementById('totalIGST').value = totalIGST.toFixed(2);
+    document.getElementById('grandTotal').value = grandTotal.toFixed(0);
+    document.getElementById('totalTaxable').value = totalTaxable.toFixed(0);
+    document.getElementById('totalCGST').value = totalCGST.toFixed(0);
+    document.getElementById('totalSGST').value = totalSGST.toFixed(0);
+    document.getElementById('totalIGST').value = totalIGST.toFixed(0);
     document.getElementById('amountInWords').innerText = Wordify(Math.round(grandTotal));
     HSNSummary();
 }
@@ -95,10 +94,10 @@ function HSNSummary() {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td class="tableCell">${hsn}</td>
-            <td class="tableCell">${hsnMap[hsn].taxable.toFixed(2)}</td>
-            <td class="tableCell">${hsnMap[hsn].cgst.toFixed(2)}</td>
-            <td class="tableCell">${hsnMap[hsn].sgst.toFixed(2)}</td>
-            <td class="tableCell">${hsnMap[hsn].igst.toFixed(2)}</td>
+            <td class="tableCell">${hsnMap[hsn].taxable.toFixed(0)}</td>
+            <td class="tableCell">${hsnMap[hsn].cgst.toFixed(0)}</td>
+            <td class="tableCell">${hsnMap[hsn].sgst.toFixed(0)}</td>
+            <td class="tableCell">${hsnMap[hsn].igst.toFixed(0)}</td>
         `;
         hsnTable.appendChild(row);
     }
