@@ -25,12 +25,17 @@ h2{
     color:var(--darkblue)
 }
 
-input,select{
+input,select, label{
     border: none;
+    padding: 5px;
+    padding-left:0;
+    padding-right: 0;
 }
 
 p,input,select,label{
     font-size: 14px;
+    line-height: 1.3;
+    cursor: pointer;
 }
 
 button{
@@ -40,6 +45,7 @@ button{
     padding: 5px;
     cursor: pointer;
     border-radius: 5px;
+    transition: 0.5s;
 }
 
 .container{
@@ -117,7 +123,7 @@ button{
     display: grid;
     grid-template-columns: calc(50% - 5px) calc(50% - 5px);
     gap:10px;
-    row-gap: 5px;
+    row-gap: 0;
 }
 
 .invoiceItemsTable{
@@ -157,6 +163,11 @@ table{
     }
 }
 
+#amountInWords{
+    font-weight: bold;
+    line-height: 1.5;
+}
+
 .slide-3{
     display:grid;
     grid-template-columns: calc(50% - 5px) calc(50% - 5px);
@@ -177,6 +188,19 @@ table{
     padding: 10px;
 }
 
+#printButton{
+    background: var(--darkblue);
+    color:white;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover, #printButton:hover{
+    opacity:0.5
+}
+
 @media screen and (max-width: 768px) {
     .slide-1, .slide-3{
         grid-template-columns: 100%;
@@ -190,7 +214,7 @@ table{
 
 @media print {
     html{
-        padding:5px
+        padding:5px,
     }
     .container{
     padding: 10px;
@@ -200,6 +224,15 @@ table{
     border: 1px solid lightgray;
     overflow: hidden;
     }
+
+    .slide{
+        padding:2px;
+    }
+
+    .title{
+        margin:0;
+    }
+
 
     .invoiceItemsTable{
         font-size: 60%;
@@ -211,7 +244,7 @@ table{
         width:100%;
     }
 
-    button{
+    button, #printButton{
         display: none;
     }
 }

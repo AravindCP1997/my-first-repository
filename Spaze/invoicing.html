@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="slide slide-2">
-                    <h2 class="title">Tax Invoice</h2>
+                    <h2 class="title">Tax Invoice <span onclick="window.print()" id="printButton">Print</span></h2>    
                     <div class="invoiceDetailsBox" onchange="calculateTotals()">
                         <div class="invoiceDetails">
                             <label for="invoiceNumber">Invoice No.:</label>
@@ -114,7 +114,7 @@
                                         <option value="12">12%</option>
                                         <option value="18" selected>18%</option>
                                         <option value="28">28%</option>
-                                        <option value="28">40%</option>
+                                        <option value="40">40%</option>
                                     </select></td>
                                     <td class="tableCell"><input type="text" name="Quantity" placeholder="Quantity"></td>
                                     <td class="tableCell"><input type="text" name="UnitPrice" placeholder="Unit Price"></td>
