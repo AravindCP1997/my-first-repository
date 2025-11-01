@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'Helvet';
+    src: url(../styles/Helvetica.woff) format('woff');
+}
+
+:root{
+    --lightgray: rgb(245, 245, 242);
+    --darkblue: rgb(64,82,106);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Helvet, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+    padding: 10px;
+    p{
+        margin:0;
+    }
+    background: var(--lightgray)
+}
+
+h2{
+    color:var(--darkblue)
+}
+
+input,select{
+    border: none;
+}
+
+button{
+    border:none;
+    background: var(--darkblue);
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.verticalContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:min(100%,1120px);
+    gap:10px;
+    background: white;
+    border-radius: 15px;
+}
+
+.slide{
+    width:100%;
+    padding:10px;
+}
+
+.slide-1{
+    display: grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    gap:10px;
+    border-bottom: 2px solid var(--lightgray)
+}
+
+.supplier{
+    padding: 10px;
+}
+
+.customer{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.customerDetails{
+    display: grid;
+    grid-template-columns: 40% 50%;
+    row-gap: 5px;
+    padding: 10px;
+}
+
+.customerTitle{
+    grid-column: span 2;
+}
+
+.slide-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width:100%;
+    
+}
+
+
+.title{
+    text-align: center;
+}
+.invoiceDetailsBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10px;
+}
+.invoiceDetails{
+    padding: 10px;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    gap:10px;
+    row-gap: 5px;
+}
+
+.invoiceItemsTable{
+    overflow-x: auto;
+    font-size: 80%;
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+}
+
+.tableCell{
+    margin: 0;
+    input,select,label{
+        border:none;
+        text-align: center;
+        width:max(100%);
+        background: transparent;
+        font-size: inherit;
+    }
+}
+
+table{
+    border-collapse: collapse;
+    width: max-content;
+    min-width: 100%;
+
+    td,th{
+        border: 1px solid lightgray;
+        padding: 5px;
+        text-align: center;
+    }
+}
+
+.slide-3{
+    display:grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    gap:10px;
+}
+
+.signature{
+    text-align: right;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.HSNSummary{
+    font-size: 80%;
+}
+
+.bankDetails{
+    padding: 10px;
+}
+
+
+@media print {
+    html{
+        padding:5px
+    }
+    .container{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid lightgray;
+    overflow: hidden;
+    }
+
+    .invoiceItemsTable{
+        font-size: 70%;
+        width:100%;
+        overflow: hidden;
+    }
+
+    .invoiceTable{
+        width:100%;
+    }
+
+    button{
+        display: none;
+    }
+}
