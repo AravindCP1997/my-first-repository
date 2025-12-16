@@ -4,8 +4,14 @@
     <title>ACP-BI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
-    <meta name="description" content="Open space for developing and deploying business tech-knowledge | Developed by: Aravind C Pradeep | Made in Kollam | Made in Kerala">
-    <meta name="keywords" content="Business Intelligence, Aravind C Pradeep, Aravind Pradeep & Co., Knowledge Base, Web Applications for Business, Object, Matrix, Read and Write JSON, Create CSV from JSON, DCF Techniques, Time Value of Money, IFRS Insights, Content Writing, Business Content Writing, Aravind Pradeep & Co., Kollam, Kochi, Kerala, Malayalam">
+    <meta
+      name="description"
+      content="Open space for developing and deploying business tech-knowledge | Developed by: Aravind C Pradeep | Made in Kollam | Made in Kerala"
+    />
+    <meta
+      name="keywords"
+      content="Business Intelligence, Aravind C Pradeep, Aravind Pradeep & Co., Knowledge Base, Web Applications for Business, Object, Matrix, Read and Write JSON, Create CSV from JSON, DCF Techniques, Time Value of Money, IFRS Insights, Content Writing, Business Content Writing, Aravind Pradeep & Co., Kollam, Kochi, Kerala, Malayalam"
+    />
     <link
       rel="icon"
       type="image/x-icon"
@@ -13,60 +19,58 @@
     />
 
     <script>
-
-
-      function openMatrix(){
+      function openMatrix() {
         let anchor = document.createElement("a");
         anchor.target = "_blank";
         anchor.href = "matrix.html";
         anchor.click();
       }
-      
-      function openObject(){
+
+      function openObject() {
         let anchor = document.createElement("a");
         anchor.target = "_blank";
         anchor.href = "object.html";
         anchor.click();
       }
 
-      function openEpisode(episode){
+      function openEpisode(episode) {
         let anchor = document.createElement("a");
         anchor.target = "_blank";
         anchor.href = episode;
         anchor.click();
       }
 
-      function searchBI(){
+      function searchBI() {
         var filter = event.target.value.toUpperCase();
 
-        searchelement('.applications');
-        searchelement('.episodes');
-        searchelement('.insights');
+        searchelement(".applications");
+        searchelement(".episodes");
+        searchelement(".insights");
 
-        function searchelement(item){
-        var apps = document.querySelector(item).children;
-        for (i=0;i<apps.length; i++) {
-          apps[i].style.opacity=0.1;
-          if (apps[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        function searchelement(item) {
+          var apps = document.querySelector(item).children;
+          for (i = 0; i < apps.length; i++) {
+            apps[i].style.opacity = 0.1;
+            if (apps[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
               apps[i].style.opacity = 1;
-
-          };
-        };
-      }
+            }
+          }
+        }
       }
     </script>
     <style>
       :root {
-        --blue: rgb(95,158,160);
-        --deepblue2:rgb(80,120,150);
-        --deepblue: rgb(85,129,156);
-        --deepbluebackground: rgb(85,129,156);
-        --deepgrey: rgb(242,242,245);
+        --blue: rgb(95, 158, 160);
+        --deepblue2: rgb(80, 120, 150);
+        --deepblue: rgb(85, 129, 156);
+        --deepbluebackground: rgb(85, 129, 156);
+        --deepgrey: rgb(242, 242, 245);
         --deepgreybackground: rgb(240, 240, 240);
         --og: rgb(255, 192, 0);
-        --black:rgb(75,75,75);
-        --red:rgb(192,0,0);
-        --ogblue:rgb(64,82,106);
+        --black: rgb(75, 75, 75);
+        --red: rgb(192, 0, 0);
+        --ogblue: rgb(64, 82, 106);
+        --fabric: rgb(236, 209, 156);
       }
 
       @font-face {
@@ -88,7 +92,7 @@
 
       * {
         box-sizing: border-box;
-        margin:0;
+        margin: 0;
       }
 
       *,
@@ -106,7 +110,7 @@
         animation-name: canvas;
         animation-duration: 6s;
         overflow: hidden;
-        opacity:0;
+        opacity: 0;
         background: var(--deepblue);
         aspect-ratio: unset;
       }
@@ -142,20 +146,20 @@
         }
       }
 
-      .background{
-        position:absolute;
-        height:100%;
-        width:100%;
-        display:grid;
+      .background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: grid;
         grid-template-columns: 20% 20% 20% 20% 20%;
         grid-template-rows: 20% 20% 20% 20% 20%;
         z-index: -1;
         background: var(--deepgrey);
       }
 
-      .back-cell{
+      .back-cell {
         background: var(--deepblue);
-        border-radius: 3px; 
+        border-radius: 3px;
       }
 
       .boat {
@@ -166,20 +170,21 @@
         aspect-ratio: 4/2;
         animation-name: boat;
         animation-duration: 6s;
-        transform: scale(1.3)
+        transform: scale(1.3);
       }
-      
+
       @keyframes boat {
-        0%,85% {
+        0%,
+        85% {
           transform: scale(1);
         }
         100% {
           transform: scale(1.3);
         }
       }
-      
-      .sun{
-        fill:var(--og);
+
+      .sun {
+        fill: var(--og);
       }
 
       .boatlines {
@@ -213,7 +218,8 @@
         35% {
           opacity: 0;
         }
-        60%,83% {
+        60%,
+        83% {
           opacity: 1;
         }
       }
@@ -279,212 +285,224 @@
         }
       }
 
-      .main-container{
+      .main-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
       }
 
-.containers{
-display:flex;
-flex-direction:column;
-padding:15px;
-padding-top:150px;
-gap:20px;
-animation-name: applications;
-animation-duration: 6s;
-width:min(100%,850px)
+      .containers {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        padding-top: 150px;
+        gap: 20px;
+        animation-name: applications;
+        animation-duration: 6s;
+        width: min(100%, 850px);
+      }
 
-}
+      .web-apps,
+      .knowledge-base,
+      .ifrs-insights,
+      .tax-planning {
+        background: white;
+        color: var(--deepblue);
+      }
 
-.web-apps, .knowledge-base, .ifrs-insights{
-  background: white;
-  color:var(--deepblue);
-}
+      .web-apps,
+      .about,
+      .knowledge-base,
+      .tax-planning,
+      .ifrs-insights {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 25px;
+        gap: 10px;
+        overflow-y: auto;
+      }
 
-.web-apps, .about, .knowledge-base, .ifrs-insights{
-  padding:30px;
-display:flex;
-flex-direction:column;
-border-radius:25px;
-gap:10px;
-overflow-y: auto;
-}
+      .about {
+        background: var(--deepblue);
+        border-radius: 25px;
+        width: 100%;
+        color: white;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+      }
 
-.about{
-  background: var(--deepblue);
-  border-radius:25px;
-  width:100%;
-  color:white;
-  height:250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  position:relative;
-}
+      .about h4 {
+        line-height: 1.5;
+      }
 
-.about h4{
-  line-height: 1.5;
-}
-
-.container-title{
+      .container-title {
         font-weight: bold;
         font-size: 1.5em;
         text-align: justify;
-        padding-bottom:0;
+        padding-bottom: 0;
       }
-      
-      .applications, .episodes, .insights{
-        display:flex;
-        flex-direction:row;
-        gap:15px;
-        opacity:1;
-        justify-content:left;
-        padding:10px;
+
+      .applications,
+      .episodes,
+      .insights {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        opacity: 1;
+        justify-content: left;
+        padding: 10px;
         overflow-x: auto;
       }
-      
-      @keyframes applications{
-        0%, 85%{
-          opacity:0;
+
+      @keyframes applications {
+        0%,
+        85% {
+          opacity: 0;
         }
-        
+
         100% {
-          opacity:1;
+          opacity: 1;
         }
       }
 
-      
-      .appbuttons{
-        border-radius:50%;
-        border:none;
-        box-shadow:2px 2px 3px rgb(75,90,106);
-        background:var(--deepblue);
-        aspect-ratio:1/1;
-        width:100px;
-        padding:10px;
-        font-weight:bold;
-        color:white;
+      .appbuttons {
+        border-radius: 50%;
+        border: none;
+        box-shadow: 2px 2px 3px rgb(75, 90, 106);
+        background: var(--deepblue);
+        aspect-ratio: 1/1;
+        width: 100px;
+        padding: 10px;
+        font-weight: bold;
+        color: white;
         cursor: pointer;
-        font-size:16px;
-        transition:0.5s;
-        padding:5px;
+        font-size: 16px;
+        transition: 0.5s;
+        padding: 5px;
       }
 
-      #matrix{
-        border-radius:25px;
+      #matrix {
+        border-radius: 25px;
       }
-      
-      .appbuttons:hover{
-        transform:scale(1.05)
+
+      .appbuttons:hover {
+        transform: scale(1.05);
       }
 
       .app-description {
         font-size: 0.9em;
         color: var(--ogblue);
         text-align: justify;
-        padding:10px;
+        padding: 10px;
         padding-left: 0px;
-        width:150px;
+        width: 150px;
       }
 
-      .episode, .insight{
-        transition:0.5s;
+      .episode,
+      .insight {
+        transition: 0.5s;
         border-radius: 10px;
-        color:var(--ogblue);
+        color: var(--ogblue);
         display: grid;
         grid-template-columns: 150px 150px;
-        padding:10px;
-        border:1px solid var(--deepgrey);
+        padding: 10px;
+        border: 1px solid var(--deepgrey);
       }
 
-      .episode:hover{
+      .episode:hover {
         cursor: pointer;
         background: var(--deepgrey);
       }
-      
-      .episode-icon, .insight-icon{
+
+      .episode-icon,
+      .insight-icon {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        color:white;
+        color: white;
         text-align: center;
-        padding:5px;
-        background:var(--deepblue);
-        border-radius:10px;
+        padding: 5px;
+        background: var(--deepblue);
+        border-radius: 10px;
+        aspect-ratio: 1/1;
       }
 
-      .ifrs-insights{
-        background:var(--deepblue);
-        color:white;
+      .ifrs-insights {
+        background: var(--deepblue);
+        color: white;
 
-        .insight{
-          border-radius:10;
+        .insight {
+          border-radius: 10;
           border: 1px solid white;
         }
 
-        .insight-icon{
-          background:var(--og);
+        .insight-icon {
+          background: var(--og);
           aspect-ratio: 1/1;
           border-radius: 50%;
           cursor: pointer;
-          box-shadow:2px 2px 3px rgb(75,90,106);
-          transition:1s;
+          box-shadow: 2px 2px 3px rgb(75, 90, 106);
+          transition: 1s;
         }
 
-        .insight-description{
-          display:flex;
+        .insight-description {
+          display: flex;
           flex-direction: column;
           justify-content: center;
-          color:white;
+          color: white;
           text-align: right;
         }
       }
 
-      .insight-icon:hover{
+      .insight-icon:hover {
         transform: scale(1.05);
       }
 
-      .genre{
+      .genre {
         font-size: 0.9em;
         text-align: justify;
-        padding:10px;
+        padding: 10px;
       }
 
-      .episode-description, .insight-description {
+      .episode-description,
+      .insight-description {
         font-size: 0.9em;
         text-align: justify;
-        padding:10px;
-        padding-top:0;
+        padding: 10px;
+        padding-top: 0;
       }
-      
-      .tag{
-        color:var(--deepblue);
-        font-weight:bold;
-        right:15px;
-        text-align:center;
-        width:100%;
+
+      .tag {
+        color: var(--deepblue);
+        font-weight: bold;
+        right: 15px;
+        text-align: center;
+        width: 100%;
         animation-name: applications;
         animation-duration: 6s;
         background: white;
-        border-radius:25px;
-        height:150px;
-        display:flex;
+        border-radius: 25px;
+        height: 150px;
+        display: flex;
         flex-direction: column;
         justify-content: center;
       }
 
-      p{
+      p {
         line-height: 1.3;
       }
 
-      .searchbox{
-        position:fixed;
-        top:0;
-        width:100%;
+      .searchbox {
+        position: fixed;
+        top: 0;
+        width: 100%;
         background: var(--deepgrey);
-        padding:10px;
+        padding: 10px;
         padding-left: 15px;
         padding-right: 15px;
         display: flex;
@@ -492,22 +510,22 @@ overflow-y: auto;
         justify-content: center;
         animation: applications 6s;
 
-        .searchbar{
-          width:min(100%,850px);
+        .searchbar {
+          width: min(100%, 850px);
 
-          input{
-            width:100%;
+          input {
+            width: 100%;
             border-radius: 25px;
             border: none;
             padding: 10px;
-            color:var(--ogblue);
-            cursor:pointer;
+            color: var(--ogblue);
+            cursor: pointer;
           }
         }
       }
 
-     #dip{
-        opacity:0.5
+      #dip {
+        opacity: 0.5;
       }
 
       @media (orientation: landscape) {
@@ -535,8 +553,7 @@ overflow-y: auto;
       }
 
       @media only screen and (max-width: 500px) {
-        }
-      
+      }
     </style>
   </head>
   <body>
@@ -591,12 +608,7 @@ overflow-y: auto;
         <line x1="55%" y1="80%" x2="50%" y2="5%" class="boatlines"></line>
         <line x1="47%" y1="90%" x2="50%" y2="35%" class="boatlines"></line>
         <line x1="53%" y1="90%" x2="50%" y2="35%" class="boatlines"></line>
-        <circle
-          cx="65%"
-          r="6%"
-          cy="30%"
-          class="sun"
-        >
+        <circle cx="65%" r="6%" cy="30%" class="sun">
           <animate attributename="cx" begin="0s" dur="5s" from="85%" to="65%" />
         </circle>
         <rect width="2%" height="10%" x="34%" y="70%" class="boatlines"></rect>
@@ -607,84 +619,117 @@ overflow-y: auto;
         <rect width="2%" height="4%" x="66%" y="76%" class="boatlines"></rect>
       </svg>
       <div class="title">
-        <div class="t1"><p lang="ml" style="font-family: Anek;">ബിസിനസ്സ് ഇന്റലിജൻസ്</p></div>
+        <div class="t1">
+          <p lang="ml" style="font-family: Anek">ബിസിനസ്സ് ഇന്റലിജൻസ്</p>
+        </div>
       </div>
       <div class="caption"><strong>Business Intelligence</strong></div>
     </div>
     <div class="main-container">
-<div class="containers">
-<div class="about">
-<h1>Business Intelligence</h1>
-<div>
-<h4>from Aravind Pradeep & Co.</h4>
-</div>
-</div>
-<div class="web-apps">
-<h2 class="container-title">Web Apps</h2>
-   <div class="applications">
-    <div class="application">
-     <button class="appbuttons" onclick="openObject()">
-       Object.
-     </button>
-     <p class="app-description">Read and write JSON.</p>
-     </div>
-     <div class="application">
-     <button class="appbuttons" onclick="openMatrix()" id="matrix">
-       Matrix.
-     </button>
-     <p class="app-description">Create <i>excelable</i> files (CSV) from JSON.</p>
-     </div>
-     <div id="dip" class="application">
-     <button class="appbuttons">
-       ?
-     </button>
-     <p class="app-description">Development in Progress</p>
-     </div>
+      <div class="containers">
+        <div class="about">
+          <h1>Business Intelligence</h1>
+          <div>
+            <h4>from Aravind Pradeep & Co.</h4>
+          </div>
+        </div>
+        <div class="web-apps">
+          <h2 class="container-title">Web Apps</h2>
+          <div class="applications">
+            <div class="application">
+              <button class="appbuttons" onclick="openObject()">Object.</button>
+              <p class="app-description">Read and write JSON.</p>
+            </div>
+            <div class="application">
+              <button class="appbuttons" onclick="openMatrix()" id="matrix">
+                Matrix.
+              </button>
+              <p class="app-description">
+                Create <i>excelable</i> files (CSV) from JSON.
+              </p>
+            </div>
+            <div id="dip" class="application">
+              <button class="appbuttons">?</button>
+              <p class="app-description">Development in Progress</p>
+            </div>
+          </div>
+        </div>
+        <div class="knowledge-base">
+          <h2 class="container-title">Knowledge Base</h2>
+          <div class="episodes">
+            <div class="episode" onclick="openEpisode('kb-timevalue.html')">
+              <div class="episode-icon">
+                <h3 class="episode-title">Time Value of Money</h3>
+              </div>
+              <div>
+                <p class="genre">Genre: Fundamentals</p>
+                <p class="episode-description">
+                  Why cash flows arising at different points of time have
+                  different worth?
+                </p>
+              </div>
+            </div>
+            <div class="episode" onclick="openEpisode('kb-dcf.html')">
+              <div class="episode-icon">
+                <h3 class="episode-title">Discounted Cash Flow Methods</h3>
+              </div>
+              <div>
+                <p class="genre">Genre: Finance</p>
+                <p class="episode-description">
+                  How quick to evaluate the financial feasibility of a project?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ifrs-insights">
+          <h2 class="container-title">Financial Reporting Insights</h2>
+          <div class="insights">
+            <div class="insight">
+              <div class="insight-description">
+                <p>
+                  Existence of a hedge relationship changes the way financial
+                  instruments are accounted for.
+                </p>
+                <p>Read why.</p>
+              </div>
+              <div
+                class="insight-icon"
+                onclick="document.location='ifrs-hedge-intro.html'"
+              >
+                <h3 class="insight-title">Hedge Accounting</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tax-planning">
+          <h2 class="container-title">Work in Progress</h2>
+          <div class="episodes">
+            <div class="episode" onclick="alert('Coming Up Soon!')">
+              <div class="episode-icon">
+                <h3 class="episode-title">Episode 1</h3>
+              </div>
+              <div>
+                <p class="genre">Genre: ?</p>
+                <p class="episode-description">Coming up.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="tag">
+          Can't find what you are looking for?
+          <a
+            target="_blank"
+            href="mailto:aravindcpradeep@outlook.com?&amp;subject=Business%20Intelligence"
+            >Write to us!</a
+          >
+        </p>
+      </div>
     </div>
-</div>
-<div class="knowledge-base">
-  <h2 class="container-title">Knowledge Base</h2>
-  <div class="episodes">
-    <div class="episode" onclick="openEpisode('kb-timevalue.html')">
-      <div class="episode-icon">
-      <h3 class="episode-title">Time Value of Money</h3>
-      </div>
-      <div>
-      <p class="genre">Genre: Fundamentals</p>
-      <p class="episode-description">Why cash flows arising at different points of time have different worth?</p>
+    <div class="searchbox">
+      <div class="searchbar">
+        <input type="text" placeholder="Search . ." onchange="searchBI()" />
       </div>
     </div>
-    <div class="episode" onclick="openEpisode('kb-dcf.html')">
-      <div class="episode-icon">
-      <h3 class="episode-title">Discounted Cash Flow Methods</h3>
-      </div>
-      <div>
-      <p class="genre">Genre: Finance</p>
-      <p class="episode-description">How quick to evaluate the financial feasibility of a project?</p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ifrs-insights">
-  <h2 class="container-title">Financial Reporting Insights</h2>
-  <div class="insights">
-    <div class="insight">
-      <div class="insight-description">
-        <p>Existence of a hedge relationship changes the way financial instruments are accounted for.</p><p>Read why.</p>
-      </div>
-      <div class="insight-icon" onclick="document.location='ifrs-hedge-intro.html'">
-        <h3 class="insight-title">Hedge Accounting</h3>
-      </div>
-    </div>
-  </div>
-</div>
-<p class="tag">Can't find what you are looking for? <a target="_blank" href="mailto:aravindcpradeep@outlook.com?&amp;subject=Business%20Intelligence">Write to us!</a></p>
-</div>
-</div>
-<div class="searchbox">
-  <div class="searchbar">
-    <input type="text" placeholder="Search . ." onchange="searchBI()">
-  </div>
-</div>
   </body>
 </html>
