@@ -71,6 +71,7 @@
         --red: rgb(192, 0, 0);
         --ogblue: rgb(64, 82, 106);
         --fabric: rgb(236, 209, 156);
+        --whitet: rgb(255, 255, 255, 0.75);
       }
 
       @font-face {
@@ -304,10 +305,37 @@
 
       .web-apps,
       .knowledge-base,
-      .ifrs-insights,
-      .tax-planning {
+      .ifrs-insights {
         background: white;
         color: var(--deepblue);
+      }
+
+      .tax-planning {
+        background-image: url("Fabric.png");
+        background-size: 35%;
+        color: var(--ogblue);
+
+        .episode {
+          border: 2px solid white;
+          backdrop-filter: blur(5px);
+          color: var(--ogblue);
+        }
+
+        .episode:hover {
+          background: unset;
+        }
+
+        .episode-icon {
+          background: white;
+          color: var(--ogblue);
+          transition: 0.5s ease-in-out;
+        }
+
+        .episode:hover {
+          .episode-icon {
+            transform: scale(1.02);
+          }
+        }
       }
 
       .web-apps,
@@ -703,15 +731,18 @@
           </div>
         </div>
         <div class="tax-planning">
-          <h2 class="container-title">Work in Progress</h2>
+          <h2 class="container-title">Tax Planning</h2>
           <div class="episodes">
-            <div class="episode" onclick="alert('Coming Up Soon!')">
+            <div class="episode" onclick="openEpisode('tp-exemptcg.html')">
               <div class="episode-icon">
-                <h3 class="episode-title">Episode 1</h3>
+                <h3 class="episode-title">Exempt Capital Gains</h3>
               </div>
               <div>
-                <p class="genre">Genre: ?</p>
-                <p class="episode-description">Coming up.</p>
+                <p class="genre">Genre: Capital Gains</p>
+                <p class="episode-description">
+                  Capital gains which are not taxable, when reinvested in
+                  eligible investments.
+                </p>
               </div>
             </div>
           </div>

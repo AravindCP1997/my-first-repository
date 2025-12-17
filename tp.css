@@ -131,9 +131,11 @@ html {
 a {
   color: inherit;
   transition: 0.5s;
+  text-decoration: none;
 }
+
 a:hover {
-  color: var(--gold);
+  text-decoration: underline;
 }
 
 ul {
