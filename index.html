@@ -39,24 +39,6 @@
         anchor.href = episode;
         anchor.click();
       }
-
-      function searchBI() {
-        var filter = event.target.value.toUpperCase();
-
-        searchelement(".applications");
-        searchelement(".episodes");
-        searchelement(".insights");
-
-        function searchelement(item) {
-          var apps = document.querySelector(item).children;
-          for (i = 0; i < apps.length; i++) {
-            apps[i].style.opacity = 0.1;
-            if (apps[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-              apps[i].style.opacity = 1;
-            }
-          }
-        }
-      }
     </script>
     <style>
       :root {
@@ -438,7 +420,7 @@
         color: var(--ogblue);
         display: grid;
         grid-template-columns: 150px 150px;
-        padding: 10px;
+        padding: 9px;
         border: 1px solid var(--deepgrey);
       }
 
@@ -676,10 +658,6 @@
                 Create <i>excelable</i> files (CSV) from JSON.
               </p>
             </div>
-            <div id="dip" class="application">
-              <button class="appbuttons">?</button>
-              <p class="app-description">Development in Progress</p>
-            </div>
           </div>
         </div>
         <div class="knowledge-base">
@@ -755,11 +733,6 @@
             >Write to us!</a
           >
         </p>
-      </div>
-    </div>
-    <div class="searchbox">
-      <div class="searchbar">
-        <input type="text" placeholder="Search . ." onchange="searchBI()" />
       </div>
     </div>
   </body>
