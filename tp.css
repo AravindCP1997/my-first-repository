@@ -40,7 +40,7 @@ html {
 .sub-container {
   display: flex;
   flex-direction: column;
-  width: min(100%, 900px);
+  width: min(100%, 1020px);
 }
 
 .slides {
