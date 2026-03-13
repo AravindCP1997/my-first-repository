@@ -17,9 +17,9 @@
         <div class="slides">
           <div class="slide">
             <div class="title">
-              <h4 style="color: var(--bluet)">Think Mathematic | ACP-BI</h4>
+              <h4 style="color: var(--bluet)">Think Mathematic</h4>
               <h2>
-                Income Tax Relief, when Salary Received in Arrears or Advance
+                Income Tax Relief, when Salary Received in Arrears or as Advance
               </h2>
             </div>
             <div
@@ -32,60 +32,113 @@
               <h4>Backdrop</h4>
               <ul>
                 <li>
-                  In a progressive tax rate system of income tax, tax rate
-                  increases, as the taxable total income of a person of a tax
-                  year increases.
+                  In a progressive rate system of income tax, tax rate
+                  increases, as the taxable income of a person for a tax year
+                  increases.
                 </li>
                 <li>
-                  An individual receives salary or pension of more than one year
-                  in a tax year, either as advance salary of future years, or as
-                  salary in arrears of past years.
+                  If an individual receives salary or pension of more than one
+                  year in a tax year, either as advance salary of future years,
+                  or as salary in arrears of past years, the individual is
+                  liable to pay tax at a rate, which is higher than the rate
+                  applicable if the salary or pension were not received as
+                  advance or in arrears (that is, salary received as and when
+                  due).
                 </li>
                 <li>
-                  As a result, the individual is liable to pay tax at a rate
-                  higher than the rate applicable, if salary or pension were not
-                  received as advance or in arrears (received as and when due).
-                </li>
-                <li>
-                  In India, the tax payable in excess, when salary is received
-                  as advance or in arrears, is allowed as relief. (Section 89 of
-                  Income Tax Act, 1961 and Section 157, of Income Tax Act 2025)
+                  The excess tax payable, when salary is received as advance or
+                  in arrears, can be claimed as relief from tax. (<a
+                    href="https://incometaxindia.gov.in/acts/income-tax act, 1961/2025/102120000000090978.htm"
+                    target="_blank"
+                    >Section 89</a
+                  >
+                  of Income Tax Act, 1961 and
+                  <a
+                    href="https://incometaxindia.gov.in/acts/income-tax act, 2025/section 157.htm"
+                    target="_blank"
+                    >Section 157</a
+                  >
+                  of Income Tax Act, 2025)
                 </li>
               </ul>
             </div>
             <div
               style="background: var(--goldt); padding: 5%; border-radius: 10px"
             >
-              <h4>Calculation</h4>
-              <math>
-                <mrow>
-                  <mi>Relief</mi>
-                  <mo>&equals;</mo><mo>(</mo>
-                  <msub><mi>TR</mi><mi>T</mi></msub>
-                  <mo>&minus;</mo>
-                  <msub><mi>TA</mi><mi>T</mi></msub
-                  ><mo>)</mo>
-                  <mo>&minus;</mo>
-                  <munderover>
-                    <mo>&sum;</mo>
-                    <mrow> <mi>t</mi> <mo>&isin;</mo><mi>Y</mi></mrow>
-                    <mi></mi>
-                  </munderover>
-                  <mo>(</mo>
-                  <msub><mi>TA</mi><mi>t</mi></msub>
-                  <mo>&minus;</mo>
-                  <msub><mi>TR</mi><mi>t</mi></msub> </mrow
-                ><mo>)</mo> </math
-              >, where:
+              <h4>Math</h4>
+              <div style="text-align: center">
+                <math>
+                  <mrow>
+                    <mi>R</mi>
+                    <mo>&equals;</mo><mo>(</mo>
+                    <msub><mi>TR</mi><mi>T</mi></msub>
+                    <mo>&minus;</mo>
+                    <msub><mi>TA</mi><mi>T</mi></msub
+                    ><mo>)</mo>
+                    <mo>&minus;</mo>
+                    <munderover>
+                      <mo>&sum;</mo>
+                      <mrow> <mi>t</mi> <mo>&isin;</mo><mi>Y</mi></mrow>
+                      <mi></mi>
+                    </munderover>
+                    <mo>(</mo>
+                    <msub><mi>TA</mi><mi>t</mi></msub>
+                    <mo>&minus;</mo>
+                    <msub><mi>TR</mi><mi>t</mi></msub> </mrow
+                  ><mo>)</mo> </math
+                >, where:
+              </div>
               <ul>
-                <li>TR<sub>i</sub> - Tax on income received for tax year i</li>
-                <li>TA<sub>i</sub> - Tax on income accrued for tax year i</li>
+                <li>R - Amount of Relief</li>
+                <li>TR<sub>i</sub> - Tax on income received during year, i</li>
+                <li>TA<sub>i</sub> - Tax on income accrued during year, i</li>
                 <li>
-                  T - Tax year in which salary received in arrears or as advance
+                  T - Year during which salary is received in arrears or as
+                  advance
                 </li>
                 <li>
-                  Y - Set of years in which salary was due, in the case of
-                  arrears, or is to become due, in the case of advance
+                  Y - Year (s) during which salary was due, in the case of
+                  arrears, or is to become due, in the case of advances
+                </li>
+              </ul>
+            </div>
+            <div
+              style="
+                background: var(--lightgreent);
+                padding: 5%;
+                border-radius: 10px;
+              "
+            >
+              <h4>Concept</h4>
+              <ul>
+                <li>
+                  <strong>Tax on Receipt Basis: </strong> For the year during
+                  which salary is received as advance, or in arrear, the excess
+                  of tax on income received during the year, over tax on income
+                  accrued during the year, is the tax on advance or arrear, on
+                  receipt basis, TR<sub>T</sub> &minus; TA<sub>T</sub>.
+                </li>
+                <li>
+                  <strong>Tax on Accrual Basis: </strong>
+                  The sum total, for each of the year during which salary was
+                  (or, is to be) actually due, of excess of tax on income
+                  accrued during the year, over tax on income received during
+                  the year, is the tax on advance or arrear on accrual basis,
+                  <math style="font-weight: normal">
+                    <munderover>
+                      <mo>&sum;</mo>
+                      <mrow> <mi>t</mi> <mo>&isin;</mo><mi>Y</mi></mrow>
+                      <mi></mi>
+                    </munderover>
+                    <mo>(</mo>
+                    <msub><mi>TA</mi><mi>t</mi></msub>
+                    <mo>&minus;</mo>
+                    <msub><mi>TR</mi><mi>t</mi></msub> <mo>)</mo>
+                  </math>
+                </li>
+                <li>
+                  <strong>Relief:</strong> Excess of tax on receipt basis, over
+                  tax on accrual basis on the advance or arrear.
                 </li>
               </ul>
             </div>

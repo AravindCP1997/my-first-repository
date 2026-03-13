@@ -45,7 +45,7 @@ html {
 .sub-container {
   display: flex;
   flex-direction: column;
-  width: min(100%, 1020px);
+  width: min(100%, 1080px);
 }
 
 .slides {
@@ -82,7 +82,7 @@ html {
   margin-top: 20px;
   margin-bottom: 10px;
   border-bottom: 2px solid var(--bluet);
-  width: min(100%, 720px);
+  width: min(100%, 800px);
   h1,
   h2,
   h3,

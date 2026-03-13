@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>ACP-BI</title>
@@ -43,6 +43,7 @@
     <style>
       :root {
         --blue: rgb(95, 158, 160);
+        --bluet: rgb(95, 158, 160, 0.5);
         --deepblue2: rgb(80, 120, 150);
         --deepblue: rgb(85, 129, 156);
         --deepbluebackground: rgb(85, 129, 156);
@@ -54,6 +55,10 @@
         --ogblue: rgb(64, 82, 106);
         --fabric: rgb(236, 209, 156);
         --whitet: rgb(255, 255, 255, 0.75);
+        --lightgreen: rgb(195, 240, 200);
+        --lightgreent: rgb(195, 240, 200, 0.5);
+        --gold: rgb(255, 192, 0);
+        --goldt: rgb(255, 192, 0, 0.2);
       }
 
       @font-face {
@@ -287,7 +292,8 @@
 
       .web-apps,
       .knowledge-base,
-      .ifrs-insights {
+      .ifrs-insights,
+      .think-math {
         background: white;
         color: var(--deepblue);
       }
@@ -324,7 +330,8 @@
       .about,
       .knowledge-base,
       .tax-planning,
-      .ifrs-insights {
+      .ifrs-insights,
+      .think-math {
         padding: 30px;
         display: flex;
         flex-direction: column;
@@ -457,7 +464,7 @@
           border-radius: 50%;
           cursor: pointer;
           box-shadow: 2px 2px 3px rgb(75, 90, 106);
-          transition: 1s;
+          transition: 0.5s;
         }
 
         .insight-description {
@@ -473,14 +480,38 @@
         transform: scale(1.05);
       }
 
+      .think-math {
+        background: var(--bluet);
+        color: var(--ogblue);
+        background-image: url("Lines White.png");
+        background-size: 15%;
+
+        .episode {
+          background: var(--bluet);
+          border: 3px solid var(--bluet);
+          aspect-ratio: unset;
+          color: white;
+        }
+
+        .episode:hover {
+          transform: translateX(10px);
+        }
+
+        .episode-icon {
+          background: var(--bluet);
+          color: white;
+          border: 3px solid var(--bluet);
+        }
+      }
+
       .genre {
         font-size: 0.9em;
         text-align: justify;
         padding: 10px;
       }
 
-      .episode-description,
-      .insight-description {
+      .insight-description,
+      .episode-description {
         font-size: 0.9em;
         text-align: justify;
         padding: 10px;
@@ -689,21 +720,44 @@
           </div>
         </div>
         <div class="ifrs-insights">
-          <h2 class="container-title">Financial Reporting Insights</h2>
+          <h2 class="container-title">Think Global</h2>
           <div class="insights">
             <div class="insight">
               <div class="insight-description">
                 <p>
                   Existence of a hedge relationship changes the way financial
-                  instruments are accounted for.
+                  instruments are accounted for, in IFRS.
                 </p>
                 <p>Read why.</p>
               </div>
               <div
                 class="insight-icon"
-                onclick="document.location='ifrs-hedge-intro.html'"
+                onclick="document.location = 'ifrs-hedge-intro.html'"
               >
                 <h3 class="insight-title">Hedge Accounting</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="think-math">
+          <h2 class="container-title">Think Mathematic</h2>
+          <div class="episodes">
+            <div class="episode" onclick="openEpisode('tm-relief.html')">
+              <div class="episode-icon">
+                <h3 class="episode-title">Relief u/s 89</h3>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                "
+              >
+                <p class="episode-description">
+                  Math behind the tax relief, when salary received in arrears or
+                  as advance
+                </p>
               </div>
             </div>
           </div>
