@@ -57,6 +57,7 @@
         --whitet: rgb(255, 255, 255, 0.75);
         --lightgreen: rgb(195, 240, 200);
         --lightgreent: rgb(195, 240, 200, 0.5);
+        --lightbluet: rgb(64, 82, 106, 0.3);
         --gold: rgb(255, 192, 0);
         --goldt: rgb(255, 192, 0, 0.2);
       }
@@ -282,12 +283,12 @@
       .containers {
         display: flex;
         flex-direction: column;
-        padding: 15px;
+        padding: 10px;
         padding-top: 150px;
         gap: 20px;
         animation-name: applications;
         animation-duration: 6s;
-        width: min(100%, 850px);
+        width: min(100%, 880px);
       }
 
       .web-apps,
@@ -300,12 +301,11 @@
 
       .tax-planning {
         background-image: url("Fabric.png");
-        background-size: 35%;
+        background-size: 25%;
         color: var(--ogblue);
 
         .episode {
-          border: 2px solid white;
-          backdrop-filter: blur(5px);
+          border: 3px solid var(--whitet);
           color: var(--ogblue);
         }
 
@@ -314,9 +314,10 @@
         }
 
         .episode-icon {
-          background: white;
+          background: var(--whitet);
           color: var(--ogblue);
           transition: 0.5s ease-in-out;
+          border: 3px solid var(--whitet);
         }
 
         .episode:hover {
@@ -767,7 +768,23 @@
           <div class="episodes">
             <div class="episode" onclick="openEpisode('tp-exemptcg.html')">
               <div class="episode-icon">
-                <h3 class="episode-title">Exempt Capital Gains</h3>
+                <h3 class="episode-title">Capital Gains Exempt</h3>
+              </div>
+              <div>
+                <p class="genre">Genre: Capital Gains</p>
+                <p class="episode-description">
+                  Capital gains which are not taxable
+                </p>
+              </div>
+            </div>
+            <div
+              class="episode"
+              onclick="openEpisode('tp-exemptcg-reinvest.html')"
+            >
+              <div class="episode-icon">
+                <h3 class="episode-title">
+                  Capital Gains Exempt, <br />when Reinvested
+                </h3>
               </div>
               <div>
                 <p class="genre">Genre: Capital Gains</p>

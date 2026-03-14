@@ -6,6 +6,10 @@
   --gray: rgb(75, 75, 75);
   --red: rgb(255, 128, 0);
   --whitet: rgb(255, 255, 255, 0.8);
+  --lightgreen: rgb(195, 240, 200);
+  --lightgreent: rgb(195, 240, 200, 0.5);
+  --goldt: rgb(255, 192, 0, 0.2);
+  --lightbluet: rgb(150, 200, 255, 0.2);
 }
 
 @font-face {
