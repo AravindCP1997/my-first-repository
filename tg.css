@@ -1,0 +1,178 @@
+:root {
+  --blue: rgb(64, 82, 106);
+  --bluet: rgb(64, 82, 106, 0.7);
+  --lightblue: rgb(165, 200, 235);
+  --lightgray: rgb(242, 242, 245);
+  --lightgreen: rgb(195, 240, 200);
+  --lightgreent: rgb(195, 240, 200, 0.5);
+  --gold: rgb(255, 192, 0);
+  --goldt: rgb(255, 192, 0, 0.2);
+  --sandal: rgb(236, 209, 156);
+  --gray: rgb(75, 75, 75);
+  --red: rgb(255, 128, 0);
+  --lightred: rgb(250, 135, 135);
+  --lightredt: rgb(250, 135, 135, 0.25);
+  --whitet: rgb(255, 255, 255, 0.8);
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("Helvetica.woff");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--goldt);
+  background-image: url("Lines\ Intercept.png");
+  background-size: 10%;
+  font-family: Helvetica, sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid black;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  overflow: auto;
+  padding: min(10px, 2%);
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 1080px);
+}
+
+.slides {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 10%;
+  padding-bottom: 10px;
+}
+
+.slide {
+  backdrop-filter: blur(2px);
+  color: var(--blue);
+  border-radius: 25px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  padding: 5%;
+  text-align: justify;
+  line-height: 1.5;
+  position: relative;
+  overflow: hidden;
+  gap: 10px;
+  box-shadow: 0px 1px 5px -4px var(--bluet);
+  border: 3px solid var(--whitet);
+  background: var(--goldt);
+}
+
+.title {
+  color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  padding: 10px 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+  }
+}
+
+.tableContainer {
+  overflow: auto;
+  max-height: 480px;
+  padding-right: 5px;
+}
+.table {
+  th,
+  td {
+    border: 2px solid var(--whitet);
+    padding: 5px;
+    border-radius: 2px;
+    background: var(--whitet);
+  }
+  th {
+    height: 70px;
+  }
+  thead {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+  }
+  h4 {
+    margin: 0;
+    text-align: center;
+  }
+  p {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.centerAlign {
+  text-align: center;
+  align-items: center;
+}
+
+.leftAlign {
+  text-align: justify;
+}
+
+.end {
+  min-height: fit-content;
+  gap: 0;
+  padding: 30px 10px;
+  background: none;
+  box-shadow: none;
+  border: none;
+  backdrop-filter: none;
+  h4,
+  h5 {
+    margin: 0;
+  }
+}
+
+a {
+  color: inherit;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  margin: 2px;
+}
+
+math {
+  font-family: inherit;
+  font-weight: bold;
+}
+
+mrow {
+  padding: 2px;
+}
