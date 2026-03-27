@@ -430,6 +430,7 @@
         grid-template-columns: 150px 150px;
         padding: 9px;
         border: 1px solid var(--deepgrey);
+        cursor: pointer;
       }
 
       .episode:hover {
@@ -462,7 +463,7 @@
         .insight-icon {
           background: var(--og);
           aspect-ratio: 1/1;
-          border-radius: 50%;
+          border-radius: 10px;
           cursor: pointer;
           box-shadow: 2px 2px 3px rgb(75, 90, 106);
           transition: 0.5s;
@@ -478,7 +479,7 @@
       }
 
       .insight-icon:hover {
-        transform: scale(1.05);
+        transform: translateX(5px);
       }
 
       .think-math {
@@ -564,6 +565,10 @@
             cursor: pointer;
           }
         }
+      }
+
+      .square {
+        border-radius: 10px;
       }
 
       #dip {
@@ -723,7 +728,10 @@
         <div class="ifrs-insights">
           <h2 class="container-title">Think Global</h2>
           <div class="insights">
-            <div class="insight">
+            <div
+              class="insight"
+              onclick="document.location = 'ifrs-hedge-intro.html'"
+            >
               <div class="insight-description">
                 <p>
                   Existence of a hedge relationship changes the way financial
@@ -731,11 +739,16 @@
                 </p>
                 <p>Read why.</p>
               </div>
-              <div
-                class="insight-icon"
-                onclick="document.location = 'ifrs-hedge-intro.html'"
-              >
+              <div class="insight-icon">
                 <h3 class="insight-title">Hedge Accounting</h3>
+              </div>
+            </div>
+            <div class="insight" onclick="document.location = 'tg-mtc.html'">
+              <div class="insight-description">
+                <p>Fundamentals of international taxation.</p>
+              </div>
+              <div class="insight-icon">
+                <h3 class="insight-title">Model Tax Convention</h3>
               </div>
             </div>
           </div>
