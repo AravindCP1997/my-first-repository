@@ -46,6 +46,7 @@
         --bluet: rgb(95, 158, 160, 0.5);
         --deepblue2: rgb(80, 120, 150);
         --deepblue: rgb(85, 129, 156);
+        --deepbluet: rgb(85, 129, 156, 0.75);
         --deepbluebackground: rgb(85, 129, 156);
         --deepgrey: rgb(242, 242, 245);
         --deepgreybackground: rgb(240, 240, 240);
@@ -77,6 +78,8 @@
       html {
         font-family: Helvetica;
         background: var(--deepgrey);
+        background-image: url("Lines Intercept.png");
+        background-size: 7.5%;
       }
 
       * {
@@ -342,7 +345,6 @@
       }
 
       .about {
-        background: var(--deepblue);
         border-radius: 25px;
         width: 100%;
         color: white;
@@ -352,6 +354,9 @@
         justify-content: center;
         text-align: center;
         position: relative;
+        box-shadow: 0px 2px 10px -5px gray;
+        border: 5px solid var(--deepbluet);
+        background: var(--deepbluet);
       }
 
       .about h4 {
@@ -676,9 +681,6 @@
       <div class="containers">
         <div class="about">
           <h1>Business Intelligence</h1>
-          <div>
-            <h4>from Aravind Pradeep & Co.</h4>
-          </div>
         </div>
         <div class="web-apps">
           <h2 class="container-title">Web Apps</h2>
